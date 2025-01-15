@@ -42,6 +42,8 @@ public class CarRaycast : MonoBehaviour
         public float gas;
         public float brake;
         public int grounded;
+        public float flip;
+        public int downed;
     }
     [System.Serializable]
     public struct WheelInfo
@@ -98,6 +100,8 @@ public class CarRaycast : MonoBehaviour
     private void FixedUpdate()
     {
         CarGrounded();
+        BikeDowned();
+
 
         if (isCarOnMenu == false)
         {
@@ -141,6 +145,12 @@ public class CarRaycast : MonoBehaviour
     {
         input.brake = value.Get<float>();
     }
+
+    private void OnFlip(InputValue value)
+    {
+        input.flip = value.Get<float>();
+    }
+
     private void OnReset(InputValue value)
     {
         //upright car
@@ -155,7 +165,14 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
-            this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * airTurnSpeed * Time.fixedDeltaTime);
+            if (input.flip > 0)
+            {
+                this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * airTurnSpeed * Time.fixedDeltaTime);
+            }
+            else
+            {
+                this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * Time.fixedDeltaTime);
+            }
         }
         //turn the front wheels
         //FR.anchor.transform.localRotation = Quaternion.AngleAxis(45f * input.steer.x, Vector3.up);
@@ -231,6 +248,18 @@ public class CarRaycast : MonoBehaviour
         FrameStabilize();
 
         
+    }
+
+    private void BikeDowned()
+    {
+        input.downed = 0;
+
+        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.right / 2, 100f) == false)
+        {
+            Debug.DrawRay(FR.anchor.transform.position, -this.transform.right / 2, Color.red);
+            input.downed++;
+        }
+        /*Debug.DrawRay(FR.anchor.transform.position, -this.transform.right, Color.red, 0f);*/
     }
 
     

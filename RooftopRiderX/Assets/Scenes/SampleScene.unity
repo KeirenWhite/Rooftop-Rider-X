@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stabilizationSensitivity: 140
-  airTurnSpeed: 1.5
+  airTurnSpeed: 3.5
   Movespeed: 35
   Turnspeed: 90
   BrakeStrength: 5
@@ -869,7 +869,7 @@ MonoBehaviour:
     wheel: {fileID: 335578854}
     tire: {fileID: 0}
     raycast: {fileID: 365633879}
-    springStrength: 155000
+    springStrength: 140000
     dampingFactor: 0.6
     maxDistance: 0
     radius: 0
