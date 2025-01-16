@@ -850,7 +850,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stabilizationSensitivity: 140
-  airTurnSpeed: 3.5
+  airTurnSpeed: 135
+  airFlipSpeed: 135
+  turnMulti: 2
   Movespeed: 35
   Turnspeed: 90
   BrakeStrength: 5
@@ -904,9 +906,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375308608}
   serializedVersion: 4
-  m_Mass: 250
+  m_Mass: 2000
   m_Drag: 0.5
-  m_AngularDrag: 10
+  m_AngularDrag: 3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

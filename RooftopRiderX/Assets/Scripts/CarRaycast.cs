@@ -32,9 +32,6 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(PlayerInput))] //remember: set the component's inputaction asset
 public class CarRaycast : MonoBehaviour
 {
-    [SerializeField] private float stabilizationSensitivity = 60f;
-    public float airTurnSpeed = 1.5f;
-
     private IEnumerator enumerator;
     public struct InputInfo
     {
@@ -42,7 +39,8 @@ public class CarRaycast : MonoBehaviour
         public float gas;
         public float brake;
         public int grounded;
-        public float flip;
+        public float slip;
+        public Vector2 flip;
         public int downed;
     }
     [System.Serializable]
@@ -72,6 +70,10 @@ public class CarRaycast : MonoBehaviour
         }
     }
 
+    [SerializeField] private float stabilizationSensitivity = 60f;
+    public float airTurnSpeed = 1.5f;
+    public float airFlipSpeed = 2f;
+    public float turnMulti = 2f;
     public float Movespeed = 35;
     public float Turnspeed = 90;
     public float BrakeStrength = 5;
@@ -101,6 +103,7 @@ public class CarRaycast : MonoBehaviour
     {
         CarGrounded();
         BikeDowned();
+        FrameStabilize();
 
 
         if (isCarOnMenu == false)
@@ -117,7 +120,18 @@ public class CarRaycast : MonoBehaviour
 
     void FrameStabilize()
     {
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, Time.deltaTime * stabilizationSensitivity));
+        RaycastHit hit;
+        
+
+        if (Physics.Raycast(transform.position, -this.transform.up, out hit))
+        {
+            Vector3 groundNormal = hit.normal;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(groundNormal.z, 0, Time.deltaTime * stabilizationSensitivity));
+            Debug.Log("stabilizing");
+        }
+
+
+        Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
     }
 
     private void OnGUI()
@@ -146,9 +160,14 @@ public class CarRaycast : MonoBehaviour
         input.brake = value.Get<float>();
     }
 
+    private void OnSlip(InputValue value)
+    {
+        input.slip = value.Get<float>();
+    }
+
     private void OnFlip(InputValue value)
     {
-        input.flip = value.Get<float>();
+        input.flip = value.Get<Vector2>();
     }
 
     private void OnReset(InputValue value)
@@ -165,13 +184,15 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
-            if (input.flip > 0 && input.downed == 0)
+            if (input.slip > 0 && input.downed == 0)
             {
-                this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * airTurnSpeed * Time.fixedDeltaTime);
+                this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * turnMulti * Time.fixedDeltaTime);
+                this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * turnMulti * Time.fixedDeltaTime);
             }
-            else
+            else if (input.downed == 0)
             {
-                this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * Time.fixedDeltaTime);
+                this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
+                this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
             }
         }
         //turn the front wheels
@@ -245,7 +266,7 @@ public class CarRaycast : MonoBehaviour
 
         
 
-        FrameStabilize();
+        
 
         
     }

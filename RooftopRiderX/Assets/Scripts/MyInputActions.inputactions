@@ -51,9 +51,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Flip",
+                    "name": "Slip",
                     "type": "Value",
                     "id": "d292b4a0-8ef6-4bf8-a693-d9fc26e9d785",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Flip",
+                    "type": "Value",
+                    "id": "e9ae07f9-614e-4788-8b3d-b550b1178392",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -162,17 +171,6 @@
                 },
                 {
                     "name": "",
-                    "id": "37aa5aed-658b-456b-a8a6-af2d0cef4124",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gas",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "806c0315-d70f-403d-a413-2fd848f781dd",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -197,17 +195,6 @@
                     "name": "",
                     "id": "438e82ef-5303-422d-aac1-f7fe62ddbfb1",
                     "path": "<Keyboard>/b",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Brake",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "78cae7c9-599e-485c-8001-906fa55d6bdf",
-                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -288,7 +275,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Flip",
+                    "action": "Slip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -299,9 +286,53 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "Slip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "65e0872f-30e4-4c89-9f4a-8052201d40c5",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Flip",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "WASD",
+                    "id": "2af4a5c3-a11f-4d8d-a62f-0fe53767c890",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "a14517b9-78b9-4a2a-8114-d95c172bbf01",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "5b1b578a-9958-49d4-8fc0-57c596e9e92d",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flip",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
