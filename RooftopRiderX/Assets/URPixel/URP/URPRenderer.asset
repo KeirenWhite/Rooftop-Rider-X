@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: FullScreenPassRendererFeature
   m_EditorClassIdentifier: 
   m_Active: 1
-  passMaterial: {fileID: 2100000, guid: 26c51ea93c5bd324383ee60864dac497, type: 2}
   injectionPoint: 600
-  requirements: 4
+  fetchColorBuffer: 1
+  requirements: 0
+  passMaterial: {fileID: 2100000, guid: 26c51ea93c5bd324383ee60864dac497, type: 2}
   passIndex: 0
+  bindDepthStencilAttachment: 0
+  m_Version: 1
 --- !u!114 &-6135413114595735907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30,13 +33,13 @@ MonoBehaviour:
   m_Name: PixelOutline
   m_EditorClassIdentifier: 
   m_Active: 1
-  renderPassEvent: 350
+  renderPassEvent: 400
   outlinesLayerMask:
     serializedVersion: 2
     m_Bits: 0
   outlineSettings:
     outlineColor: {r: 0, g: 0, b: 0, a: 1}
-    outlineScale: 1
+    outlineScale: 1.5
     depthThreshold: 0.005
     innerEdge: 0
     angleThreshold: 0.4
@@ -57,9 +60,9 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
-  - {fileID: -7451210813805916396}
   - {fileID: -6135413114595735907}
-  m_RendererFeatureMap: 148f8c383efb97989d863f7247a2daaa
+  - {fileID: -7451210813805916396}
+  m_RendererFeatureMap: 9d863f7247a2daaa148f8c383efb9798
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
