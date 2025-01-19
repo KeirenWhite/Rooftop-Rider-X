@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Black
-  m_Shader: {fileID: 4800000, guid: a2882fcb0c3527b47a2015203e3f08d7, type: 3}
+  m_Name: ColorDepthMaterial
+  m_Shader: {fileID: 4800000, guid: 3da7223984bd20c41a8ebcf94bddba9d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -73,35 +73,24 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BrightColorMapPosition: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
-    - _DarkColorMapPosition: 0
+    - _Depth: 16
     - _DetailNormalMapScale: 1
-    - _DitherPattern1: 0.75
-    - _DitherPattern2: 0.53
-    - _DitherRange1: 0.15
-    - _DitherRange2: 0.15
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LayersAmount: 4
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _QueueControl: 0
-    - _QueueOffset: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TextureBrightness: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BrightColor: {r: 0.25943398, g: 0.25943398, b: 0.25943398, a: 1}
-    - _Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
-    - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
