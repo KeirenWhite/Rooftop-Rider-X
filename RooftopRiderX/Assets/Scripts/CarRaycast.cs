@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+
 
 /* Hierarchy of Car raycast gameobject parts:
  
@@ -112,8 +114,8 @@ public class CarRaycast : MonoBehaviour
             CarMove();
         }       
 
-        CarSuspension(ref FR);
-        CarSuspension(ref BL);
+        //CarSuspension(ref FR);
+        //CarSuspension(ref BL);
         
         //SpinWheels();
     }
@@ -181,6 +183,7 @@ public class CarRaycast : MonoBehaviour
         if (input.grounded > 0)
         {
             FrameStabilize();
+
             //turn the car
             this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * Time.fixedDeltaTime);
         }
@@ -273,32 +276,52 @@ public class CarRaycast : MonoBehaviour
         
     }
 
+
+    
     private void BikeDowned() 
     {
         input.downed = 0;
 
-        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.right / 3) == true) //check if bike is on its side
+        
+
+        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.up / 1.34f) == true) //check if bike is on its side
         {
-            Debug.DrawRay(FR.anchor.transform.position, -this.transform.right / 3, Color.red);
+            Debug.DrawRay(FR.anchor.transform.position, -this.transform.up / 1.34f, Color.red);
             input.downed++;
         }
-        if (Physics.Raycast(FR.anchor.transform.position, this.transform.right / 3) == true) //check if bike is on its side
+   
+        if (Physics.Raycast(BL.anchor.transform.position, -this.transform.up / 1.34f) == true) //check if bike is on its side
         {
-            Debug.DrawRay(FR.anchor.transform.position, this.transform.right / 3, Color.red);
-            input.downed++;
-        }
-        if (Physics.Raycast(BL.anchor.transform.position, -this.transform.right / 3) == true) //check if bike is on its side
-        {
-            Debug.DrawRay(BL.anchor.transform.position, -this.transform.right / 3, Color.red);
-            input.downed++;
-        }
-        if (Physics.Raycast(BL.anchor.transform.position, this.transform.right / 3) == true) //check if bike is on its side
-        {
-            Debug.DrawRay(BL.anchor.transform.position, this.transform.right / 3, Color.red);
+            Debug.DrawRay(BL.anchor.transform.position, -this.transform.up / 1.34f, Color.red);
             input.downed++;
         }
 
+        
     }
 
-    
+    /*private void OnDrawGizmosSelected()
+    {
+        if (Physics.SphereCast(FR.anchor.transform.position, .5439239f, transform.forward, out hit) == true)
+        {
+            Gizmos.DrawWireSphere(SphereCase(), 0.5439239f);
+        }
+    }
+    private Vector3 SphereCase()
+    {
+        Gizmos.color = Color.yellow;
+        Vector3 midPoint = new Vector3();
+        Ray r = new Ray(transform.position, transform.forward);
+        Vector3 a = transform.position;
+        Vector3 b = hit.point;
+        Vector3 c = r.GetPoint(hit.distance - .5439239f);
+
+        float v1 = Vector3.Dot((c - a), (c - a));
+        float v2 = Vector3.Dot((b - a), (c - a));
+        float t = v2 / v1;
+
+        midPoint = (a + t * (c - a));
+        return midPoint;
+    }*/
+
+
 }

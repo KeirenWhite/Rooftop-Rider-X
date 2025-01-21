@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f467d2a6ae695c04182a174451071637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stabilizationSensitivity: 1000
+  stabilizationSensitivity: 700
   airTurnSpeed: 200
   airFlipSpeed: 250
   turnMulti: 2
