@@ -39,7 +39,7 @@ public class CarRaycast : MonoBehaviour
         public float gas;
         public float brake;
         public int grounded;
-        public float slip;
+        public float roll;
         public Vector2 flip;
         public int downed;
     }
@@ -103,8 +103,8 @@ public class CarRaycast : MonoBehaviour
     {
         CarGrounded();
         BikeDowned();
-        FrameStabilize();
-
+        
+        //FrameStabilize();
 
         if (isCarOnMenu == false)
         {
@@ -125,8 +125,9 @@ public class CarRaycast : MonoBehaviour
 
         if (Physics.Raycast(transform.position, -this.transform.up, out hit))
         {
-            Vector3 groundNormal = hit.normal;
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(groundNormal.z, 0, Time.deltaTime * stabilizationSensitivity));
+            float groundNormal = hit.normal.y;
+           
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, groundNormal, Time.deltaTime * stabilizationSensitivity));
             Debug.Log("stabilizing");
         }
 
@@ -160,9 +161,9 @@ public class CarRaycast : MonoBehaviour
         input.brake = value.Get<float>();
     }
 
-    private void OnSlip(InputValue value)
+    private void OnRoll(InputValue value)
     {
-        input.slip = value.Get<float>();
+        input.roll = value.Get<float>();
     }
 
     private void OnFlip(InputValue value)
@@ -179,17 +180,18 @@ public class CarRaycast : MonoBehaviour
     {
         if (input.grounded > 0)
         {
+            FrameStabilize();
             //turn the car
             this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * Time.fixedDeltaTime);
         }
         else
         {
-            if (input.slip > 0 && input.downed == 0)
+            if (input.roll > 0)
             {
-                this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * turnMulti * Time.fixedDeltaTime);
-                this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * turnMulti * Time.fixedDeltaTime);
+                this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
+                this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
             }
-            else if (input.downed == 0)
+            else
             {
                 this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
                 this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
@@ -275,24 +277,24 @@ public class CarRaycast : MonoBehaviour
     {
         input.downed = 0;
 
-        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.right / 2, 100f) == true) //check if bike is on its side
+        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.right / 3) == true) //check if bike is on its side
         {
-            Debug.DrawRay(FR.anchor.transform.position, -this.transform.right / 2, Color.red);
+            Debug.DrawRay(FR.anchor.transform.position, -this.transform.right / 3, Color.red);
             input.downed++;
         }
-        if (Physics.Raycast(FR.anchor.transform.position, this.transform.right / 2, 100f) == true) //check if bike is on its side
+        if (Physics.Raycast(FR.anchor.transform.position, this.transform.right / 3) == true) //check if bike is on its side
         {
-            Debug.DrawRay(FR.anchor.transform.position, this.transform.right / 2, Color.red);
+            Debug.DrawRay(FR.anchor.transform.position, this.transform.right / 3, Color.red);
             input.downed++;
         }
-        if (Physics.Raycast(BL.anchor.transform.position, -this.transform.right / 2, 100f) == true) //check if bike is on its side
+        if (Physics.Raycast(BL.anchor.transform.position, -this.transform.right / 3) == true) //check if bike is on its side
         {
-            Debug.DrawRay(BL.anchor.transform.position, -this.transform.right / 2, Color.red);
+            Debug.DrawRay(BL.anchor.transform.position, -this.transform.right / 3, Color.red);
             input.downed++;
         }
-        if (Physics.Raycast(BL.anchor.transform.position, this.transform.right / 2, 100f) == true) //check if bike is on its side
+        if (Physics.Raycast(BL.anchor.transform.position, this.transform.right / 3) == true) //check if bike is on its side
         {
-            Debug.DrawRay(BL.anchor.transform.position, this.transform.right / 2, Color.red);
+            Debug.DrawRay(BL.anchor.transform.position, this.transform.right / 3, Color.red);
             input.downed++;
         }
 
