@@ -850,9 +850,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stabilizationSensitivity: 700
-  airTurnSpeed: 200
+  airStabilizationSensitivityZ: 100
+  airStabilizationSensitivityX: 50
+  airTurnSpeed: 250
   airFlipSpeed: 250
-  turnMulti: 2
   Movespeed: 35
   Turnspeed: 90
   BrakeStrength: 5
@@ -861,8 +862,6 @@ MonoBehaviour:
     wheel: {fileID: 845141706}
     tire: {fileID: 0}
     raycast: {fileID: 2127729118}
-    springStrength: 140000
-    dampingFactor: 0.6
     maxDistance: 0
     radius: 0
     springForce: {x: 0, y: 0, z: 0}
@@ -871,12 +870,9 @@ MonoBehaviour:
     wheel: {fileID: 335578854}
     tire: {fileID: 0}
     raycast: {fileID: 365633879}
-    springStrength: 140000
-    dampingFactor: 0.6
     maxDistance: 0
     radius: 0
     springForce: {x: 0, y: 0, z: 0}
-  isCarOnMenu: 0
 --- !u!65 &1375308613
 BoxCollider:
   m_ObjectHideFlags: 0
