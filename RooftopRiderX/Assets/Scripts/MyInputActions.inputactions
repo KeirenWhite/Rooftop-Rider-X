@@ -215,6 +215,17 @@
                 },
                 {
                     "name": "",
+                    "id": "78a3d914-fa9c-4b3c-94a1-6a352103920a",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9b59ac75-127a-4e6e-94d5-1cd764cb08f8",
                     "path": "<Gamepad>/start",
                     "interactions": "",

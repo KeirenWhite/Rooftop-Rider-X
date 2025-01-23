@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
@@ -36,6 +37,7 @@ public class CarRaycast : MonoBehaviour
         public float roll;
         public Vector2 flip;
         public int downed;
+        public float reset;
     }
     [System.Serializable]
     public struct WheelInfo
@@ -44,14 +46,10 @@ public class CarRaycast : MonoBehaviour
         public GameObject wheel;
         public TrailRenderer tire;
         public GameObject raycast;      //how far down to ground to raycast        
-        //public float springStrength;    //strong enough to hold up car (ie: ~180,000 for a 1000 lbs car)      
-        //public float dampingFactor;     //stop the car from being too bouncy (boat 0.0f, car 0.3f)
         [HideInInspector]
         public float maxDistance;       //calculated in start (anchor - raycastTo position)        
         [HideInInspector]
         public float radius;            //calculated in start (mesh bounds)
-        [HideInInspector]
-        public Vector3 springForce;
 
 
         public static WheelInfo CreateDefault()
@@ -69,20 +67,22 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private float airStabilizationSensitivityX = 10f;
     public float airTurnSpeed = 1.5f;
     public float airFlipSpeed = 2f;
-    //public float wheelieSpeed = 100f;
+    public float wheelieSpeed = 100f;
     public float Movespeed = 35;
-    public float Turnspeed = 90;
-    public float BrakeStrength = 5;
+    public float turnSpeed = 90;
+    public float brakeStrength = 5;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
 
     private Rigidbody rb = null;
     private float origDrag;
     private InputInfo input;
+    
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        origDrag = rb.drag;
        
         //size of each wheel (used to spin wheels)
         FR.radius = FR.wheel.GetComponent<Renderer>().bounds.extents.y;
@@ -148,8 +148,6 @@ public class CarRaycast : MonoBehaviour
         style.normal.textColor = Color.black;
         GUI.Label(new Rect(10, 10, 300, 50), string.Format("steer {0}, gas {1}, brake {2}", input.steer.x, input.gas, input.brake), style);
         GUI.Label(new Rect(10, 30, 300, 50), string.Format("grounded {0}", input.grounded), style);
-        GUI.Label(new Rect(10, 50, 300, 50), string.Format("suspension FR {0}", FR.springForce), style);
-        GUI.Label(new Rect(10, 70, 300, 50), string.Format("suspension BL {0}", BL.springForce), style);
     }
     private void OnSteer(InputValue value)
     {
@@ -178,6 +176,8 @@ public class CarRaycast : MonoBehaviour
     {
         //upright car
         this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
+        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+        //input.reset = value.Get<float>();
     }
     private void BikeTurn()
     {
@@ -186,8 +186,8 @@ public class CarRaycast : MonoBehaviour
             FrameStabilize();
 
             //turn the car
-            this.transform.Rotate(Vector3.up, Turnspeed * input.steer.x * Time.fixedDeltaTime);
-            //this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
+            this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
+            this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
         }
         else
         {
@@ -204,7 +204,7 @@ public class CarRaycast : MonoBehaviour
             }
         }
         //turn the front wheels
-        //FR.anchor.transform.localRotation = Quaternion.AngleAxis(45f * input.steer.x, Vector3.up);
+        //BL.anchor.transform.localRotation = Quaternion.AngleAxis(45f * input.steer.x, Vector3.up);
     }
     private void BikeMove()
     {
@@ -213,7 +213,11 @@ public class CarRaycast : MonoBehaviour
             //gas
             rb.AddRelativeForce(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime, ForceMode.VelocityChange);
             //brake
-            //rb.linearDamping = origDrag + (BrakeStrength * input.brake * Time.fixedDeltaTime);
+            rb.drag = origDrag + (input.brake * brakeStrength * Time.deltaTime);
+        }
+        else
+        {
+            rb.drag = origDrag;
         }
     }
     
@@ -234,8 +238,9 @@ public class CarRaycast : MonoBehaviour
         //  'tire' trail emitting = wheel contact with ground
 
         input.grounded = 0;
+        RaycastHit hit;
 
-        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.up, FR.maxDistance) == true)
+        if (Physics.SphereCast(FR.anchor.transform.position, .25f, -this.transform.up, out hit, FR.maxDistance) == true)
         {
             input.grounded++;
             //FR.tire.emitting = true;
@@ -247,7 +252,7 @@ public class CarRaycast : MonoBehaviour
 
         
 
-        if (Physics.Raycast(BL.anchor.transform.position, -this.transform.up, BL.maxDistance) == true)
+        if (Physics.SphereCast(BL.anchor.transform.position, .25f, -this.transform.up, out hit, BL.maxDistance) == true)
         {
             input.grounded++;
             //BL.tire.emitting = true;
@@ -284,32 +289,21 @@ public class CarRaycast : MonoBehaviour
             input.downed++;
         }
 
+        /*if (input.downed > 0 || input.reset > 0)
+        {
+            this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+        }*/
+
         
     }
 
-    /*private void OnDrawGizmosSelected()
+   /* private void OnDrawGizmos()
     {
-        if (Physics.SphereCast(FR.anchor.transform.position, .5439239f, transform.forward, out hit) == true)
-        {
-            Gizmos.DrawWireSphere(SphereCase(), 0.5439239f);
-        }
-    }
-    private Vector3 SphereCase()
-    {
-        Gizmos.color = Color.yellow;
-        Vector3 midPoint = new Vector3();
-        Ray r = new Ray(transform.position, transform.forward);
-        Vector3 a = transform.position;
-        Vector3 b = hit.point;
-        Vector3 c = r.GetPoint(hit.distance - .5439239f);
-
-        float v1 = Vector3.Dot((c - a), (c - a));
-        float v2 = Vector3.Dot((b - a), (c - a));
-        float t = v2 / v1;
-
-        midPoint = (a + t * (c - a));
-        return midPoint;
+            Gizmos.DrawWireSphere(FR.anchor.transform.position, .4f);
+        
     }*/
+    
 
 
 }
