@@ -1387,6 +1387,7 @@ MonoBehaviour:
   Movespeed: 35
   turnSpeed: 90
   brakeStrength: 75
+  jumpStrength: 300000
   FR:
     anchor: {fileID: 578306513}
     wheel: {fileID: 845141706}

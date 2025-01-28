@@ -32,12 +32,15 @@ public class CarRaycast : MonoBehaviour
     {
         public Vector2 steer;
         public float gas;
+        public float reverse;
         public float brake;
         public int grounded;
         public float roll;
         public Vector2 flip;
+        //public Vector2 wheelie;
         public int downed;
         public float reset;
+        public float jump;
     }
     [System.Serializable]
     public struct WheelInfo
@@ -71,11 +74,13 @@ public class CarRaycast : MonoBehaviour
     public float Movespeed = 35;
     public float turnSpeed = 90;
     public float brakeStrength = 5;
+    public float jumpStrength = 5;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
 
     private Rigidbody rb = null;
     private float origDrag;
+    private float origAngDrag;
     private InputInfo input;
     
 
@@ -83,6 +88,7 @@ public class CarRaycast : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         origDrag = rb.drag;
+        origAngDrag = rb.angularDrag;
        
         //size of each wheel (used to spin wheels)
         FR.radius = FR.wheel.GetComponent<Renderer>().bounds.extents.y;
@@ -100,6 +106,7 @@ public class CarRaycast : MonoBehaviour
         //FrameStabilize();
 
         BikeTurn();
+        BikeJump();
         BikeMove();
         
         //SpinWheels();
@@ -157,6 +164,11 @@ public class CarRaycast : MonoBehaviour
     {
         input.gas = value.Get<float>();
     }
+
+    private void OnReverse(InputValue value)
+    {
+        input.reverse = value.Get<float>();
+    }
     private void OnBrake(InputValue value)
     {
         input.brake = value.Get<float>();
@@ -172,6 +184,16 @@ public class CarRaycast : MonoBehaviour
         input.flip = value.Get<Vector2>();
     }
 
+    private void OnJump(InputValue value)
+    {
+        input.jump = value.Get<float>();
+    }
+
+    /*private void onWheelie(InputValue value)
+    {
+        input.wheelie = value.Get<Vector2>();
+    }*/
+
     private void OnReset(InputValue value)
     {
         //upright car
@@ -181,16 +203,20 @@ public class CarRaycast : MonoBehaviour
     }
     private void BikeTurn()
     {
-        if (input.grounded > 0)
+        if (input.grounded > 1)
         {
+            rb.drag = origDrag;
+            rb.angularDrag = origAngDrag;
             FrameStabilize();
 
             //turn the car
             this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
-            this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
+            //this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
         }
         else
         {
+            rb.drag = 0.3f;
+            rb.angularDrag = 1f;
             AirFrameStabilize();
             if (input.roll > 0)
             {
@@ -212,12 +238,28 @@ public class CarRaycast : MonoBehaviour
         {
             //gas
             rb.AddRelativeForce(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
+            
+
+
+            //reverse
+            //rb.AddRelativeForce(Vector3.forward * (-Movespeed / 2) * input.reverse * Time.fixedDeltaTime, ForceMode.VelocityChange);
+
             //brake
             rb.drag = origDrag + (input.brake * brakeStrength * Time.deltaTime);
         }
         else
         {
-            rb.drag = origDrag;
+            //rb.drag = origDrag;
+        }
+    }
+
+    private void BikeJump()
+    {
+        if (input.grounded > 1)
+        {
+            //jump
+            rb.AddForce(Vector3.up * jumpStrength * input.jump);
         }
     }
     
