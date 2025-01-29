@@ -178,17 +178,6 @@
                 },
                 {
                     "name": "",
-                    "id": "24a10766-07db-4adb-9bf3-3b4b909c1eeb",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gas",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "806c0315-d70f-403d-a413-2fd848f781dd",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -202,6 +191,17 @@
                     "name": "",
                     "id": "a1e779e5-45fc-4b42-88e5-5132adebff92",
                     "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e6de152c-a304-4238-8d8d-9942b78b0b42",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -387,8 +387,8 @@
                 },
                 {
                     "name": "",
-                    "id": "6f816009-6c71-4a7f-9b00-0d4f62eed42f",
-                    "path": "<Mouse>/leftButton",
+                    "id": "9b4970a0-7435-4404-9667-f3f568f3f283",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
