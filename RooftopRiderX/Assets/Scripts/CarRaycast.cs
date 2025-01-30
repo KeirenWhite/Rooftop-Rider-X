@@ -67,7 +67,6 @@ public class CarRaycast : MonoBehaviour
 
     [SerializeField] private float stabilizationSensitivity = 60f;
     [SerializeField] private float airStabilizationSensitivityZ = 10f;
-    [SerializeField] private float airStabilizationSensitivityX = 10f;
     public float airTurnSpeed = 1.5f;
     public float airFlipSpeed = 2f;
     public float wheelieSpeed = 100f;
@@ -138,7 +137,7 @@ public class CarRaycast : MonoBehaviour
         {
             float groundNormal = hit.normal.y;
 
-            transform.eulerAngles = new Vector3(Mathf.MoveTowardsAngle(transform.eulerAngles.x, 0, Time.deltaTime * airStabilizationSensitivityX), transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, Time.deltaTime * airStabilizationSensitivityZ));
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, Time.deltaTime * airStabilizationSensitivityZ));
             Debug.Log("stabilizing");
         }
 
