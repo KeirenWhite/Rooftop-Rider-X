@@ -95,7 +95,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DitherPattern1: 0.85
-    - _DitherPattern2: 0.5
+    - _DitherPattern2: 0.867
     - _DitherRange1: 0.64
     - _DitherRange2: 0.65
     - _DstBlend: 0

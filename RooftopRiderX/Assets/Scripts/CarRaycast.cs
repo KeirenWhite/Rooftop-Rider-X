@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.HID;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+//using UnityEngine.PhysicsModule;
 
 
 /* Hierarchy of Bike raycast gameobject parts:
@@ -38,7 +39,7 @@ public class CarRaycast : MonoBehaviour
         public float roll;
         public Vector2 flip;
         //public Vector2 wheelie;
-        public int downed;
+        public bool downed;
         public float reset;
         public float jump;
     }
@@ -76,16 +77,18 @@ public class CarRaycast : MonoBehaviour
     public float jumpStrength = 5;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
-
+    [SerializeField] private Collider bikeBody;
     private Rigidbody rb = null;
     private float origDrag;
     private float origAngDrag;
     private InputInfo input;
+
     
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //bikeBody = GetComponent<BoxCollider>();
         origDrag = rb.drag;
         origAngDrag = rb.angularDrag;
        
@@ -196,36 +199,42 @@ public class CarRaycast : MonoBehaviour
     private void OnReset(InputValue value)
     {
         //upright car
-        this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
-        this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+        if (input.downed)
+        {
+            this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+        }
         //input.reset = value.Get<float>();
     }
     private void BikeTurn()
     {
-        if (input.grounded > 1)
+        if (input.downed == false)
         {
-            rb.drag = origDrag;
-            rb.angularDrag = origAngDrag;
-            FrameStabilize();
-
-            //turn the car
-            this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
-            //this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
-        }
-        else
-        {
-            rb.drag = 0.3f;
-            rb.angularDrag = 1f;
-            AirFrameStabilize();
-            if (input.roll > 0)
+            if (input.grounded > 1)
             {
-                this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
-                this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
+                rb.drag = origDrag;
+                rb.angularDrag = origAngDrag;
+                FrameStabilize();
+
+                //turn the car
+                this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
+                //this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
             }
             else
             {
-                this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
-                this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
+                rb.drag = 0.3f;
+                rb.angularDrag = 1f;
+                AirFrameStabilize();
+                if (input.roll > 0)
+                {
+                    this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
+                    this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
+                }
+                else
+                {
+                    this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
+                    this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
+                }
             }
         }
         //turn the front wheels
@@ -310,27 +319,53 @@ public class CarRaycast : MonoBehaviour
         
     }
 
+    private void OnCollisionStay(Collision col)
+    {
+        foreach(ContactPoint contact in col.contacts)
+        {
+            Debug.Log(contact.thisCollider);
+            if(contact.thisCollider == bikeBody)
+            {
+                if (col.collider.CompareTag("Ground"))
+                {
+                    Debug.Log("gasdf");
+                    input.downed = true;
+                    break;
+                }
 
+            }
+            else
+            {
+                input.downed = false;
+            }
+        }
+        //ody = GetComponent<BoxCollider>();
+        /*if (col.otherCollider)
+        {
+            Debug.Log("gasdf");
+            input.downed = true;
+            
+        }
+        else
+        {
+            input.downed = false;
+        }*/
+    }
     
     private void BikeDowned() 
     {
-        input.downed = 0;
-
-        
-
-        if (Physics.Raycast(FR.anchor.transform.position, -this.transform.up / 1.34f) == true) //check if bike is on its side
+       /* if (bikeBody.GetComponent<BoxCollider>().CompareTag("Ground"))
         {
-            Debug.DrawRay(FR.anchor.transform.position, -this.transform.up / 1.34f, Color.red);
-            input.downed++;
-        }
-   
-        if (Physics.Raycast(BL.anchor.transform.position, -this.transform.up / 1.34f) == true) //check if bike is on its side
-        {
-            Debug.DrawRay(BL.anchor.transform.position, -this.transform.up / 1.34f, Color.red);
-            input.downed++;
-        }
 
-        /*if (input.downed > 0 || input.reset > 0)
+            input.downed++;
+            
+        }
+        else
+        {
+            input.downed = 0;
+        }*/
+
+        /*if (input.downed && input.reset > 0)
         {
             this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
