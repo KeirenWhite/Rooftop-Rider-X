@@ -78,6 +78,7 @@ public class CarRaycast : MonoBehaviour
     public GameObject WheelF;
     public GameObject WheelB;
     public GameObject AxelF;
+    public GameObject HandleBar;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
     [SerializeField] private Collider bikeBody;
@@ -87,6 +88,7 @@ public class CarRaycast : MonoBehaviour
     private InputInfo input;
     private Quaternion initialRotationAxel;
     private Quaternion initialRotationWheelF;
+    private Quaternion initialRotationHB;
     private float maxRot = 45f;
 
     
@@ -100,6 +102,7 @@ public class CarRaycast : MonoBehaviour
 
         initialRotationAxel = AxelF.transform.localRotation;
         initialRotationWheelF = WheelF.transform.localRotation;
+        initialRotationHB = HandleBar.transform.localRotation;
         
         //size of each wheel (used to spin wheels)
         FR.radius = FR.wheel.GetComponent<Renderer>().bounds.extents.y;
@@ -246,6 +249,7 @@ public class CarRaycast : MonoBehaviour
         }
         //turn the front wheels
         AxelF.transform.localRotation = initialRotationAxel * Quaternion.AngleAxis(45f * input.steer.x, Vector3.forward);
+        HandleBar.transform.localRotation = initialRotationHB * Quaternion.AngleAxis(25f * input.steer.x, Vector3.forward);
         //WheelF.transform.localRotation = initialRotationWheelF * Quaternion.AngleAxis(45f * input.steer.x, Vector3.right);
     }
     private void BikeMove()
