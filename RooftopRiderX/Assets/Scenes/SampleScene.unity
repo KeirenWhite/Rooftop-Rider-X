@@ -1960,8 +1960,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stabilizationSensitivity: 750
   airStabilizationSensitivityZ: 50
-  airTurnSpeed: 275
-  airFlipSpeed: 275
+  airTurnSpeed: 300
+  airFlipSpeed: 300
   wheelieSpeed: 137
   Movespeed: 35
   turnSpeed: 90
