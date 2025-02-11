@@ -7,7 +7,7 @@ public class Boost : MonoBehaviour
 {
     [SerializeField] private float forwardForce = 100f;
 
-    private CarRaycast.InputInfo input;
+    private float input;
 
     private Rigidbody rb;
 
@@ -21,7 +21,7 @@ public class Boost : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (input.boost > 0)
+        if (input > 0)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
         }
@@ -29,6 +29,6 @@ public class Boost : MonoBehaviour
 
     private void OnBoost(InputValue value)
     {
-        input.boost = value.Get<float>();
+        input = value.Get<float>();
     }
 }
