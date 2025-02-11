@@ -1647,6 +1647,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -34.098, y: 0, z: 0}
+--- !u!1 &1039020948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1039020949}
+  m_Layer: 0
+  m_Name: ForcePosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1039020949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039020948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5, z: -0.452}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1375308615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1126886858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1940,6 +1971,7 @@ GameObject:
   - component: {fileID: 1375308611}
   - component: {fileID: 1375308610}
   - component: {fileID: 1375308609}
+  - component: {fileID: 1375308616}
   m_Layer: 0
   m_Name: Bike
   m_TagString: Untagged
@@ -2119,7 +2151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375308608}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.99906427, z: -0, w: -0.043249797}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 182.4, y: 210.9, z: 308.9}
   m_LocalScale: {x: 0.26069, y: 0.4984835, z: 1.6542435}
   m_ConstrainProportionsScale: 0
@@ -2128,8 +2160,23 @@ Transform:
   - {fileID: 578306514}
   - {fileID: 1668064633}
   - {fileID: 1892259627}
+  - {fileID: 1039020949}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -184.958, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+--- !u!114 &1375308616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375308608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba22a86beea44446b37158786009945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardForce: 50000
+  forcePos: {fileID: 1039020949}
 --- !u!1001 &1549886195
 PrefabInstance:
   m_ObjectHideFlags: 0

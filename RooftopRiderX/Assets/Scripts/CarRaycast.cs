@@ -42,6 +42,7 @@ public class CarRaycast : MonoBehaviour
         public bool downed;
         public float reset;
         public float jump;
+        public float boost;
     }
     [System.Serializable]
     public struct WheelInfo
