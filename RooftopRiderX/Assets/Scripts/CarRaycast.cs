@@ -76,6 +76,8 @@ public class CarRaycast : MonoBehaviour
     public float turnSpeed = 90;
     public float brakeStrength = 5;
     public float jumpStrength = 5;
+    public GameObject WheelF;
+    public GameObject AxelF;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
     [SerializeField] private Collider bikeBody;
@@ -83,6 +85,9 @@ public class CarRaycast : MonoBehaviour
     private float origDrag;
     private float origAngDrag;
     private InputInfo input;
+    private Quaternion initialRotationAxel;
+    private Quaternion initialRotationWheelF;
+    private float maxRot = 45f;
 
     
 
@@ -92,7 +97,10 @@ public class CarRaycast : MonoBehaviour
         //bikeBody = GetComponent<BoxCollider>();
         origDrag = rb.drag;
         origAngDrag = rb.angularDrag;
-       
+
+        initialRotationAxel = AxelF.transform.localRotation;
+        initialRotationWheelF = WheelF.transform.localRotation;
+        
         //size of each wheel (used to spin wheels)
         FR.radius = FR.wheel.GetComponent<Renderer>().bounds.extents.y;
         BL.radius = BL.wheel.GetComponent<Renderer>().bounds.extents.y;
@@ -239,7 +247,8 @@ public class CarRaycast : MonoBehaviour
             }
         }
         //turn the front wheels
-        //BL.anchor.transform.localRotation = Quaternion.AngleAxis(45f * input.steer.x, Vector3.up);
+        AxelF.transform.localRotation = initialRotationAxel * Quaternion.AngleAxis(45f * input.steer.x, Vector3.forward);
+        WheelF.transform.localRotation = initialRotationWheelF * Quaternion.AngleAxis(45f * input.steer.x, Vector3.right);
     }
     private void BikeMove()
     {
@@ -278,8 +287,6 @@ public class CarRaycast : MonoBehaviour
         float velocity = rb.linearVelocity.magnitude;
         float direction = Vector3.Dot(rb.linearVelocity, rb.transform.forward) > 0 ? 1f : -1f;
         FR.wheel.transform.Rotate(Vector3.right * direction, ((velocity / FR.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
-        FL.wheel.transform.Rotate(Vector3.right * direction, ((velocity / FL.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
-        BR.wheel.transform.Rotate(Vector3.right * direction, ((velocity / BR.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
         BL.wheel.transform.Rotate(Vector3.right * direction, ((velocity / BL.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
     }*/
     private void BikeGrounded()
@@ -320,7 +327,7 @@ public class CarRaycast : MonoBehaviour
         
     }
 
-    private void OnCollisionStay(Collision col)
+    private void OnCollisionEnter(Collision col)
     {
         foreach(ContactPoint contact in col.contacts)
         {

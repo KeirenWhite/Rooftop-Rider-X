@@ -2080,6 +2080,8 @@ MonoBehaviour:
   turnSpeed: 90
   brakeStrength: 75
   jumpStrength: 300000
+  WheelF: {fileID: 1489056141}
+  AxelF: {fileID: 1994128407}
   FR:
     anchor: {fileID: 578306513}
     wheel: {fileID: 845141706}
@@ -2175,8 +2177,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba22a86beea44446b37158786009945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForce: 50000
+  forwardForce: 30000
   forcePos: {fileID: 1039020949}
+--- !u!1 &1489056141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7158254802033448150, guid: 858d7b82a0a38fb42b7d06549b72084e, type: 3}
+  m_PrefabInstance: {fileID: 907467695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1549886195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2534,6 +2541,11 @@ MeshCollider:
 --- !u!4 &1892259627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 858d7b82a0a38fb42b7d06549b72084e, type: 3}
+  m_PrefabInstance: {fileID: 907467695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1994128407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7884193301806316129, guid: 858d7b82a0a38fb42b7d06549b72084e, type: 3}
   m_PrefabInstance: {fileID: 907467695}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2127729118
