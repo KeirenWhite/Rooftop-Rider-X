@@ -134,7 +134,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29586416}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 140d3f01baa6dc2438c4ca74eea0bae7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1101,7 +1101,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758958350}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 140d3f01baa6dc2438c4ca74eea0bae7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1197,7 +1197,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5439239
-  m_Center: {x: -0.0021505745, y: -0.0000009543912, z: -0.015662799}
+  m_Center: {x: 0.00000005960467, y: -0.0000009536743, z: -0.00000008940695}
 --- !u!23 &845141709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1373,7 +1373,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958513474}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 140d3f01baa6dc2438c4ca74eea0bae7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveto: {fileID: 616134531}
   lookat: {fileID: 1375308608}
-  Movespeed: 2
+  Movespeed: 3
   Lookspeed: 120
 --- !u!114 &963194230
 MonoBehaviour:
@@ -2079,7 +2079,7 @@ MonoBehaviour:
   Movespeed: 35
   turnSpeed: 90
   brakeStrength: 75
-  jumpStrength: 300000
+  jumpStrength: 600000
   WheelF: {fileID: 1489056141}
   AxelF: {fileID: 1994128407}
   FR:
@@ -2126,7 +2126,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375308608}
   serializedVersion: 4
-  m_Mass: 2000
+  m_Mass: 4000
   m_Drag: 0.5
   m_AngularDrag: 3
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2328,7 +2328,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711022971}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 140d3f01baa6dc2438c4ca74eea0bae7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2443,7 +2443,7 @@ TerrainCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773905328}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 140d3f01baa6dc2438c4ca74eea0bae7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2523,7 +2523,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870729883}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 140d3f01baa6dc2438c4ca74eea0bae7, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2573,7 +2573,7 @@ Transform:
   m_GameObject: {fileID: 2127729118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.36100003, z: 0}
+  m_LocalPosition: {x: 0, y: -0.361, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

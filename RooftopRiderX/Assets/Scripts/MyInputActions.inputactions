@@ -221,7 +221,7 @@
                 {
                     "name": "",
                     "id": "1f36bf9c-10c3-49a8-ad59-aeb96ea3b739",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -420,6 +420,17 @@
                     "name": "",
                     "id": "b8c563e2-c92d-4983-a31c-89e7d3279b9a",
                     "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9cf82db5-8a99-4adc-baa1-2ed0f71e7766",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
