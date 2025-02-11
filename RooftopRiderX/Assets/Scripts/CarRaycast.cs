@@ -76,6 +76,7 @@ public class CarRaycast : MonoBehaviour
     public float brakeStrength = 5;
     public float jumpStrength = 5;
     public GameObject WheelF;
+    public GameObject WheelB;
     public GameObject AxelF;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
@@ -118,8 +119,8 @@ public class CarRaycast : MonoBehaviour
         BikeTurn();
         BikeJump();
         BikeMove();
-        
-        //SpinWheels();
+         
+        SpinWheels();
     }
 
     void FrameStabilize()
@@ -215,13 +216,11 @@ public class CarRaycast : MonoBehaviour
         //input.reset = value.Get<float>();
     }
     private void BikeTurn()
-    {
-        if (input.downed == false)
-        {
+    {      
             if (input.grounded > 1)
             {
-                rb.drag = origDrag;
-                rb.angularDrag = origAngDrag;
+                /*rb.drag = origDrag;
+                rb.angularDrag = origAngDrag;*/
                 FrameStabilize();
 
                 //turn the car
@@ -230,8 +229,8 @@ public class CarRaycast : MonoBehaviour
             }
             else
             {
-                rb.drag = 0.3f;
-                rb.angularDrag = 1f;
+                /*rb.drag = 0.3f;
+                rb.angularDrag = 1f;*/
                 AirFrameStabilize();
                 if (input.roll > 0)
                 {
@@ -243,11 +242,11 @@ public class CarRaycast : MonoBehaviour
                     this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
                     this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
                 }
-            }
+           
         }
         //turn the front wheels
         AxelF.transform.localRotation = initialRotationAxel * Quaternion.AngleAxis(45f * input.steer.x, Vector3.forward);
-        WheelF.transform.localRotation = initialRotationWheelF * Quaternion.AngleAxis(45f * input.steer.x, Vector3.right);
+        //WheelF.transform.localRotation = initialRotationWheelF * Quaternion.AngleAxis(45f * input.steer.x, Vector3.right);
     }
     private void BikeMove()
     {
@@ -280,14 +279,14 @@ public class CarRaycast : MonoBehaviour
         }
     }
     
-    /*private void SpinWheels()
+    private void SpinWheels()
     {
         // convert linear speed to anglular speed. spin the wheel that much.
-        float velocity = rb.linearVelocity.magnitude;
-        float direction = Vector3.Dot(rb.linearVelocity, rb.transform.forward) > 0 ? 1f : -1f;
-        FR.wheel.transform.Rotate(Vector3.right * direction, ((velocity / FR.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
-        BL.wheel.transform.Rotate(Vector3.right * direction, ((velocity / BL.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
-    }*/
+        float velocity = rb.velocity.magnitude;
+        float direction = Vector3.Dot(rb.velocity, rb.transform.forward) > 0 ? 1f : -1f;
+        WheelF.transform.Rotate(Vector3.forward * direction, ((velocity / FR.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
+        WheelB.transform.Rotate(Vector3.forward * direction, ((velocity / BL.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
+    }
     private void BikeGrounded()
     {
         //Purpose:
@@ -326,7 +325,7 @@ public class CarRaycast : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnCollisionStay(Collision col)
     {
         foreach(ContactPoint contact in col.contacts)
         {
@@ -346,39 +345,14 @@ public class CarRaycast : MonoBehaviour
                 input.downed = false;
             }
         }
-        //ody = GetComponent<BoxCollider>();
-        /*if (col.otherCollider)
-        {
-            Debug.Log("gasdf");
-            input.downed = true;
-            
-        }
-        else
-        {
-            input.downed = false;
-        }*/
+
     }
     
     private void BikeDowned() 
     {
-       /* if (bikeBody.GetComponent<BoxCollider>().CompareTag("Ground"))
-        {
 
-            input.downed++;
-            
-        }
-        else
-        {
-            input.downed = 0;
-        }*/
 
-        /*if (input.downed && input.reset > 0)
-        {
-            this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
-        }*/
-
-        
+       
     }
 
    /* private void OnDrawGizmos()
