@@ -49,6 +49,7 @@ public class CarRaycast : MonoBehaviour
         public GameObject anchor;
         public GameObject wheel;
         public TrailRenderer tire;
+        public TrailRenderer airTire;
         public GameObject raycast;      //how far down to ground to raycast        
         [HideInInspector]
         public float maxDistance;       //calculated in start (anchor - raycastTo position)        
@@ -304,10 +305,12 @@ public class CarRaycast : MonoBehaviour
         {
             input.grounded++;
             FR.tire.emitting = true;
+            FR.airTire.emitting = false;
         }
         else
         {
             FR.tire.emitting = false;
+            FR.airTire.emitting = true;
         }
 
         
@@ -316,10 +319,12 @@ public class CarRaycast : MonoBehaviour
         {
             input.grounded++;
             BL.tire.emitting = true;
+            BL.airTire.emitting = false;
         }
         else
         {
-            BL.tire.emitting = false;         
+            BL.tire.emitting = false;       
+            BL.airTire.emitting = true;
         }
 
         
