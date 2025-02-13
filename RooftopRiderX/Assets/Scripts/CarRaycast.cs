@@ -305,12 +305,12 @@ public class CarRaycast : MonoBehaviour
         {
             input.grounded++;
             FR.tire.emitting = true;
-            //FR.airTire.emitting = false;
+            FR.airTire.emitting = false;
         }
         else
         {
             FR.tire.emitting = false;
-            //FR.airTire.emitting = true;
+            FR.airTire.emitting = true;
         }
 
         
@@ -319,12 +319,12 @@ public class CarRaycast : MonoBehaviour
         {
             input.grounded++;
             BL.tire.emitting = true;
-            //BL.airTire.emitting = false;
+            BL.airTire.emitting = false;
         }
         else
         {
             BL.tire.emitting = false;       
-            //BL.airTire.emitting = true;
+            BL.airTire.emitting = true;
         }
 
         
