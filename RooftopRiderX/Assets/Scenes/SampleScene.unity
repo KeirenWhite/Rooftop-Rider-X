@@ -1363,7 +1363,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.086992875, y: -0.5338988, z: 0.031180833, w: 0.84048325}
-  m_LocalPosition: {x: 184.954, y: 211.665, z: 307.663}
+  m_LocalPosition: {x: -40.446, y: 10.564994, z: 173.163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1693,7 +1693,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 47838dcb0d9d1ee4c9270adbce021c16, type: 2}
+  - {fileID: 2100000, guid: ac9f7ee89fc2675479ccf797b23e43bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1975,6 +1975,7 @@ MonoBehaviour:
     anchor: {fileID: 578306513}
     wheel: {fileID: 845141706}
     tire: {fileID: 1689375473}
+    airTire: {fileID: 0}
     raycast: {fileID: 2127729118}
     maxDistance: 0
     radius: 0
@@ -1982,6 +1983,7 @@ MonoBehaviour:
     anchor: {fileID: 1668064632}
     wheel: {fileID: 335578854}
     tire: {fileID: 580540092}
+    airTire: {fileID: 0}
     raycast: {fileID: 365633879}
     maxDistance: 0
     radius: 0
@@ -2043,7 +2045,7 @@ Transform:
   m_GameObject: {fileID: 1375308608}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 182.4, y: 210.9, z: 308.9}
+  m_LocalPosition: {x: -43, y: 9.8, z: 174.4}
   m_LocalScale: {x: 0.26069, y: 0.4984835, z: 1.6542435}
   m_ConstrainProportionsScale: 0
   m_Children:
