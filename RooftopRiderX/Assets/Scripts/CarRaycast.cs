@@ -69,6 +69,7 @@ public class CarRaycast : MonoBehaviour
 
     [SerializeField] private float stabilizationSensitivity = 60f;
     [SerializeField] private float airStabilizationSensitivityZ = 10f;
+    [SerializeField] private float airTurnMult = 0.7f;
     public float airTurnSpeed = 1.5f;
     public float airFlipSpeed = 2f;
     public float wheelieSpeed = 100f;
@@ -244,7 +245,7 @@ public class CarRaycast : MonoBehaviour
             {
                 Vector3 torque = new Vector3(inputVal.y, 0, inputVal.x);
 
-                rb.angularVelocity += transform.rotation * torque;
+                rb.angularVelocity += (transform.rotation * torque) * airTurnMult;
 
                 //this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
                 //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
@@ -253,7 +254,7 @@ public class CarRaycast : MonoBehaviour
             {
                 Vector3 torque = new Vector3(inputVal.y, inputVal.x, 0);
 
-                rb.angularVelocity += transform.rotation * torque;
+                rb.angularVelocity += transform.rotation * torque * airTurnMult;
 
                 //this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
                 //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
