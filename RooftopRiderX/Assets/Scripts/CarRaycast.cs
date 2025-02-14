@@ -221,32 +221,43 @@ public class CarRaycast : MonoBehaviour
         //input.reset = value.Get<float>();
     }
     private void BikeTurn()
-    {      
-            if (input.grounded > 1)
-            {
-                //rb.drag = origDrag;
-                //rb.angularDrag = origAngDrag;
-                FrameStabilize();
+    {
 
-                //turn the car
-                this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
-                //this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
+        Vector2 inputVal = new Vector2(input.steer.x, input.flip.y);
+
+        if (input.grounded > 1)
+        {
+            //rb.drag = origDrag;
+            //rb.angularDrag = origAngDrag;
+            FrameStabilize();
+
+            //turn the car
+            this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
+            //this.transform.Rotate(Vector3.right, wheelieSpeed * input.flip.y * Time.fixedDeltaTime);
+        }
+        else
+        {
+            //rb.drag = 0.3f;
+            //rb.angularDrag = 1f;
+            AirFrameStabilize();
+            if (input.roll > 0)
+            {
+                Vector3 torque = new Vector3(inputVal.y, 0, inputVal.x);
+
+                rb.angularVelocity += transform.rotation * torque;
+
+                //this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
+                //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
             }
             else
             {
-                //rb.drag = 0.3f;
-                //rb.angularDrag = 1f;
-                AirFrameStabilize();
-                if (input.roll > 0)
-                {
-                    this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
-                    this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
-                }
-                else
-                {
-                    this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
-                    this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
-                }
+                Vector3 torque = new Vector3(inputVal.y, inputVal.x, 0);
+
+                rb.angularVelocity += transform.rotation * torque;
+
+                //this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
+                //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
+            }
            
         }
         //turn the front wheels
