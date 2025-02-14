@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Boost : MonoBehaviour
 {
     [SerializeField] private float forwardForce = 100f;
-
+    [SerializeField] private Transform forcePos;
     private float input;
-
     private Rigidbody rb;
 
-    [SerializeField] private Transform forcePos;
+    private float boostVal = 100f;
+    [SerializeField] private Slider boostSlider;
+    [SerializeField] private float boostUseMult = 10f;
+    [SerializeField] private float boostRefillMult = 1f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +25,16 @@ public class Boost : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (input > 0)
+        if (input > 0 && boostVal > 0)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
+            boostVal -= Time.deltaTime * boostUseMult;
+            boostSlider.value = boostVal;
+        }
+        else if (input == 0 && boostVal < 100)
+        {
+            boostVal += Time.deltaTime * boostRefillMult;
+            boostSlider.value = boostVal;
         }
     }
 

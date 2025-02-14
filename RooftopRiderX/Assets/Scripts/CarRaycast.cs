@@ -93,7 +93,6 @@ public class CarRaycast : MonoBehaviour
     private Quaternion initialRotationHB;
     private float maxRot = 45f;
 
-    
 
     private void Start()
     {
@@ -167,11 +166,13 @@ public class CarRaycast : MonoBehaviour
     {
         
         //this is just to display debug text on screen
+        /*
         GUIStyle style = new GUIStyle();
         style.fontSize = 28;
         style.normal.textColor = Color.black;
         GUI.Label(new Rect(10, 10, 300, 50), string.Format("steer {0}, gas {1}, brake {2}", input.steer.x, input.gas, input.brake), style);
         GUI.Label(new Rect(10, 30, 300, 50), string.Format("grounded {0}", input.grounded), style);
+        */
     }
     private void OnSteer(InputValue value)
     {
