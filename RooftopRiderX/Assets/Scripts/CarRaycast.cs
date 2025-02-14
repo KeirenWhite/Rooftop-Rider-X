@@ -134,7 +134,7 @@ public class CarRaycast : MonoBehaviour
         RaycastHit hit;
         
 
-        if (Physics.Raycast(transform.position, -this.transform.up, out hit))
+        if (Physics.SphereCast(FR.anchor.transform.position, .25f, -this.transform.up, out hit, FR.maxDistance) == true || Physics.SphereCast(BL.anchor.transform.position, .25f, -this.transform.up, out hit, BL.maxDistance) == true)
         {
             float groundNormal = hit.normal.y;
            
@@ -317,6 +317,7 @@ public class CarRaycast : MonoBehaviour
         if (Physics.SphereCast(FR.anchor.transform.position, .25f, -this.transform.up, out hit, FR.maxDistance) == true)
         {
             input.grounded++;
+            Debug.Log("groundedFR");
             FR.tire.emitting = true;
             FR.airTire.emitting = false;
         }
@@ -331,6 +332,7 @@ public class CarRaycast : MonoBehaviour
         if (Physics.SphereCast(BL.anchor.transform.position, .25f, -this.transform.up, out hit, BL.maxDistance) == true)
         {
             input.grounded++;
+            Debug.Log("groundedBL");
             BL.tire.emitting = true;
             BL.airTire.emitting = false;
         }
