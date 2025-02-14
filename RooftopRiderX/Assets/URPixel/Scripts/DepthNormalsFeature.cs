@@ -9,6 +9,101 @@ namespace Urpixel
         class DepthNormalsPass : ScriptableRenderPass
         {
             int kDepthBufferBits = 32;
+            private RTHandle depthAttachment;
+            internal RenderTextureDescriptor descriptor { get; private set; }
+
+            private Material depthNormalsMaterial = null;
+            private FilteringSettings m_FilteringSettings;
+            string m_ProfilerTag = "DepthNormals Prepass";
+            ShaderTagId m_ShaderTagId = new ShaderTagId("DepthOnly");
+
+            public DepthNormalsPass(RenderQueueRange renderQueueRange, LayerMask layerMask, Material material)
+            {
+                m_FilteringSettings = new FilteringSettings(renderQueueRange, layerMask);
+                depthNormalsMaterial = material;
+            }
+
+            public void Setup(RenderTextureDescriptor baseDescriptor, RTHandle depthAttachment)
+            {
+                this.depthAttachment = depthAttachment;
+                baseDescriptor.colorFormat = RenderTextureFormat.ARGB32;
+                baseDescriptor.depthBufferBits = kDepthBufferBits;
+                descriptor = baseDescriptor;
+            }
+
+            public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
+            {
+                RenderingUtils.ReAllocateIfNeeded(ref depthAttachment, descriptor, FilterMode.Point, name: "_CameraDepthNormalsTexture");
+                ConfigureTarget(depthAttachment);
+                cmd.ClearRenderTarget(true, true, Color.black); ConfigureClear(ClearFlag.All, Color.black);
+            }
+
+            public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
+            {
+                CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
+                using (new ProfilingScope(cmd, new ProfilingSampler(m_ProfilerTag)))
+                {
+                    context.ExecuteCommandBuffer(cmd);
+                    cmd.Clear();
+
+                    var sortFlags = renderingData.cameraData.defaultOpaqueSortFlags;
+                    var drawSettings = CreateDrawingSettings(m_ShaderTagId, ref renderingData, sortFlags);
+                    drawSettings.perObjectData = PerObjectData.None;
+
+                    ref CameraData cameraData = ref renderingData.cameraData;
+                    Camera camera = cameraData.camera;
+                    if (cameraData.xr.enabled)
+                        context.StartMultiEye(camera);
+
+                    drawSettings.overrideMaterial = depthNormalsMaterial;
+
+                    context.DrawRenderers(renderingData.cullResults, ref drawSettings, ref m_FilteringSettings);
+                    cmd.SetGlobalTexture("_CameraDepthNormalsTexture", depthAttachment);
+                }
+
+                context.ExecuteCommandBuffer(cmd);
+                CommandBufferPool.Release(cmd);
+            }
+
+            public override void FrameCleanup(CommandBuffer cmd)
+            {
+                depthAttachment?.Release();
+            }
+        }
+
+        DepthNormalsPass depthNormalsPass;
+        RTHandle depthNormalsTexture;
+        Material depthNormalsMaterial;
+
+        public override void Create()
+        {
+            depthNormalsMaterial = CoreUtils.CreateEngineMaterial("Hidden/Internal-DepthNormalsTexture");
+            depthNormalsPass = new DepthNormalsPass(RenderQueueRange.opaque, -1, depthNormalsMaterial);
+            depthNormalsPass.renderPassEvent = RenderPassEvent.BeforeRenderingOpaques;
+        }
+
+        public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
+        {
+            if (depthNormalsTexture == null)
+            {
+                depthNormalsTexture = RTHandles.Alloc(renderingData.cameraData.cameraTargetDescriptor, FilterMode.Point, TextureWrapMode.Clamp, name: "_CameraDepthNormalsTexture");
+            }
+
+            depthNormalsPass.Setup(renderingData.cameraData.cameraTargetDescriptor, depthNormalsTexture);
+            renderer.EnqueuePass(depthNormalsPass);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            depthNormalsTexture?.Release();
+        }
+
+
+        /*
+        class DepthNormalsPass : ScriptableRenderPass
+        {
+
+            int kDepthBufferBits = 32;
             private RenderTargetHandle depthAttachmentHandle { get; set; }
             internal RenderTextureDescriptor descriptor { get; private set; }
 
@@ -110,5 +205,6 @@ namespace Urpixel
             depthNormalsPass.Setup(renderingData.cameraData.cameraTargetDescriptor, depthNormalsTexture);
             renderer.EnqueuePass(depthNormalsPass);
         }
+        */
     }
 }

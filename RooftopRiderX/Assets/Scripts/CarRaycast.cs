@@ -93,6 +93,11 @@ public class CarRaycast : MonoBehaviour
     private Quaternion initialRotationHB;
     private float maxRot = 45f;
 
+    private bool wasOnGround = false;
+    private Quaternion holdoverRotation;
+    private Quaternion deltaRotation;
+    private Vector3 trickTrack;
+    [SerializeField] private Boost boostScript;
 
     private void Start()
     {
@@ -124,7 +129,9 @@ public class CarRaycast : MonoBehaviour
         BikeTurn();
         BikeJump();
         BikeMove();
-         
+
+        Trick();
+
         SpinWheels();
     }
 
@@ -138,7 +145,7 @@ public class CarRaycast : MonoBehaviour
             float groundNormal = hit.normal.y;
            
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, groundNormal, Time.deltaTime * stabilizationSensitivity));
-            Debug.Log("stabilizing");
+            //Debug.Log("stabilizing");
         }
 
 
@@ -155,7 +162,7 @@ public class CarRaycast : MonoBehaviour
             float groundNormal = hit.normal.y;
 
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, 0, Time.deltaTime * airStabilizationSensitivityZ));
-            Debug.Log("stabilizing");
+            //Debug.Log("stabilizing");
         }
 
 
@@ -222,6 +229,29 @@ public class CarRaycast : MonoBehaviour
         }
         //input.reset = value.Get<float>();
     }
+
+    private void Trick()
+    {
+        if (input.grounded > 0)
+            return;
+
+        deltaRotation = Quaternion.Inverse(transform.rotation) * holdoverRotation;
+
+        /* So multiplying deltaRotation by Vector3.up gives the correct x and z value, but since it's based on the rotation around the y axis,
+         * it doesn't take yaw into account. Thus, by multiplying deltaRotation by Vector3.forward, the x value properly represents rotation
+         * around the y axis. */
+        trickTrack += new Vector3(Mathf.Abs((deltaRotation * Vector3.up).x), Mathf.Abs((deltaRotation * Vector3.forward).x), Mathf.Abs((deltaRotation * Vector3.up).z));
+
+        holdoverRotation = transform.rotation;
+    }
+
+    private void FinishTrick()
+    {
+        boostScript.RefillBoost(trickTrack.x + trickTrack.y + trickTrack.z);
+        trickTrack = Vector3.zero;
+    }
+
+
     private void BikeTurn()
     {
 
@@ -260,7 +290,7 @@ public class CarRaycast : MonoBehaviour
                 //this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
                 //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
             }
-           
+
         }
         //turn the front wheels
         AxelF.transform.localRotation = initialRotationAxel * Quaternion.AngleAxis(45f * input.steer.x, Vector3.forward);
@@ -308,6 +338,7 @@ public class CarRaycast : MonoBehaviour
     }
     private void BikeGrounded()
     {
+
         //Purpose:
         //  check each wheel contact with ground
         //  'tire' trail emitting = wheel contact with ground
@@ -318,9 +349,12 @@ public class CarRaycast : MonoBehaviour
         if (Physics.SphereCast(FR.anchor.transform.position, .25f, -this.transform.up, out hit, FR.maxDistance) == true)
         {
             input.grounded++;
-            Debug.Log("groundedFR");
+            //Debug.Log("groundedFR");
             FR.tire.emitting = true;
             FR.airTire.emitting = false;
+            if (!wasOnGround)
+                FinishTrick();
+            wasOnGround = true;
         }
         else
         {
@@ -328,38 +362,41 @@ public class CarRaycast : MonoBehaviour
             FR.airTire.emitting = true;
         }
 
-        
-
         if (Physics.SphereCast(BL.anchor.transform.position, .25f, -this.transform.up, out hit, BL.maxDistance) == true)
         {
             input.grounded++;
-            Debug.Log("groundedBL");
+            //Debug.Log("groundedBL");
             BL.tire.emitting = true;
             BL.airTire.emitting = false;
+            if (!wasOnGround)
+                FinishTrick();
+            wasOnGround = true;
         }
         else
         {
-            BL.tire.emitting = false;       
+            BL.tire.emitting = false;
             BL.airTire.emitting = true;
         }
 
-        
 
-        
-
-        
+        if (input.grounded == 0 && wasOnGround)
+        {
+            wasOnGround = false;
+            holdoverRotation = transform.rotation;
+        }
+            
     }
 
     private void OnCollisionStay(Collision col)
     {
         foreach(ContactPoint contact in col.contacts)
         {
-            Debug.Log(contact.thisCollider);
+            //Debug.Log(contact.thisCollider);
             if(contact.thisCollider == bikeBody)
             {
                 if (col.collider.CompareTag("Ground"))
                 {
-                    Debug.Log("gasdf");
+                    //Debug.Log("gasdf");
                     input.downed = true;
                     break;
                 }

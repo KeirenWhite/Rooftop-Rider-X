@@ -1406,10 +1406,10 @@ RectTransform:
   - {fileID: 1617165011}
   m_Father: {fileID: 799076409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -159.2, y: -118.1}
-  m_SizeDelta: {x: 148.7632, y: 16.9606}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 86, y: 18}
+  m_SizeDelta: {x: 148.7632, y: 16.960602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &492214978
 MonoBehaviour:
@@ -4100,6 +4100,7 @@ MonoBehaviour:
     maxDistance: 0
     radius: 0
   bikeBody: {fileID: 1375308613}
+  boostScript: {fileID: 1375308616}
 --- !u!65 &1375308613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4185,7 +4186,8 @@ MonoBehaviour:
   forcePos: {fileID: 1039020949}
   boostSlider: {fileID: 492214978}
   boostUseMult: 50
-  boostRefillMult: 10
+  boostRefillMult: 4
+  trickMultiplier: 2
 --- !u!1 &1395268045 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7545258001078794117, guid: df9dc066e5bae784594c45b4ec51e0d1, type: 3}

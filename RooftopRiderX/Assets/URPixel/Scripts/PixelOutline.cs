@@ -66,6 +66,7 @@ namespace Urpixel
                 RenderingUtils.ReAllocateIfNeeded(ref temporaryBuffer, textureDescriptor, FilterMode.Bilinear);
 
                 ConfigureTarget(normals, renderingData.cameraData.renderer.cameraDepthTargetHandle);
+                cmd.ClearRenderTarget(true, true, Color.clear);
                 ConfigureClear(ClearFlag.Color, Color.clear);
             }
 
@@ -101,8 +102,11 @@ namespace Urpixel
                         renderingData.cameraData.renderer.cameraColorTargetHandle);
                 }
 
+                cmd.SetViewProjectionMatrices(renderingData.cameraData.camera.worldToCameraMatrix, renderingData.cameraData.camera.projectionMatrix);
+
                 context.ExecuteCommandBuffer(cmd);
                 CommandBufferPool.Release(cmd);
+
             }
 
             public void Release()

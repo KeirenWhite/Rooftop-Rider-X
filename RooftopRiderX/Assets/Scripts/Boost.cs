@@ -15,6 +15,7 @@ public class Boost : MonoBehaviour
     [SerializeField] private Slider boostSlider;
     [SerializeField] private float boostUseMult = 10f;
     [SerializeField] private float boostRefillMult = 1f;
+    [SerializeField] private float trickMultiplier = 0.25f;
 
 
     // Start is called before the first frame update
@@ -42,4 +43,16 @@ public class Boost : MonoBehaviour
     {
         input = value.Get<float>();
     }
+
+    public void RefillBoost(float addBoost)
+    {
+        Debug.Log(addBoost);
+
+        boostVal += addBoost * trickMultiplier;
+        if (boostVal > 100)
+            boostVal = 100;
+
+        boostSlider.value = boostVal;
+    }
+
 }
