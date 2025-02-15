@@ -87,7 +87,7 @@ public class CarRaycast : MonoBehaviour
     private Rigidbody rb = null;
     private float origDrag;
     private float origAngDrag;
-    private InputInfo input;
+    [HideInInspector] public InputInfo input;
     private Quaternion initialRotationAxel;
     private Quaternion initialRotationWheelF;
     private Quaternion initialRotationHB;

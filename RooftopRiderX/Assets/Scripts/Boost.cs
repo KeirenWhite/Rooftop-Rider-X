@@ -17,6 +17,7 @@ public class Boost : MonoBehaviour
     [SerializeField] private float boostRefillMult = 1f;
     [SerializeField] private float trickMultiplier = 0.25f;
 
+    [SerializeField] private CarRaycast bikeScript;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,7 @@ public class Boost : MonoBehaviour
             boostVal -= Time.deltaTime * boostUseMult;
             boostSlider.value = boostVal;
         }
-        else if (input == 0 && boostVal < 100)
+        else if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)
         {
             boostVal += Time.deltaTime * boostRefillMult;
             boostSlider.value = boostVal;

@@ -4194,8 +4194,9 @@ MonoBehaviour:
   forcePos: {fileID: 1039020949}
   boostSlider: {fileID: 492214978}
   boostUseMult: 50
-  boostRefillMult: 4
+  boostRefillMult: 2
   trickMultiplier: 2
+  bikeScript: {fileID: 1375308612}
 --- !u!1 &1395268045 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7545258001078794117, guid: df9dc066e5bae784594c45b4ec51e0d1, type: 3}
