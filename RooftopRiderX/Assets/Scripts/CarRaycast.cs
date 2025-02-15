@@ -133,6 +133,8 @@ public class CarRaycast : MonoBehaviour
         Trick();
 
         SpinWheels();
+
+        //Debug.Log("speed: " + rb.velocity.magnitude);
     }
 
     void FrameStabilize()
@@ -304,7 +306,7 @@ public class CarRaycast : MonoBehaviour
             //gas
             rb.AddRelativeForce(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
-            
+            Debug.Log(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime);
 
 
             //reverse
@@ -377,7 +379,6 @@ public class CarRaycast : MonoBehaviour
             BL.tire.emitting = false;
             BL.airTire.emitting = true;
         }
-
 
         if (input.grounded == 0 && wasOnGround)
         {

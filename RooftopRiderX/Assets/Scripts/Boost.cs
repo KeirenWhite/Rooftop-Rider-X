@@ -47,7 +47,7 @@ public class Boost : MonoBehaviour
 
     public void RefillBoost(float addBoost)
     {
-        Debug.Log(addBoost);
+        //Debug.Log(addBoost);
 
         boostVal += addBoost * trickMultiplier;
         if (boostVal > 100)
