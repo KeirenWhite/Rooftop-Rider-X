@@ -99,6 +99,8 @@ public class CarRaycast : MonoBehaviour
     private Vector3 trickTrack;
     [SerializeField] private Boost boostScript;
 
+    private bool wasInAir = true;
+
     private void Start()
     {
         Physics.bounceThreshold = 2000000;
@@ -134,7 +136,7 @@ public class CarRaycast : MonoBehaviour
 
         SpinWheels();
 
-        //Debug.Log("speed: " + rb.velocity.magnitude);
+        Debug.Log("speed: " + rb.velocity.magnitude);
     }
 
     void FrameStabilize()
@@ -147,7 +149,7 @@ public class CarRaycast : MonoBehaviour
             float groundNormal = hit.normal.y;
            
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, groundNormal, Time.deltaTime * stabilizationSensitivity));
-            //Debug.Log("stabilizing");
+            //Debug.Log("stabilizing"); 
         }
 
 
@@ -306,8 +308,6 @@ public class CarRaycast : MonoBehaviour
             //gas
             rb.AddRelativeForce(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
-            Debug.Log(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime);
-
 
             //reverse
             //rb.AddRelativeForce(Vector3.forward * (-Movespeed / 2) * input.reverse * Time.fixedDeltaTime, ForceMode.VelocityChange);
@@ -380,11 +380,25 @@ public class CarRaycast : MonoBehaviour
             BL.airTire.emitting = true;
         }
 
+        // testing out resetting angular velocity on landing
+        /*
+        if (input.grounded == 2)
+        {
+            if (wasInAir)
+            {
+                rb.angularVelocity = Vector3.zero;
+            }
+            wasInAir = false;
+        }
+        */
+
         if (input.grounded == 0 && wasOnGround)
         {
             wasOnGround = false;
             holdoverRotation = transform.rotation;
         }
+        else if (input.grounded == 0)
+            wasInAir = true;
             
     }
 

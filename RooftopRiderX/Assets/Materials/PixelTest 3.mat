@@ -94,7 +94,7 @@ Material:
     - _DarkColorMapPosition: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _DitherPattern1: 0.85
+    - _DitherPattern1: 1.21
     - _DitherPattern2: 0.5
     - _DitherRange1: 0.64
     - _DitherRange2: 0.65
@@ -122,7 +122,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BrightColor: {r: 0.6335659, g: 0.8867924, b: 0.56051975, a: 1}
+    - _BrightColor: {r: 0.68226916, g: 0.9622642, b: 0.5991456, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

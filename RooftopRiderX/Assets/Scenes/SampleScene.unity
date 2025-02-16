@@ -4217,7 +4217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba22a86beea44446b37158786009945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForce: 1000000
+  forwardForce: 1500000
   forcePos: {fileID: 1039020949}
   boostSlider: {fileID: 492214978}
   boostUseMult: 50
