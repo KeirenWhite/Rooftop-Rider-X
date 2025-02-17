@@ -381,7 +381,6 @@ public class CarRaycast : MonoBehaviour
         }
 
         // testing out resetting angular velocity on landing
-        /*
         if (input.grounded == 2)
         {
             if (wasInAir)
@@ -390,7 +389,6 @@ public class CarRaycast : MonoBehaviour
             }
             wasInAir = false;
         }
-        */
 
         if (input.grounded == 0 && wasOnGround)
         {
