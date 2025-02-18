@@ -254,9 +254,12 @@ public class CarRaycast : MonoBehaviour
         if (input.downed == true)
         {
             trickTrack = Vector3.zero;
-        }    
-        boostScript.RefillBoost(trickTrack.x + trickTrack.y + trickTrack.z);
-        trickTrack = Vector3.zero;
+        }
+        else
+        {
+            boostScript.RefillBoost(trickTrack.x + trickTrack.y + trickTrack.z);
+            trickTrack = Vector3.zero;
+        }     
     }
 
 
@@ -386,10 +389,10 @@ public class CarRaycast : MonoBehaviour
 
         // testing out resetting angular velocity on landing
         if (input.grounded == 2)
-        {
-            input.downed = false;
+        { 
             if (!wasOnGround)
                 FinishTrick();
+            input.downed = false;
             wasOnGround = true;
             
             if (wasInAir)
