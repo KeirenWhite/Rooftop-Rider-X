@@ -136,7 +136,7 @@ public class CarRaycast : MonoBehaviour
 
         SpinWheels();
 
-        Debug.Log("speed: " + rb.velocity.magnitude);
+        //Debug.Log("speed: " + rb.velocity.magnitude);
     }
 
     void FrameStabilize()
