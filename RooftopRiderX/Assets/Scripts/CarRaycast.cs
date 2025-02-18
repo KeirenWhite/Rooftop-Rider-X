@@ -263,7 +263,7 @@ public class CarRaycast : MonoBehaviour
 
         if (input.grounded > 1)
         {
-            //rb.drag = origDrag;
+            rb.drag = origDrag;
             //rb.angularDrag = origAngDrag;
             FrameStabilize();
 
@@ -273,7 +273,7 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
-            //rb.drag = 0.3f;
+            rb.drag = 0.3f;
             //rb.angularDrag = 1f;
             AirFrameStabilize();
             if (input.roll > 0)
