@@ -236,7 +236,7 @@ public class CarRaycast : MonoBehaviour
 
     private void Trick()
     {
-        if (input.grounded > 0)
+        if (input.grounded > 1)
             return;
 
         deltaRotation = Quaternion.Inverse(transform.rotation) * holdoverRotation;
@@ -354,9 +354,9 @@ public class CarRaycast : MonoBehaviour
             //Debug.Log("groundedFR");
             FR.tire.emitting = true;
             FR.airTire.emitting = false;
-            if (!wasOnGround)
-                FinishTrick();
-            wasOnGround = true;
+            /*if (!wasOnGround)
+                FinishTrick();*/
+            //wasOnGround = true;
         }
         else
         {
@@ -370,9 +370,9 @@ public class CarRaycast : MonoBehaviour
             //Debug.Log("groundedBL");
             BL.tire.emitting = true;
             BL.airTire.emitting = false;
-            if (!wasOnGround)
-                FinishTrick();
-            wasOnGround = true;
+            /*if (!wasOnGround)
+                FinishTrick();*/
+            //wasOnGround = true;
         }
         else
         {
@@ -383,6 +383,10 @@ public class CarRaycast : MonoBehaviour
         // testing out resetting angular velocity on landing
         if (input.grounded == 2)
         {
+            if (!wasOnGround)
+                FinishTrick();
+            wasOnGround = true;
+            
             if (wasInAir)
             {
                 rb.angularVelocity = Vector3.zero;
