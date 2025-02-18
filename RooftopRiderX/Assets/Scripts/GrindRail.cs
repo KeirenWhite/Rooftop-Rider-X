@@ -13,12 +13,16 @@ public class GrindRail : MonoBehaviour
     private bool grinding;
     public float launchStrength = 100f;
     public float grindSpeed = 100f;
-    public CarRaycast CarRaycast;
+    public CarRaycast carRaycast;
     private Vector3 grindTowards;
+
+    private Boost boostScript;
+
+    private string endPointTag = "EndGrindA";
 
     void Start()
     {
-        
+        boostScript = carRaycast.gameObject.GetComponent<Boost>();
     }
 
     // Update is called once per frame
@@ -48,13 +52,16 @@ public class GrindRail : MonoBehaviour
         if (col.CompareTag("Grind"))
         {
             Debug.Log("Grinding");
-            endPoint = col.gameObject.GetComponentInParent<EndPointHolder>().endPoint;
-            //Debug.Log(endPoint.name);
+
+            DetermineEndPoint(col);
             grinding = true;
+
+            boostScript.GrindBoostEnabled(true);
         }
-        if (col.CompareTag("EndGrind"))
+        if (col.CompareTag(endPointTag))
         {
             grinding = false;
+            boostScript.GrindBoostEnabled(false);
         }
     }
     private void Grind()
@@ -74,12 +81,39 @@ public class GrindRail : MonoBehaviour
     {
         if (grinding)
         {
-           if (CarRaycast.input.jump > 0)
+           if (carRaycast.input.jump > 0)
            {
                grinding = false;
                rb.freezeRotation = false;
-               rb.AddForce(Vector3.up * launchStrength * CarRaycast.input.jump);
+               rb.AddForce(Vector3.up * launchStrength * carRaycast.input.jump);
+               boostScript.GrindBoostEnabled(false);
            }
         }  
+    }
+
+    private void DetermineEndPoint(Collider col)
+    {
+        if (grinding)
+            return;
+
+        Vector3 aPointAngle = col.GetComponentInParent<Transform>().transform.rotation * Vector3.up;
+        Vector3 bikeVel = carRaycast.worldVelocity;
+
+        float dot = Vector2.Dot(aPointAngle.normalized, bikeVel.normalized);
+
+        Debug.Log("point A angle: " + aPointAngle.normalized + "      bike vel: " + bikeVel.normalized + "      dot: " + dot);
+
+        if (dot >= 0)
+        {
+            endPoint = col.gameObject.GetComponentInParent<EndPointHolder>().endPointA;
+            endPointTag = "EndGrindA";
+            return;
+        }
+        else if (dot < 0)
+        {
+            endPoint = col.gameObject.GetComponentInParent<EndPointHolder>().endPointB;
+            endPointTag = "EndGrindB";
+            return;
+        }
     }
 }

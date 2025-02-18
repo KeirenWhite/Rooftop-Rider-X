@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class EndPointHolder : MonoBehaviour
 {
-    [SerializeField] public GameObject endPoint;
+    [SerializeField] public GameObject endPointA;
+    [SerializeField] public GameObject endPointB;
 }

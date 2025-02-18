@@ -101,6 +101,10 @@ public class CarRaycast : MonoBehaviour
 
     private bool wasInAir = true;
 
+
+    public Vector3 worldVelocity;
+    private Vector3 previousPos;
+
     private void Start()
     {
         Physics.bounceThreshold = 2000000;
@@ -120,6 +124,8 @@ public class CarRaycast : MonoBehaviour
         //distance to raycast to ground
         FR.maxDistance = FR.anchor.transform.position.y - FR.raycast.transform.position.y;
         BL.maxDistance = BL.anchor.transform.position.y - BL.raycast.transform.position.y;
+
+        previousPos = transform.position;
     }
     private void FixedUpdate()
     {
@@ -319,6 +325,9 @@ public class CarRaycast : MonoBehaviour
         {
             //rb.drag = origDrag;
         }
+
+        worldVelocity = (transform.position - previousPos) / Time.deltaTime;
+        previousPos = transform.position;
     }
 
     private void BikeJump()
@@ -435,7 +444,5 @@ public class CarRaycast : MonoBehaviour
             Gizmos.DrawWireSphere(FR.anchor.transform.position, .4f);
         
     }*/
-    
-
 
 }

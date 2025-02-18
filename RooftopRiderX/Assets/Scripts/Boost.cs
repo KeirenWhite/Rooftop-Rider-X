@@ -15,9 +15,12 @@ public class Boost : MonoBehaviour
     [SerializeField] private Slider boostSlider;
     [SerializeField] private float boostUseMult = 10f;
     [SerializeField] private float boostRefillMult = 1f;
+    [SerializeField] private float grindRefillMult = 30f;
     [SerializeField] private float trickMultiplier = 0.25f;
 
     [SerializeField] private CarRaycast bikeScript;
+
+    private bool grindBoostEnabled = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,15 +30,18 @@ public class Boost : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (input > 0 && boostVal > 0)
+        if ((input > 0 && boostVal > 0) && !grindBoostEnabled)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
             boostVal -= Time.deltaTime * boostUseMult;
             boostSlider.value = boostVal;
         }
-        else if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)
+        else if ((input == 0 && boostVal < 100 && bikeScript.input.grounded > 0) || grindBoostEnabled)
         {
-            boostVal += Time.deltaTime * boostRefillMult;
+            float refillMult = grindBoostEnabled ? grindRefillMult : boostRefillMult;
+            boostVal += Time.deltaTime * refillMult;
+            if (boostVal > 100)
+                boostVal = 100;
             boostSlider.value = boostVal;
         }
     }
@@ -54,6 +60,11 @@ public class Boost : MonoBehaviour
             boostVal = 100;
 
         boostSlider.value = boostVal;
+    }
+
+    public void GrindBoostEnabled(bool enable)
+    {
+        grindBoostEnabled = enable;
     }
 
 }

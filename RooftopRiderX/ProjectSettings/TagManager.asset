@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Ground
   - Grind
-  - EndGrind
+  - EndGrindA
+  - EndGrindB
   layers:
   - Default
   - TransparentFX
