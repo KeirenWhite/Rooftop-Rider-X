@@ -6,7 +6,7 @@ using UnityEngine.Windows;
 public class GrindRail : MonoBehaviour
 {
     public Rigidbody rb;
-    public GameObject endPoint;
+    private GameObject endPoint;
     public float fixedRotationX;
     public float fixedRotationY;
     public float fixedRotationZ;
@@ -48,7 +48,8 @@ public class GrindRail : MonoBehaviour
         if (col.CompareTag("Grind"))
         {
             Debug.Log("Grinding");
-            col.gameObject.GetComponentInChildren<Collider>();
+            endPoint = col.gameObject.GetComponentInParent<EndPointHolder>().endPoint;
+            //Debug.Log(endPoint.name);
             grinding = true;
         }
         if (col.CompareTag("EndGrind"))
@@ -58,6 +59,9 @@ public class GrindRail : MonoBehaviour
     }
     private void Grind()
     {
+        if (endPoint == null)
+            return;
+
         Vector3 grindTowards = (endPoint.transform.position - transform.position).normalized;
         if (grinding)
         {

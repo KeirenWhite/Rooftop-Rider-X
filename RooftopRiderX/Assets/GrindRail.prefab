@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 4054161596695360872}
   - component: {fileID: 5566844419189991325}
   - component: {fileID: 2269153272086717842}
+  - component: {fileID: 8324513423337745473}
   m_Layer: 0
   m_Name: GrindRail
   m_TagString: Untagged
@@ -214,3 +215,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4870745975334307247, guid: df9dc066e5bae784594c45b4ec51e0d1, type: 3}
+--- !u!114 &8324513423337745473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7869820864470722566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84dc145dbc95d8a40a1fc58c5b76fb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPoint: {fileID: 4228666609961657086}
