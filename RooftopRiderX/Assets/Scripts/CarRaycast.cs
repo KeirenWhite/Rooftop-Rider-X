@@ -257,9 +257,31 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
-            boostScript.RefillBoost(trickTrack.x + trickTrack.y + trickTrack.z);
+            float[] trickScore = new float[3];
+
+            trickScore[0] = trickTrack.x;
+            trickScore[1] = trickTrack.y;
+            trickScore[2] = trickTrack.z;
+
+            Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2]);
+
+            for (int i = 0; i < 3; i++)
+            {
+                //Debug.Log(trickScore[i] / (2 * Mathf.PI));
+                if (trickScore[i] / (2 * Mathf.PI) >= 2)
+                {
+                    float removeMult = (trickScore[i] / (2 * Mathf.PI)) - 1;
+                    float scoreRemove = Mathf.Pow(2, (-0.2f * removeMult) +2f ) - 4;
+                    //Debug.Log(scoreRemove);
+                    trickScore[i] = trickScore[i] + (scoreRemove * (2 * Mathf.PI));
+                }
+            }
+
+            Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2] + "\n");
+
+            boostScript.RefillBoost(trickScore[0] + trickScore[1] + trickScore[2]);
             trickTrack = Vector3.zero;
-        }     
+        }
     }
 
 
