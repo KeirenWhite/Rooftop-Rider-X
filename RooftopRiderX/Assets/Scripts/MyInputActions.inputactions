@@ -198,17 +198,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a1e779e5-45fc-4b42-88e5-5132adebff92",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Gas",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "e6de152c-a304-4238-8d8d-9942b78b0b42",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",

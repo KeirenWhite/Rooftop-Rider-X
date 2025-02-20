@@ -131,6 +131,7 @@ public class CarRaycast : MonoBehaviour
         BikeTurn();
         BikeJump();
         BikeMove();
+        BikeBrake();
 
         Trick();
 
@@ -345,7 +346,8 @@ public class CarRaycast : MonoBehaviour
             //rb.AddRelativeForce(Vector3.forward * (-Movespeed / 2) * input.reverse * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
             //brake
-            rb.drag = origDrag + (input.brake * brakeStrength * Time.deltaTime);
+            
+            //rb.drag = origDrag + (input.brake * brakeStrength * Time.deltaTime);
         }
         else
         {
@@ -361,7 +363,15 @@ public class CarRaycast : MonoBehaviour
             rb.AddForce(Vector3.up * jumpStrength * input.jump);
         }
     }
-    
+
+    public void BikeBrake()
+    {
+        if (rb.velocity.magnitude > .01f)
+        {
+            rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, input.brake * brakeStrength * Time.deltaTime);
+        }
+    }
+
     private void SpinWheels()
     {
         // convert linear speed to anglular speed. spin the wheel that much.
@@ -437,7 +447,7 @@ public class CarRaycast : MonoBehaviour
             
     }
 
-    private void OnCollisionEnter(Collision col)
+    private void OnCollisionStay(Collision col)
     {
         foreach(ContactPoint contact in col.contacts)
         {
