@@ -83,7 +83,7 @@ public class CarRaycast : MonoBehaviour
     public GameObject HandleBar;
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
-    [SerializeField] private Collider bikeBody;
+    [SerializeField] private Collider bikeDownCol;
     private Rigidbody rb = null;
     private float origDrag;
     private float origAngDrag;
@@ -452,23 +452,23 @@ public class CarRaycast : MonoBehaviour
         foreach(ContactPoint contact in col.contacts)
         {
             //Debug.Log(contact.thisCollider);
-            if(contact.thisCollider == bikeBody)
+            if(contact.thisCollider == bikeDownCol)
             {
                 if (col.collider.CompareTag("Ground"))
                 {
                     Debug.Log("gasdf");
-                    input.downed = true;
-                    break;
+                    input.downed = true;                   
                 }
-
+                else
+                {
+                    input.downed = false;
+                }
             }
-            /*else
-            {
-                input.downed = false;
-            }*/
         }
 
     }
+
+
     
     private void BikeDowned() 
     {
