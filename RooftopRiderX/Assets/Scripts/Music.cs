@@ -61,7 +61,7 @@ public class Music : MonoBehaviour
         {
             audioSourceZero.volume = 0;
             audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
-            audioSourceMid.volume = Mathf.Lerp(startMid, .75f, currentTime / duration);
+            audioSourceMid.volume = Mathf.Lerp(startMid, .7f, currentTime / duration);
             audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration);
         }
         if(currentSpeed > 120f) //top speed
