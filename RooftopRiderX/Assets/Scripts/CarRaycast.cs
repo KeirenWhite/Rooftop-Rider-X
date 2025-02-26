@@ -156,12 +156,12 @@ public class CarRaycast : MonoBehaviour
     {
         bikeVisuals.transform.position = visualsTransformTarget.transform.position;
 
-        if (input.grounded == 2)
+        if (input.grounded >= 0)
             bikeVisuals.transform.rotation = Quaternion.Euler(
                 visualsTransformTarget.transform.eulerAngles.x,
                 visualsTransformTarget.transform.eulerAngles.y,
                 visualsTransformTarget.transform.eulerAngles.z + (30 * input.steer.x));
-        else
+        if (input.roll > 0 || input.downed == true)
             bikeVisuals.transform.rotation = visualsTransformTarget.transform.rotation;
 
         /*
