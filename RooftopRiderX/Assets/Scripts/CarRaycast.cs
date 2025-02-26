@@ -91,7 +91,7 @@ public class CarRaycast : MonoBehaviour
     private Quaternion initialRotationAxel;
     private Quaternion initialRotationWheelF;
     private Quaternion initialRotationHB;
-    private float maxRot = 45f;
+    //private float maxRot = 45f;
 
     private bool wasOnGround = false;
     private Quaternion holdoverRotation;
@@ -104,7 +104,7 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private bool leanMode = false;
     [SerializeField] private GameObject bikeVisuals;
     [SerializeField] private GameObject visualsTransformTarget;
-    [SerializeField] private float leanSpeedModifier = 1f;
+    //SerializeField] private float leanSpeedModifier = 1f;
 
     private void Start()
     {
