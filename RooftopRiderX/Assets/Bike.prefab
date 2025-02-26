@@ -66,6 +66,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2472288903595977985}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &674200236075072149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 803434725415916607}
+  - component: {fileID: 1172843332773887939}
+  m_Layer: 0
+  m_Name: BikeDownPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &803434725415916607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674200236075072149}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2472288903595977985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1172843332773887939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674200236075072149}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.049527735, z: 0.17157072}
+  m_Center: {x: 0.0000015432935, y: -0.024263952, z: 0.00015638511}
 --- !u!1 &2090049648452035498
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4444904774986761349}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.95905215, z: -0, w: -0.2832297}
+  m_LocalRotation: {x: -0, y: -0.95905244, z: 0, w: -0.2832286}
   m_LocalPosition: {x: -392.69208, y: 94.07, z: 345.83185}
   m_LocalScale: {x: 0.26069, y: 0.4984835, z: 1.6542435}
   m_ConstrainProportionsScale: 0
@@ -547,6 +600,8 @@ Transform:
   - {fileID: 1776140042203203992}
   - {fileID: 8304384342189796661}
   - {fileID: 653553477226157687}
+  - {fileID: 1245064151378396678}
+  - {fileID: 803434725415916607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -212.906, z: 0}
 --- !u!54 &9104552801487708138
@@ -617,7 +672,7 @@ MonoBehaviour:
   wheelieSpeed: 137
   Movespeed: 70
   turnSpeed: 90
-  brakeStrength: 250
+  brakeStrength: 1.8
   jumpStrength: 20000000
   WheelF: {fileID: 7718216957446554687}
   WheelB: {fileID: 7146368053618818284}
@@ -639,7 +694,7 @@ MonoBehaviour:
     raycast: {fileID: 3407019568016729598}
     maxDistance: 0
     radius: 0
-  bikeBody: {fileID: 3156097798033986596}
+  bikeDownCol: {fileID: 1172843332773887939}
   boostScript: {fileID: 6026556502449190980}
 --- !u!33 &9174943701828177173
 MeshFilter:
@@ -733,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba22a86beea44446b37158786009945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardForce: 1500000
+  forwardForce: 5000000
   forcePos: {fileID: 653553477226157687}
   boostSlider: {fileID: 0}
   boostUseMult: 50
@@ -1506,6 +1561,79 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8029220791413406948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1245064151378396678}
+  - component: {fileID: 4808569280580332455}
+  - component: {fileID: 1003602190838497005}
+  m_Layer: 0
+  m_Name: GrindPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1245064151378396678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029220791413406948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.437, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2472288903595977985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4808569280580332455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029220791413406948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.24684338, z: 0.37208334}
+  m_Center: {x: 3.6172415e-10, y: -0.107604146, z: -0.0020567782}
+--- !u!114 &1003602190838497005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029220791413406948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783eed786b5fdc94e81da584c7cef30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 9104552801487708138}
+  fixedRotationX: 0
+  fixedRotationY: 0
+  fixedRotationZ: 0
+  launchStrength: 40000000
+  grindSpeed: 50
+  CarRaycast: {fileID: 8081849393468209108}
 --- !u!1 &9072682408906155402
 GameObject:
   m_ObjectHideFlags: 0

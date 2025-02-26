@@ -101,6 +101,11 @@ public class CarRaycast : MonoBehaviour
 
     private bool wasInAir = true;
 
+    [SerializeField] private bool leanMode = false;
+    [SerializeField] private GameObject bikeVisuals;
+    [SerializeField] private GameObject visualsTransformTarget;
+    [SerializeField] private float leanSpeedModifier = 1f;
+
     private void Start()
     {
         Physics.bounceThreshold = 2000000;
@@ -133,6 +138,9 @@ public class CarRaycast : MonoBehaviour
         BikeMove();
         BikeBrake();
 
+        UpdateBikeVisuals();
+        //BikeLean();
+
         Trick();
 
         SpinWheels();
@@ -140,7 +148,112 @@ public class CarRaycast : MonoBehaviour
         //Debug.Log("speed: " + rb.velocity.magnitude);
     }
 
-    void FrameStabilize()
+    //private bool isLeanCoroutineRunning = false;
+    //private bool isResetLeanCoroutineRunning = false;
+    //private Coroutine currentLeanCoroutine;
+    //private float leanHoldRotation = 0f;
+    private void UpdateBikeVisuals()
+    {
+        bikeVisuals.transform.position = visualsTransformTarget.transform.position;
+
+        if (input.grounded == 2)
+            bikeVisuals.transform.rotation = Quaternion.Euler(
+                visualsTransformTarget.transform.eulerAngles.x,
+                visualsTransformTarget.transform.eulerAngles.y,
+                visualsTransformTarget.transform.eulerAngles.z + (30 * input.steer.x));
+        else
+            bikeVisuals.transform.rotation = visualsTransformTarget.transform.rotation;
+
+        /*
+        if (!isLeanCoroutineRunning)
+            bikeVisuals.transform.rotation = Quaternion.Euler(
+                visualsTransformTarget.transform.eulerAngles.x, 
+                visualsTransformTarget.transform.eulerAngles.y, 
+                leanHoldRotation
+                );
+        */
+    }
+
+    /*
+    private float leanDirHandler = 0f;
+    private void BikeLean()
+    {
+        if (!leanMode)
+            return;
+
+        if (input.grounded < 2 && isLeanCoroutineRunning)
+        {
+            if (currentLeanCoroutine != null)
+                StopCoroutine(currentLeanCoroutine);
+            //StartCoroutine(Lean(false));
+            bikeVisuals.transform.rotation = visualsTransformTarget.transform.rotation;
+        }
+
+        if ((leanDirHandler != input.steer.x) && input.grounded == 2)
+        {
+            if (currentLeanCoroutine != null)
+                StopCoroutine(currentLeanCoroutine);
+            currentLeanCoroutine = StartCoroutine(Lean());
+        }
+
+        leanDirHandler = input.steer.x;
+    }
+
+
+    private IEnumerator Lean(bool useSteer = true)
+    {
+        float directionModifier = input.steer.x;
+        if (!useSteer)
+            directionModifier = 0f;
+
+        isLeanCoroutineRunning = true;
+        Quaternion baseRotation = bikeVisuals.transform.rotation;
+        Quaternion leanRotationTarget = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, visualsTransformTarget.transform.eulerAngles.z + (30f * directionModifier));
+        float leanTimeTrack = 0f;
+
+        while (leanTimeTrack < 1f)
+        {
+            Quaternion newBikeRot = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, baseRotation.eulerAngles.z);
+            leanRotationTarget = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, leanRotationTarget.eulerAngles.z);
+            bikeVisuals.transform.rotation = Quaternion.Slerp(newBikeRot, leanRotationTarget, leanTimeTrack);
+
+            leanTimeTrack += Time.deltaTime * leanSpeedModifier;
+
+            yield return null;
+        }
+
+        yield return null;
+
+        isLeanCoroutineRunning = false;
+        leanHoldRotation = bikeVisuals.transform.eulerAngles.z;
+    }
+
+    /*
+    private IEnumerator ResetLean()
+    {
+        isResetLeanCoroutineRunning = true;
+        Quaternion baseRotation = bikeVisuals.transform.rotation;
+        Quaternion leanRotationTarget = visualsTransformTarget.transform.rotation;
+        float leanTimeTrack = 0f;
+
+        while (leanTimeTrack < 1f)
+        {
+            Quaternion newBikeRot = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, baseRotation.eulerAngles.z);
+            leanRotationTarget = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, leanRotationTarget.eulerAngles.z);
+            bikeVisuals.transform.rotation = Quaternion.Slerp(newBikeRot, leanRotationTarget, leanTimeTrack);
+
+            leanTimeTrack += Time.deltaTime * leanSpeedModifier;
+
+            yield return null;
+        }
+
+        yield return null;
+
+        isResetLeanCoroutineRunning = false;
+    }
+    */
+
+    private void FrameStabilize()
     {
         RaycastHit hit;
         
@@ -424,7 +537,7 @@ public class CarRaycast : MonoBehaviour
 
         // testing out resetting angular velocity on landing
         if (input.grounded == 2)
-        { 
+        {
             if (!wasOnGround)
                 FinishTrick();
             input.downed = false;
@@ -456,7 +569,7 @@ public class CarRaycast : MonoBehaviour
             {
                 if (col.collider.CompareTag("Ground"))
                 {
-                    Debug.Log("gasdf");
+                    //Debug.Log("gasdf");
                     input.downed = true;                   
                 }
                 else
