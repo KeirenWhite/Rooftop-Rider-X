@@ -47,7 +47,7 @@ public class GrindRail : MonoBehaviour
     {
         if (col.CompareTag("Grind"))
         {
-            Debug.Log("Grinding");
+            //Debug.Log("Grinding");
             endPoint = col.gameObject.GetComponentInParent<EndPointHolder>().endPoint;
             //Debug.Log(endPoint.name);
             grinding = true;

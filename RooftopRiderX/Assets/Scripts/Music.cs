@@ -46,7 +46,7 @@ public class Music : MonoBehaviour
         float startLow = audioSourceLow.volume;
         float startMid = audioSourceMid.volume;
         float startTop = audioSourceTop.volume;
-        Debug.Log(currentSpeed);
+        //Debug.Log(currentSpeed);
 
         if(currentSpeed >= 0 && currentSpeed <= zeroTransition) //zero speed
         {

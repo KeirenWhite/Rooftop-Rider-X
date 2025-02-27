@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -178,85 +179,6 @@ public class CarRaycast : MonoBehaviour
         */
     }
 
-    /*
-    private float leanDirHandler = 0f;
-    private void BikeLean()
-    {
-        if (!leanMode)
-            return;
-
-        if (input.grounded < 2 && isLeanCoroutineRunning)
-        {
-            if (currentLeanCoroutine != null)
-                StopCoroutine(currentLeanCoroutine);
-            //StartCoroutine(Lean(false));
-            bikeVisuals.transform.rotation = visualsTransformTarget.transform.rotation;
-        }
-
-        if ((leanDirHandler != input.steer.x) && input.grounded == 2)
-        {
-            if (currentLeanCoroutine != null)
-                StopCoroutine(currentLeanCoroutine);
-            currentLeanCoroutine = StartCoroutine(Lean());
-        }
-
-        leanDirHandler = input.steer.x;
-    }
-
-
-    private IEnumerator Lean(bool useSteer = true)
-    {
-        float directionModifier = input.steer.x;
-        if (!useSteer)
-            directionModifier = 0f;
-
-        isLeanCoroutineRunning = true;
-        Quaternion baseRotation = bikeVisuals.transform.rotation;
-        Quaternion leanRotationTarget = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, visualsTransformTarget.transform.eulerAngles.z + (30f * directionModifier));
-        float leanTimeTrack = 0f;
-
-        while (leanTimeTrack < 1f)
-        {
-            Quaternion newBikeRot = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, baseRotation.eulerAngles.z);
-            leanRotationTarget = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, leanRotationTarget.eulerAngles.z);
-            bikeVisuals.transform.rotation = Quaternion.Slerp(newBikeRot, leanRotationTarget, leanTimeTrack);
-
-            leanTimeTrack += Time.deltaTime * leanSpeedModifier;
-
-            yield return null;
-        }
-
-        yield return null;
-
-        isLeanCoroutineRunning = false;
-        leanHoldRotation = bikeVisuals.transform.eulerAngles.z;
-    }
-
-    /*
-    private IEnumerator ResetLean()
-    {
-        isResetLeanCoroutineRunning = true;
-        Quaternion baseRotation = bikeVisuals.transform.rotation;
-        Quaternion leanRotationTarget = visualsTransformTarget.transform.rotation;
-        float leanTimeTrack = 0f;
-
-        while (leanTimeTrack < 1f)
-        {
-            Quaternion newBikeRot = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, baseRotation.eulerAngles.z);
-            leanRotationTarget = Quaternion.Euler(visualsTransformTarget.transform.eulerAngles.x, visualsTransformTarget.transform.eulerAngles.y, leanRotationTarget.eulerAngles.z);
-            bikeVisuals.transform.rotation = Quaternion.Slerp(newBikeRot, leanRotationTarget, leanTimeTrack);
-
-            leanTimeTrack += Time.deltaTime * leanSpeedModifier;
-
-            yield return null;
-        }
-
-        yield return null;
-
-        isResetLeanCoroutineRunning = false;
-    }
-    */
-
     private void FrameStabilize()
     {
         RaycastHit hit;
@@ -271,7 +193,7 @@ public class CarRaycast : MonoBehaviour
         }
 
 
-        Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
+        //Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
     }
 
     void AirFrameStabilize()
@@ -288,7 +210,7 @@ public class CarRaycast : MonoBehaviour
         }
 
 
-        Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
+        //Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
     }
 
     private void OnGUI()
@@ -381,7 +303,7 @@ public class CarRaycast : MonoBehaviour
             trickScore[1] = trickTrack.y;
             trickScore[2] = trickTrack.z;
 
-            Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2]);
+            //Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2]);
 
             for (int i = 0; i < 3; i++)
             {
@@ -395,7 +317,7 @@ public class CarRaycast : MonoBehaviour
                 }
             }
 
-            Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2] + "\n");
+            //Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2] + "\n");
 
             boostScript.RefillBoost(trickScore[0] + trickScore[1] + trickScore[2]);
             trickTrack = Vector3.zero;
@@ -545,6 +467,7 @@ public class CarRaycast : MonoBehaviour
         {
             if (!wasOnGround)
                 FinishTrick();
+            bikeDownFrameCount = 0;
             input.downed = false;
             wasOnGround = true;
             
@@ -565,8 +488,11 @@ public class CarRaycast : MonoBehaviour
             
     }
 
+    [SerializeField] private int framesUntilBikeDown = 30;
+    private int bikeDownFrameCount = 0;
     private void OnCollisionStay(Collision col)
     {
+
         foreach(ContactPoint contact in col.contacts)
         {
             //Debug.Log(contact.thisCollider);
@@ -574,13 +500,17 @@ public class CarRaycast : MonoBehaviour
             {
                 if (col.collider.CompareTag("Ground"))
                 {
-                    //Debug.Log("gasdf");
-                    input.downed = true;                   
+                    bikeDownFrameCount++;
+
+                    Debug.Log(bikeDownFrameCount);
+
+                    if (bikeDownFrameCount >= framesUntilBikeDown)
+                        input.downed = true;                   
                 }
-                else
+                /*else
                 {
                     input.downed = false;
-                }
+                }*/
             }
             
         }
@@ -588,7 +518,6 @@ public class CarRaycast : MonoBehaviour
     }
 
 
-    
     private void BikeDowned() 
     {
 
