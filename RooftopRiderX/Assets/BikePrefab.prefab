@@ -1702,7 +1702,7 @@ MonoBehaviour:
   leanMode: 1
   bikeVisuals: {fileID: 3267159709697827920}
   visualsTransformTarget: {fileID: 6136018837992285226}
-  leanSpeedModifier: 3
+  landTrickAudio: {fileID: 0}
 --- !u!33 &5127109234020144523
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1990,8 +1990,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.24684338, z: 0.37208334}
-  m_Center: {x: 3.6172415e-10, y: -0.107604146, z: -0.0020567782}
+  m_Size: {x: 1, y: 0.032395568, z: 0.68018025}
+  m_Center: {x: 3.3043235e-11, y: -0.000380562, z: 0.009861064}
 --- !u!114 &2497713593717314207
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -106,6 +106,10 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private GameObject visualsTransformTarget;
     //SerializeField] private float leanSpeedModifier = 1f;
 
+    [Header("Sound Effects")]
+    public AudioSource landTrickAudio;
+   
+
     private void Start()
     {
         Physics.bounceThreshold = 2000000;
@@ -395,6 +399,7 @@ public class CarRaycast : MonoBehaviour
 
             boostScript.RefillBoost(trickScore[0] + trickScore[1] + trickScore[2]);
             trickTrack = Vector3.zero;
+            landTrickAudio.Play();
         }
     }
 
@@ -577,6 +582,7 @@ public class CarRaycast : MonoBehaviour
                     input.downed = false;
                 }
             }
+            
         }
 
     }
