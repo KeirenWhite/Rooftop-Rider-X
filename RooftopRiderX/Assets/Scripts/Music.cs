@@ -15,6 +15,11 @@ public class Music : MonoBehaviour
     private float currentSpeed;
     private float currentTime = 0;
     public float duration = 2f;
+
+    [SerializeField] private float zeroTransition = 4f;
+    [SerializeField] private float lowerTransition = 56f;
+    [SerializeField] private float upperTransition = 90f;
+
     void Start()
     {
         audioSourceZero.Play();
@@ -43,28 +48,28 @@ public class Music : MonoBehaviour
         float startTop = audioSourceTop.volume;
         Debug.Log(currentSpeed);
 
-        if(currentSpeed >= 0 && currentSpeed <= 1f) //zero speed
+        if(currentSpeed >= 0 && currentSpeed <= zeroTransition) //zero speed
         {
             audioSourceZero.volume = 1;
             audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
             audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime / duration);
             audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration); 
         }
-        if(currentSpeed > 1f && currentSpeed <= 56f) //low speed
+        if(currentSpeed > zeroTransition && currentSpeed <= lowerTransition) //low speed
         {
             audioSourceZero.volume = 0; 
             audioSourceLow.volume = Mathf.Lerp(startLow, .9f, currentTime / 10f); 
             audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime / duration);
             audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration);
         }
-        if(currentSpeed > 56f && currentSpeed <= 120f) //moderate speed
+        if(currentSpeed > lowerTransition && currentSpeed <= upperTransition) //moderate speed
         {
             audioSourceZero.volume = 0;
             audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
             audioSourceMid.volume = Mathf.Lerp(startMid, .7f, currentTime / duration);
             audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration);
         }
-        if(currentSpeed > 120f) //top speed
+        if(currentSpeed > upperTransition) //top speed
         {
             audioSourceZero.volume = 0;
             audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
