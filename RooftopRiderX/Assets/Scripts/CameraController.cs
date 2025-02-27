@@ -5,9 +5,13 @@ public class CameraController : MonoBehaviour
 {
     public GameObject moveto = null;
     public GameObject lookat = null;
+    public GameObject farmoveto = null;
     public float Movespeed = 2;
+    public float reverseSpeedMult = 2;
     public float Lookspeed = 120;
     private float RecallCameraY = 0; //this is so the camera doesn't rollover with the car
+
+    public CarRaycast bike = null;
 
     private void Start()
     {
@@ -18,7 +22,24 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         //the new position, but keep the camera at original y so it doesn't flip with the car
-        if (moveto != null)
+        if (farmoveto != null && bike.input.reverse > 0)
+        {
+            float moveTargetY;
+            Vector3 cameraMovePos;
+            if (lookat != null)
+            {
+                
+
+                moveTargetY = lookat.transform.position.y + RecallCameraY;
+                cameraMovePos = new Vector3(farmoveto.transform.position.x, moveTargetY, farmoveto.transform.position.z);
+                this.transform.position = Vector3.Lerp(this.transform.position, cameraMovePos, (Movespeed * reverseSpeedMult) * Time.deltaTime);
+            }
+            else
+            {
+                this.transform.position = Vector3.Lerp(this.transform.position, moveto.transform.position, Movespeed * Time.deltaTime);
+            }
+        }
+        else if (moveto != null)
         {
             float moveTargetY;
             Vector3 cameraMovePos;

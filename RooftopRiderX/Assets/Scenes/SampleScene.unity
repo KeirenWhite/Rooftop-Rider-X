@@ -618,19 +618,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -133.90776
+      value: -269.6
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.61
+      value: 142.7
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1128.4954
+      value: 485.8
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.10394266
+      value: -0.8133849
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.x
@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99458337
+      value: 0.5817259
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.z
@@ -650,7 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 191.933
+      value: 288.85602
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3274,8 +3274,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveto: {fileID: 427047769}
   lookat: {fileID: 1615413674}
+  farmoveto: {fileID: 0}
   Movespeed: 3
+  reverseSpeedMult: 2
   Lookspeed: 120
+  bike: {fileID: 0}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3519,7 +3519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveto: {fileID: 1623970704}
   lookat: {fileID: 645618636}
+  farmoveto: {fileID: 941456194}
   Movespeed: 2
+  reverseSpeedMult: 2
   Lookspeed: 120
   bike: {fileID: 645618647}
 --- !u!1 &1503635508 stripped

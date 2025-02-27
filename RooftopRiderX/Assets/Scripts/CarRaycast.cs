@@ -186,10 +186,8 @@ public class CarRaycast : MonoBehaviour
 
         if (Physics.SphereCast(FR.anchor.transform.position, .25f, -this.transform.up, out hit, FR.maxDistance) == true || Physics.SphereCast(BL.anchor.transform.position, .25f, -this.transform.up, out hit, BL.maxDistance) == true)
         {
-            float groundNormal = hit.normal.y;
-           
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, Mathf.MoveTowardsAngle(transform.eulerAngles.z, groundNormal, Time.deltaTime * stabilizationSensitivity));
-            //Debug.Log("stabilizing"); 
+            Vector3 groundNormal = hit.normal;
+            transform.rotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
         }
 
 
@@ -406,6 +404,9 @@ public class CarRaycast : MonoBehaviour
 
     public void BikeBrake()
     {
+        if (input.grounded == 0)
+            return;
+
         if (rb.velocity.magnitude > .01f)
         {
             rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, input.brake * brakeStrength * Time.deltaTime);
