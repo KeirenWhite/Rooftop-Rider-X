@@ -383,7 +383,7 @@ public class CarRaycast : MonoBehaviour
 
 
             //reverse
-            //rb.AddRelativeForce(Vector3.forward * (-Movespeed / 2) * input.reverse * Time.fixedDeltaTime, ForceMode.VelocityChange);
+            rb.AddRelativeForce(Vector3.forward * (-Movespeed / 2) * input.reverse * Time.fixedDeltaTime, ForceMode.VelocityChange);
 
             //brake
             

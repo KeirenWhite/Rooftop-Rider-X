@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ public class Music : MonoBehaviour
     [SerializeField] private float lowerTransition = 56f;
     [SerializeField] private float upperTransition = 90f;
 
+    private int deltaTransition = 0;
+
     void Start()
     {
         audioSourceZero.Play();
@@ -37,7 +40,8 @@ public class Music : MonoBehaviour
     private void DynamicMusic()
     {
         currentSpeed = rb.velocity.magnitude;
-        currentTime += Time.deltaTime;
+        if (currentTime < 1)
+            currentTime += Time.deltaTime * duration;
         audioSourceZero.volume = .5f;
         audioSourceLow.volume = 0;
         audioSourceMid.volume = 0;
@@ -48,33 +52,54 @@ public class Music : MonoBehaviour
         float startTop = audioSourceTop.volume;
         //Debug.Log(currentSpeed);
 
+        int currentTransition = 0;
+
         if(currentSpeed >= 0 && currentSpeed <= zeroTransition) //zero speed
         {
+            currentTransition = 0;
+            if (currentTransition != deltaTransition)
+                currentTime = 0f;
             audioSourceZero.volume = 1;
-            audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
-            audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime / duration);
-            audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration); 
+            audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime);
+            audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime);
+            audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime);
+            deltaTransition = 0;
         }
         if(currentSpeed > zeroTransition && currentSpeed <= lowerTransition) //low speed
         {
+            currentTransition = 1;
+            if (currentTransition != deltaTransition)
+                currentTime = 0f;
             audioSourceZero.volume = 0; 
-            audioSourceLow.volume = Mathf.Lerp(startLow, .9f, currentTime / 10f); 
-            audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime / duration);
-            audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration);
+            audioSourceLow.volume = Mathf.Lerp(startLow, .9f, currentTime); 
+            audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime);
+            audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime);
+            deltaTransition = 1;
         }
         if(currentSpeed > lowerTransition && currentSpeed <= upperTransition) //moderate speed
         {
+            currentTransition = 2;
+            if (currentTransition != deltaTransition)
+                currentTime = 0f;
             audioSourceZero.volume = 0;
-            audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
-            audioSourceMid.volume = Mathf.Lerp(startMid, .7f, currentTime / duration);
-            audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime / duration);
+            audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime);
+            audioSourceMid.volume = Mathf.Lerp(startMid, .7f, currentTime);
+            audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime);
+            deltaTransition = 2;
         }
         if(currentSpeed > upperTransition) //top speed
         {
+            currentTransition = 3;
+            if (currentTransition != deltaTransition)
+                currentTime = 0f;
             audioSourceZero.volume = 0;
             audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
             audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime / duration);
             audioSourceTop.volume = Mathf.Lerp(startTop, .8f, currentTime / duration);
+            deltaTransition = 3;
         }
+
+        //Debug.Log(currentTime);
+
     }
 }

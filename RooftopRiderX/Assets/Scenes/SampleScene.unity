@@ -11659,7 +11659,7 @@ MonoBehaviour:
   audioSourceLow: {fileID: 6937858302574128346}
   audioSourceMid: {fileID: 6937858302574128345}
   audioSourceTop: {fileID: 6937858302574128344}
-  duration: 30
+  duration: 1
   zeroTransition: 2
   lowerTransition: 45
   upperTransition: 90
