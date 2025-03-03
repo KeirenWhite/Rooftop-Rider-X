@@ -70,8 +70,8 @@ public class Music : MonoBehaviour
             currentTransition = 1;
             if (currentTransition != deltaTransition)
                 currentTime = 0f;
-            audioSourceZero.volume = 0; 
-            audioSourceLow.volume = Mathf.Lerp(startLow, .9f, currentTime); 
+            audioSourceZero.volume = 1; 
+            audioSourceLow.volume = Mathf.Lerp(startLow, 1, currentTime); 
             audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime);
             audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime);
             deltaTransition = 1;
@@ -81,9 +81,9 @@ public class Music : MonoBehaviour
             currentTransition = 2;
             if (currentTransition != deltaTransition)
                 currentTime = 0f;
-            audioSourceZero.volume = 0;
-            audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime);
-            audioSourceMid.volume = Mathf.Lerp(startMid, .7f, currentTime);
+            audioSourceZero.volume = 1;
+            audioSourceLow.volume = 1;
+            audioSourceMid.volume = Mathf.Lerp(startMid, 1, currentTime);
             audioSourceTop.volume = Mathf.Lerp(startTop, 0, currentTime);
             deltaTransition = 2;
         }
@@ -92,10 +92,10 @@ public class Music : MonoBehaviour
             currentTransition = 3;
             if (currentTransition != deltaTransition)
                 currentTime = 0f;
-            audioSourceZero.volume = 0;
-            audioSourceLow.volume = Mathf.Lerp(startLow, 0, currentTime / duration);
-            audioSourceMid.volume = Mathf.Lerp(startMid, 0, currentTime / duration);
-            audioSourceTop.volume = Mathf.Lerp(startTop, .8f, currentTime / duration);
+            audioSourceZero.volume = 1;
+            audioSourceLow.volume = 1;
+            audioSourceMid.volume = 1;
+            audioSourceTop.volume = Mathf.Lerp(startTop, 1, currentTime / duration);
             deltaTransition = 3;
         }
 
