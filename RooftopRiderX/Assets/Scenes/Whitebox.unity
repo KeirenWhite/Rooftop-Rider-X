@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 23664795}
   m_Layer: 0
   m_Name: Cylinder (23)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 49786608}
   m_Layer: 0
   m_Name: Long_1_Tall (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 52595156}
   m_Layer: 0
   m_Name: Long_1_Tall (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 53566871}
   m_Layer: 0
   m_Name: Tent (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 62443425}
   m_Layer: 0
   m_Name: Base (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 71814644}
   m_Layer: 0
   m_Name: Tent (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 76159966}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 81883467}
   m_Layer: 0
   m_Name: Base (36)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1332,7 +1332,7 @@ GameObject:
   - component: {fileID: 81894216}
   m_Layer: 0
   m_Name: Long_2_Tall (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1440,7 +1440,7 @@ GameObject:
   - component: {fileID: 82625184}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1575,7 +1575,7 @@ GameObject:
   - component: {fileID: 97344728}
   m_Layer: 0
   m_Name: Base (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1683,7 +1683,7 @@ GameObject:
   - component: {fileID: 97847541}
   m_Layer: 0
   m_Name: Base (24)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1875,7 +1875,7 @@ GameObject:
   - component: {fileID: 116141018}
   m_Layer: 0
   m_Name: Long_2_Tall (32)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1983,7 +1983,7 @@ GameObject:
   - component: {fileID: 119653010}
   m_Layer: 0
   m_Name: Track (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2116,7 +2116,7 @@ GameObject:
   - component: {fileID: 135696816}
   m_Layer: 0
   m_Name: Crater
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2222,7 +2222,7 @@ GameObject:
   - component: {fileID: 137147953}
   m_Layer: 0
   m_Name: Base_Tall (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2330,7 +2330,7 @@ GameObject:
   - component: {fileID: 146868598}
   m_Layer: 0
   m_Name: Base_Tall (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2492,7 +2492,7 @@ GameObject:
   - component: {fileID: 161891018}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2599,7 +2599,7 @@ GameObject:
   - component: {fileID: 165519961}
   m_Layer: 0
   m_Name: Long_1_Tall (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2744,7 +2744,7 @@ GameObject:
   - component: {fileID: 187604523}
   m_Layer: 0
   m_Name: Long_1_Tall (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2852,7 +2852,7 @@ GameObject:
   - component: {fileID: 190607862}
   m_Layer: 0
   m_Name: Cylinder (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2960,7 +2960,7 @@ GameObject:
   - component: {fileID: 193946112}
   m_Layer: 0
   m_Name: Cylinder (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3068,7 +3068,7 @@ GameObject:
   - component: {fileID: 195268344}
   m_Layer: 0
   m_Name: Tent (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3174,7 +3174,7 @@ GameObject:
   - component: {fileID: 197501152}
   m_Layer: 0
   m_Name: Long_2_Tall (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3282,7 +3282,7 @@ GameObject:
   - component: {fileID: 200187503}
   m_Layer: 0
   m_Name: Tree_FourLeaves (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3416,7 +3416,7 @@ GameObject:
   - component: {fileID: 204663106}
   m_Layer: 0
   m_Name: Tent (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3522,7 +3522,7 @@ GameObject:
   - component: {fileID: 209697585}
   m_Layer: 0
   m_Name: Tree_FourLeaves (23)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3629,7 +3629,7 @@ GameObject:
   - component: {fileID: 213854134}
   m_Layer: 0
   m_Name: Cylinder (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 225247824}
   m_Layer: 0
   m_Name: Base_Tall (25)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3872,7 +3872,7 @@ GameObject:
   - component: {fileID: 248841505}
   m_Layer: 0
   m_Name: LowBuildingCurve
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4121,7 +4121,7 @@ GameObject:
   - component: {fileID: 262920143}
   m_Layer: 0
   m_Name: Cylinder (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4229,7 +4229,7 @@ GameObject:
   - component: {fileID: 281213882}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4337,7 +4337,7 @@ GameObject:
   - component: {fileID: 284373660}
   m_Layer: 0
   m_Name: Square_Tall (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4445,7 +4445,7 @@ GameObject:
   - component: {fileID: 286232234}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4552,7 +4552,7 @@ GameObject:
   - component: {fileID: 290746904}
   m_Layer: 0
   m_Name: TallGuy_2 (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4658,7 +4658,7 @@ GameObject:
   - component: {fileID: 297426660}
   m_Layer: 0
   m_Name: Cylinder (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4766,7 +4766,7 @@ GameObject:
   - component: {fileID: 299048867}
   m_Layer: 0
   m_Name: Base_Tall (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4874,7 +4874,7 @@ GameObject:
   - component: {fileID: 301068255}
   m_Layer: 0
   m_Name: Cylinder (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4982,7 +4982,7 @@ GameObject:
   - component: {fileID: 306316325}
   m_Layer: 0
   m_Name: Cylinder (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5117,7 +5117,7 @@ GameObject:
   - component: {fileID: 312563913}
   m_Layer: 0
   m_Name: Square (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5225,7 +5225,7 @@ GameObject:
   - component: {fileID: 319428837}
   m_Layer: 0
   m_Name: Long_2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5333,7 +5333,7 @@ GameObject:
   - component: {fileID: 327483862}
   m_Layer: 0
   m_Name: Long_1_Tall (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5441,7 +5441,7 @@ GameObject:
   - component: {fileID: 327726837}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5549,7 +5549,7 @@ GameObject:
   - component: {fileID: 338515295}
   m_Layer: 0
   m_Name: Long_2_Tall (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5657,7 +5657,7 @@ GameObject:
   - component: {fileID: 341500607}
   m_Layer: 0
   m_Name: Long_2_Tall (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5765,7 +5765,7 @@ GameObject:
   - component: {fileID: 348436001}
   m_Layer: 0
   m_Name: Cylinder (25)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5873,7 +5873,7 @@ GameObject:
   - component: {fileID: 348630365}
   m_Layer: 0
   m_Name: TallGuy_2 (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5979,7 +5979,7 @@ GameObject:
   - component: {fileID: 353507122}
   m_Layer: 0
   m_Name: Base (28)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6087,7 +6087,7 @@ GameObject:
   - component: {fileID: 362220252}
   m_Layer: 0
   m_Name: Base_Tall (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6195,7 +6195,7 @@ GameObject:
   - component: {fileID: 365291451}
   m_Layer: 0
   m_Name: Tree_FourLeaves (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6360,7 +6360,7 @@ GameObject:
   - component: {fileID: 375223421}
   m_Layer: 0
   m_Name: GemBuilding (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6489,7 +6489,7 @@ GameObject:
   - component: {fileID: 378864591}
   m_Layer: 0
   m_Name: GemBuilding (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6617,7 +6617,7 @@ GameObject:
   - component: {fileID: 391959214}
   m_Layer: 0
   m_Name: Tent (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6723,7 +6723,7 @@ GameObject:
   - component: {fileID: 397625029}
   m_Layer: 0
   m_Name: Long_1 (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6831,7 +6831,7 @@ GameObject:
   - component: {fileID: 406101828}
   m_Layer: 0
   m_Name: Base_Tall (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6939,7 +6939,7 @@ GameObject:
   - component: {fileID: 411169358}
   m_Layer: 0
   m_Name: Long_1_Tall (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7047,7 +7047,7 @@ GameObject:
   - component: {fileID: 414074621}
   m_Layer: 0
   m_Name: TallGuy_2 (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7153,7 +7153,7 @@ GameObject:
   - component: {fileID: 425448615}
   m_Layer: 0
   m_Name: Tree_FourLeaves (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7260,7 +7260,7 @@ GameObject:
   - component: {fileID: 437171975}
   m_Layer: 0
   m_Name: TallGuy_2 (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7366,7 +7366,7 @@ GameObject:
   - component: {fileID: 437789630}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7474,7 +7474,7 @@ GameObject:
   - component: {fileID: 439242051}
   m_Layer: 0
   m_Name: Base_Tall (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7582,7 +7582,7 @@ GameObject:
   - component: {fileID: 443327453}
   m_Layer: 0
   m_Name: Base_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7690,7 +7690,7 @@ GameObject:
   - component: {fileID: 446585802}
   m_Layer: 0
   m_Name: Tree_FourLeaves (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7797,7 +7797,7 @@ GameObject:
   - component: {fileID: 448911990}
   m_Layer: 0
   m_Name: Long_2_Tall (23)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7905,7 +7905,7 @@ GameObject:
   - component: {fileID: 449242717}
   m_Layer: 0
   m_Name: TallGuy_2 (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8011,7 +8011,7 @@ GameObject:
   - component: {fileID: 449999983}
   m_Layer: 0
   m_Name: Square_Tall (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8119,7 +8119,7 @@ GameObject:
   - component: {fileID: 452573385}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8251,7 +8251,7 @@ GameObject:
   - component: {fileID: 453173630}
   m_Layer: 0
   m_Name: Long_1_Tall (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8345,6 +8345,113 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453173628}
   m_Mesh: {fileID: 7301436857095882930, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
+--- !u!1 &453311086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 453311087}
+  - component: {fileID: 453311090}
+  - component: {fileID: 453311089}
+  - component: {fileID: 453311088}
+  m_Layer: 0
+  m_Name: Tree_FourLeaves (4)
+  m_TagString: Ground
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453311087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453311086}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.6997812, y: 0.10152015, z: 0.10152016, w: 0.6997812}
+  m_LocalPosition: {x: -1340.7, y: 39.655994, z: 523.1}
+  m_LocalScale: {x: 640.0239, y: 640.0239, z: 679.739}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450652089057361}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 16.509}
+--- !u!64 &453311088
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453311086}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8380277876266866310, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
+--- !u!23 &453311089
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453311086}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -4770390735465466038, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
+  - {fileID: -8753481769234136891, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &453311090
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453311086}
+  m_Mesh: {fileID: 8380277876266866310, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
 --- !u!1 &454883980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2262224183777011953, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
@@ -8386,7 +8493,7 @@ GameObject:
   - component: {fileID: 457318718}
   m_Layer: 0
   m_Name: TallGuy_2 (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8519,7 +8626,7 @@ GameObject:
   - component: {fileID: 472797014}
   m_Layer: 0
   m_Name: Tent (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8625,7 +8732,7 @@ GameObject:
   - component: {fileID: 483252189}
   m_Layer: 0
   m_Name: Track (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8758,7 +8865,7 @@ GameObject:
   - component: {fileID: 503486966}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8866,7 +8973,7 @@ GameObject:
   - component: {fileID: 505116481}
   m_Layer: 0
   m_Name: Pyramid (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8972,7 +9079,7 @@ GameObject:
   - component: {fileID: 510861186}
   m_Layer: 0
   m_Name: Base_Tall (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9880,7 +9987,7 @@ GameObject:
   - component: {fileID: 523327587}
   m_Layer: 0
   m_Name: TallGuy_2 (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9986,7 +10093,7 @@ GameObject:
   - component: {fileID: 534532319}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10094,7 +10201,7 @@ GameObject:
   - component: {fileID: 551900378}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10201,7 +10308,7 @@ GameObject:
   - component: {fileID: 560535523}
   m_Layer: 0
   m_Name: Base (27)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10309,7 +10416,7 @@ GameObject:
   - component: {fileID: 560651635}
   m_Layer: 0
   m_Name: Tree_FourLeaves (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10416,7 +10523,7 @@ GameObject:
   - component: {fileID: 566269183}
   m_Layer: 0
   m_Name: HalfpipeLong (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10522,7 +10629,7 @@ GameObject:
   - component: {fileID: 580585932}
   m_Layer: 0
   m_Name: Long_2_Tall (26)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10630,7 +10737,7 @@ GameObject:
   - component: {fileID: 584736003}
   m_Layer: 0
   m_Name: Cylinder_Large (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10738,7 +10845,7 @@ GameObject:
   - component: {fileID: 587075675}
   m_Layer: 0
   m_Name: Square (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10846,7 +10953,7 @@ GameObject:
   - component: {fileID: 587917722}
   m_Layer: 0
   m_Name: Base (33)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11008,7 +11115,7 @@ GameObject:
   - component: {fileID: 603487803}
   m_Layer: 0
   m_Name: LowBuilding (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11114,7 +11221,7 @@ GameObject:
   - component: {fileID: 608864866}
   m_Layer: 0
   m_Name: Base (29)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11222,7 +11329,7 @@ GameObject:
   - component: {fileID: 609361784}
   m_Layer: 0
   m_Name: Cylinder (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11330,7 +11437,7 @@ GameObject:
   - component: {fileID: 622888720}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11437,7 +11544,7 @@ GameObject:
   - component: {fileID: 623845705}
   m_Layer: 0
   m_Name: Pyramid (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11597,7 +11704,7 @@ GameObject:
   - component: {fileID: 636009311}
   m_Layer: 0
   m_Name: TallGuy_2 (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11900,7 +12007,7 @@ GameObject:
   - component: {fileID: 659230643}
   m_Layer: 0
   m_Name: Tree_FourLeaves
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12007,7 +12114,7 @@ GameObject:
   - component: {fileID: 660662148}
   m_Layer: 0
   m_Name: Base_Tall (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12115,7 +12222,7 @@ GameObject:
   - component: {fileID: 665945166}
   m_Layer: 0
   m_Name: TallGuy_2 (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12383,7 +12490,7 @@ GameObject:
   - component: {fileID: 690857291}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12488,7 +12595,7 @@ GameObject:
   - component: {fileID: 692970097}
   m_Layer: 0
   m_Name: Long_2_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12714,7 +12821,7 @@ GameObject:
   - component: {fileID: 699671682}
   m_Layer: 0
   m_Name: TallGuy_2 (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12820,7 +12927,7 @@ GameObject:
   - component: {fileID: 707304548}
   m_Layer: 0
   m_Name: Long_2_Tall (27)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12928,7 +13035,7 @@ GameObject:
   - component: {fileID: 707810944}
   m_Layer: 0
   m_Name: Tree_FourLeaves (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12941,13 +13048,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707810942}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6910797, y: 0.14969604, z: 0.14969604, w: 0.6910797}
-  m_LocalPosition: {x: -1360.1001, y: 17.7, z: 464.4}
+  m_LocalRotation: {x: -0.366604, y: 0.60464996, z: 0.6046499, w: 0.36660403}
+  m_LocalPosition: {x: -1347.2, y: 17.7, z: 440.6}
   m_LocalScale: {x: 850.5075, y: 850.5075, z: 903.2836}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450652089057361}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 24.444}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 117.542}
 --- !u!64 &707810944
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13062,7 +13169,7 @@ GameObject:
   - component: {fileID: 711680590}
   m_Layer: 0
   m_Name: Base_Tall (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13170,7 +13277,7 @@ GameObject:
   - component: {fileID: 722086371}
   m_Layer: 0
   m_Name: Base (34)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13305,7 +13412,7 @@ GameObject:
   - component: {fileID: 734623279}
   m_Layer: 0
   m_Name: TallGuy_2 (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13527,7 +13634,7 @@ GameObject:
   - component: {fileID: 746455983}
   m_Layer: 0
   m_Name: Tree_FourLeaves (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13753,7 +13860,7 @@ GameObject:
   - component: {fileID: 750464505}
   m_Layer: 0
   m_Name: Cylinder_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13861,7 +13968,7 @@ GameObject:
   - component: {fileID: 752621255}
   m_Layer: 0
   m_Name: TallGuy_2 (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13994,7 +14101,7 @@ GameObject:
   - component: {fileID: 765165133}
   m_Layer: 0
   m_Name: Tree_FourLeaves (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14101,7 +14208,7 @@ GameObject:
   - component: {fileID: 773492710}
   m_Layer: 0
   m_Name: Base_Tall (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14209,7 +14316,7 @@ GameObject:
   - component: {fileID: 784197997}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14314,7 +14421,7 @@ GameObject:
   - component: {fileID: 786241795}
   m_Layer: 0
   m_Name: Base (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14449,7 +14556,7 @@ GameObject:
   - component: {fileID: 796359105}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14557,7 +14664,7 @@ GameObject:
   - component: {fileID: 799614239}
   m_Layer: 0
   m_Name: TallGuy_2 (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14717,7 +14824,7 @@ GameObject:
   - component: {fileID: 815660936}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14825,7 +14932,7 @@ GameObject:
   - component: {fileID: 817888144}
   m_Layer: 0
   m_Name: Tree_FourLeaves (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14932,7 +15039,7 @@ GameObject:
   - component: {fileID: 820204553}
   m_Layer: 0
   m_Name: Base (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15040,7 +15147,7 @@ GameObject:
   - component: {fileID: 824546545}
   m_Layer: 0
   m_Name: Cylinder (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15175,7 +15282,7 @@ GameObject:
   - component: {fileID: 840452584}
   m_Layer: 0
   m_Name: Cylinder (26)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15283,7 +15390,7 @@ GameObject:
   - component: {fileID: 844964082}
   m_Layer: 0
   m_Name: Tree_FourLeaves (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15417,7 +15524,7 @@ GameObject:
   - component: {fileID: 861412137}
   m_Layer: 0
   m_Name: Base_Tall (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15525,7 +15632,7 @@ GameObject:
   - component: {fileID: 863386620}
   m_Layer: 0
   m_Name: Long_1_Tall (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15660,7 +15767,7 @@ GameObject:
   - component: {fileID: 864295541}
   m_Layer: 0
   m_Name: Base (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15768,7 +15875,7 @@ GameObject:
   - component: {fileID: 879196498}
   m_Layer: 0
   m_Name: TallGuy_2 (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15874,7 +15981,7 @@ GameObject:
   - component: {fileID: 881440938}
   m_Layer: 0
   m_Name: Tree_FourLeaves (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15981,7 +16088,7 @@ GameObject:
   - component: {fileID: 882152016}
   m_Layer: 0
   m_Name: LowBuildingCurve (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16114,7 +16221,7 @@ GameObject:
   - component: {fileID: 891209329}
   m_Layer: 0
   m_Name: Crater
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16220,7 +16327,7 @@ GameObject:
   - component: {fileID: 891491158}
   m_Layer: 0
   m_Name: Crater (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16353,7 +16460,7 @@ GameObject:
   - component: {fileID: 894524969}
   m_Layer: 0
   m_Name: TallGuy_2 (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16459,7 +16566,7 @@ GameObject:
   - component: {fileID: 897470524}
   m_Layer: 0
   m_Name: TallGuy_2 (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16565,7 +16672,7 @@ GameObject:
   - component: {fileID: 899423816}
   m_Layer: 0
   m_Name: Track (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16698,7 +16805,7 @@ GameObject:
   - component: {fileID: 907895549}
   m_Layer: 0
   m_Name: Cylinder_Large
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16833,7 +16940,7 @@ GameObject:
   - component: {fileID: 936293413}
   m_Layer: 0
   m_Name: Base (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16972,7 +17079,7 @@ GameObject:
   - component: {fileID: 944656690}
   m_Layer: 0
   m_Name: Base (23)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17188,7 +17295,7 @@ GameObject:
   - component: {fileID: 973029619}
   m_Layer: 0
   m_Name: TallGuy_2 (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17294,7 +17401,7 @@ GameObject:
   - component: {fileID: 973695689}
   m_Layer: 0
   m_Name: Long_2_Tall (29)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17402,7 +17509,7 @@ GameObject:
   - component: {fileID: 974345039}
   m_Layer: 0
   m_Name: Base (37)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17510,7 +17617,7 @@ GameObject:
   - component: {fileID: 981415164}
   m_Layer: 0
   m_Name: Base_Tall (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17645,7 +17752,7 @@ GameObject:
   - component: {fileID: 983959905}
   m_Layer: 0
   m_Name: Base_Tall (23)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17753,7 +17860,7 @@ GameObject:
   - component: {fileID: 985530994}
   m_Layer: 0
   m_Name: Tent (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17859,7 +17966,7 @@ GameObject:
   - component: {fileID: 999936430}
   m_Layer: 0
   m_Name: Long_2_Tall (30)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17967,7 +18074,7 @@ GameObject:
   - component: {fileID: 1017523073}
   m_Layer: 0
   m_Name: Tent (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18073,7 +18180,7 @@ GameObject:
   - component: {fileID: 1017975057}
   m_Layer: 0
   m_Name: Base (31)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18181,7 +18288,7 @@ GameObject:
   - component: {fileID: 1018521942}
   m_Layer: 0
   m_Name: Tree_FourLeaves (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18288,7 +18395,7 @@ GameObject:
   - component: {fileID: 1033573687}
   m_Layer: 0
   m_Name: Long_2_Tall (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18396,7 +18503,7 @@ GameObject:
   - component: {fileID: 1036011998}
   m_Layer: 0
   m_Name: Long_1 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18531,7 +18638,7 @@ GameObject:
   - component: {fileID: 1043479970}
   m_Layer: 0
   m_Name: Base (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18639,7 +18746,7 @@ GameObject:
   - component: {fileID: 1044779903}
   m_Layer: 0
   m_Name: Tree_FourLeaves (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18746,7 +18853,7 @@ GameObject:
   - component: {fileID: 1050204733}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18854,7 +18961,7 @@ GameObject:
   - component: {fileID: 1061851546}
   m_Layer: 0
   m_Name: Square_Tall (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18962,7 +19069,7 @@ GameObject:
   - component: {fileID: 1085139201}
   m_Layer: 0
   m_Name: Long_2_Tall (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19070,7 +19177,7 @@ GameObject:
   - component: {fileID: 1099958916}
   m_Layer: 0
   m_Name: Base (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19205,7 +19312,7 @@ GameObject:
   - component: {fileID: 1101112402}
   m_Layer: 0
   m_Name: Cylinder (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19313,7 +19420,7 @@ GameObject:
   - component: {fileID: 1118223698}
   m_Layer: 0
   m_Name: Cylinder (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19421,7 +19528,7 @@ GameObject:
   - component: {fileID: 1124748671}
   m_Layer: 0
   m_Name: Tree_FourLeaves (26)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19690,7 +19797,7 @@ GameObject:
   - component: {fileID: 1164990041}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19799,7 +19906,7 @@ GameObject:
   - component: {fileID: 1188597168}
   m_Layer: 0
   m_Name: GemBuilding (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19927,7 +20034,7 @@ GameObject:
   - component: {fileID: 1189887231}
   m_Layer: 0
   m_Name: Base (30)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20035,7 +20142,7 @@ GameObject:
   - component: {fileID: 1195993879}
   m_Layer: 0
   m_Name: Base (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20143,7 +20250,7 @@ GameObject:
   - component: {fileID: 1205712255}
   m_Layer: 0
   m_Name: Base_Tall (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20251,7 +20358,7 @@ GameObject:
   - component: {fileID: 1205936547}
   m_Layer: 0
   m_Name: Long_1_Tall (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20386,7 +20493,7 @@ GameObject:
   - component: {fileID: 1214206540}
   m_Layer: 0
   m_Name: Base_Tall (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20494,7 +20601,7 @@ GameObject:
   - component: {fileID: 1229637314}
   m_Layer: 0
   m_Name: Long_2_Tall (28)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20599,7 +20706,7 @@ GameObject:
   - component: {fileID: 1234202009}
   m_Layer: 0
   m_Name: --CITY--
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20873,7 +20980,7 @@ GameObject:
   - component: {fileID: 1255792812}
   m_Layer: 0
   m_Name: Tree_FourLeaves (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20980,7 +21087,7 @@ GameObject:
   - component: {fileID: 1264909866}
   m_Layer: 0
   m_Name: Base (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21088,7 +21195,7 @@ GameObject:
   - component: {fileID: 1268622705}
   m_Layer: 0
   m_Name: TransportTube (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21194,7 +21301,7 @@ GameObject:
   - component: {fileID: 1273802662}
   m_Layer: 0
   m_Name: Long_2_Tall (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21302,7 +21409,7 @@ GameObject:
   - component: {fileID: 1280956407}
   m_Layer: 0
   m_Name: Base_Tall (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21410,7 +21517,7 @@ GameObject:
   - component: {fileID: 1294101858}
   m_Layer: 0
   m_Name: Base (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21518,7 +21625,7 @@ GameObject:
   - component: {fileID: 1301640101}
   m_Layer: 0
   m_Name: Base (32)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21626,7 +21733,7 @@ GameObject:
   - component: {fileID: 1304609279}
   m_Layer: 0
   m_Name: Cylinder (30)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21734,7 +21841,7 @@ GameObject:
   - component: {fileID: 1314130080}
   m_Layer: 0
   m_Name: Cylinder (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21842,7 +21949,7 @@ GameObject:
   - component: {fileID: 1317556267}
   m_Layer: 0
   m_Name: TallGuy_2 (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21975,7 +22082,7 @@ GameObject:
   - component: {fileID: 1319879396}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22083,7 +22190,7 @@ GameObject:
   - component: {fileID: 1320030338}
   m_Layer: 0
   m_Name: Cylinder (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22272,7 +22379,7 @@ GameObject:
   - component: {fileID: 1337062307}
   m_Layer: 0
   m_Name: Square_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22407,7 +22514,7 @@ GameObject:
   - component: {fileID: 1345227764}
   m_Layer: 0
   m_Name: Base_Tall (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22542,7 +22649,7 @@ GameObject:
   - component: {fileID: 1369626376}
   m_Layer: 0
   m_Name: Tree_FourLeaves (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22649,7 +22756,7 @@ GameObject:
   - component: {fileID: 1370598019}
   m_Layer: 0
   m_Name: Long_2 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22757,7 +22864,7 @@ GameObject:
   - component: {fileID: 1377277934}
   m_Layer: 0
   m_Name: Long_1_Tall (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22865,7 +22972,7 @@ GameObject:
   - component: {fileID: 1385040745}
   m_Layer: 0
   m_Name: Cylinder (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22973,7 +23080,7 @@ GameObject:
   - component: {fileID: 1388162533}
   m_Layer: 0
   m_Name: Long_2_Tall (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23081,7 +23188,7 @@ GameObject:
   - component: {fileID: 1398886931}
   m_Layer: 0
   m_Name: LowBuilding (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23187,7 +23294,7 @@ GameObject:
   - component: {fileID: 1400694206}
   m_Layer: 0
   m_Name: Square_Tall (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23295,7 +23402,7 @@ GameObject:
   - component: {fileID: 1423257629}
   m_Layer: 0
   m_Name: Base (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23403,7 +23510,7 @@ GameObject:
   - component: {fileID: 1423942846}
   m_Layer: 0
   m_Name: CrystalPath (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23509,7 +23616,7 @@ GameObject:
   - component: {fileID: 1426669081}
   m_Layer: 0
   m_Name: TallGuy_2 (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23615,7 +23722,7 @@ GameObject:
   - component: {fileID: 1428144061}
   m_Layer: 0
   m_Name: Pyramid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23721,7 +23828,7 @@ GameObject:
   - component: {fileID: 1436158006}
   m_Layer: 0
   m_Name: Long_2_Tall (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23829,7 +23936,7 @@ GameObject:
   - component: {fileID: 1446417433}
   m_Layer: 0
   m_Name: Cylinder (24)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23964,7 +24071,7 @@ GameObject:
   - component: {fileID: 1451304318}
   m_Layer: 0
   m_Name: Tree_FourLeaves (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24261,7 +24368,7 @@ GameObject:
   - component: {fileID: 1453916008}
   m_Layer: 0
   m_Name: TallGuy_2 (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24367,7 +24474,7 @@ GameObject:
   - component: {fileID: 1467336020}
   m_Layer: 0
   m_Name: Base (25)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24475,7 +24582,7 @@ GameObject:
   - component: {fileID: 1470257093}
   m_Layer: 0
   m_Name: TallGuy_2 (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24581,7 +24688,7 @@ GameObject:
   - component: {fileID: 1471783179}
   m_Layer: 0
   m_Name: Base_Tall (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24689,7 +24796,7 @@ GameObject:
   - component: {fileID: 1472540239}
   m_Layer: 0
   m_Name: Long_2_Tall (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24797,7 +24904,7 @@ GameObject:
   - component: {fileID: 1481574861}
   m_Layer: 0
   m_Name: Base (26)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24905,7 +25012,7 @@ GameObject:
   - component: {fileID: 1485986444}
   m_Layer: 0
   m_Name: Long_2_Tall (33)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25013,7 +25120,7 @@ GameObject:
   - component: {fileID: 1492720156}
   m_Layer: 0
   m_Name: TallGuy_2 (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25119,7 +25226,7 @@ GameObject:
   - component: {fileID: 1493415432}
   m_Layer: 0
   m_Name: Base (38)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25227,7 +25334,7 @@ GameObject:
   - component: {fileID: 1496489978}
   m_Layer: 0
   m_Name: Volcano (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25333,7 +25440,7 @@ GameObject:
   - component: {fileID: 1497354916}
   m_Layer: 0
   m_Name: Base (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25441,7 +25548,7 @@ GameObject:
   - component: {fileID: 1499379934}
   m_Layer: 0
   m_Name: Base (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25549,7 +25656,7 @@ GameObject:
   - component: {fileID: 1503327011}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25684,7 +25791,7 @@ GameObject:
   - component: {fileID: 1511362448}
   m_Layer: 0
   m_Name: Base_Tall (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25792,7 +25899,7 @@ GameObject:
   - component: {fileID: 1517939813}
   m_Layer: 0
   m_Name: Long_2_Tall (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25900,7 +26007,7 @@ GameObject:
   - component: {fileID: 1530911878}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26008,7 +26115,7 @@ GameObject:
   - component: {fileID: 1540332692}
   m_Layer: 0
   m_Name: Volcano
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26114,7 +26221,7 @@ GameObject:
   - component: {fileID: 1543370885}
   m_Layer: 0
   m_Name: Base (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26222,7 +26329,7 @@ GameObject:
   - component: {fileID: 1543924312}
   m_Layer: 0
   m_Name: Cylinder (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26465,7 +26572,7 @@ GameObject:
   - component: {fileID: 1577310034}
   m_Layer: 0
   m_Name: Long_2_Tall (31)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26573,7 +26680,7 @@ GameObject:
   - component: {fileID: 1584709166}
   m_Layer: 0
   m_Name: Tree_FourLeaves (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26680,7 +26787,7 @@ GameObject:
   - component: {fileID: 1593745472}
   m_Layer: 0
   m_Name: Tree_FourLeaves (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26787,7 +26894,7 @@ GameObject:
   - component: {fileID: 1599083159}
   m_Layer: 0
   m_Name: Crater (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26947,7 +27054,7 @@ GameObject:
   - component: {fileID: 1609683417}
   m_Layer: 0
   m_Name: Square_Tall (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27055,7 +27162,7 @@ GameObject:
   - component: {fileID: 1613804917}
   m_Layer: 0
   m_Name: Long_1_Tall (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27163,7 +27270,7 @@ GameObject:
   - component: {fileID: 1617839553}
   m_Layer: 0
   m_Name: Long_2_Tall (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27276,7 +27383,7 @@ GameObject:
   - component: {fileID: 1645967337}
   m_Layer: 0
   m_Name: Long_2_Tall (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27384,7 +27491,7 @@ GameObject:
   - component: {fileID: 1649137509}
   m_Layer: 0
   m_Name: Long_1_Tall (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27492,7 +27599,7 @@ GameObject:
   - component: {fileID: 1655967874}
   m_Layer: 0
   m_Name: Cylinder (28)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27627,7 +27734,7 @@ GameObject:
   - component: {fileID: 1660289481}
   m_Layer: 0
   m_Name: Long_2_Tall (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27735,7 +27842,7 @@ GameObject:
   - component: {fileID: 1672591838}
   m_Layer: 0
   m_Name: Tree_FourLeaves (24)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27896,7 +28003,7 @@ GameObject:
   - component: {fileID: 1690073921}
   m_Layer: 0
   m_Name: Tree_FourLeaves (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28045,7 +28152,7 @@ GameObject:
   - component: {fileID: 1692636190}
   m_Layer: 0
   m_Name: Cylinder (29)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28180,7 +28287,7 @@ GameObject:
   - component: {fileID: 1723892780}
   m_Layer: 0
   m_Name: Base_Tall (24)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28288,7 +28395,7 @@ GameObject:
   - component: {fileID: 1725719588}
   m_Layer: 0
   m_Name: HalfpipeLong
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28394,7 +28501,7 @@ GameObject:
   - component: {fileID: 1726260923}
   m_Layer: 0
   m_Name: Base_Tall (27)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28502,7 +28609,7 @@ GameObject:
   - component: {fileID: 1728543614}
   m_Layer: 0
   m_Name: Long_1_Tall (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28610,7 +28717,7 @@ GameObject:
   - component: {fileID: 1735775239}
   m_Layer: 0
   m_Name: Long_2_Tall (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28718,7 +28825,7 @@ GameObject:
   - component: {fileID: 1743819001}
   m_Layer: 0
   m_Name: Long_2_Tall (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28826,7 +28933,7 @@ GameObject:
   - component: {fileID: 1751888599}
   m_Layer: 0
   m_Name: Long_2_Tall (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29009,7 +29116,7 @@ GameObject:
   - component: {fileID: 1765108119}
   m_Layer: 0
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29117,7 +29224,7 @@ GameObject:
   - component: {fileID: 1765905447}
   m_Layer: 0
   m_Name: TallGuy_2 (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29223,7 +29330,7 @@ GameObject:
   - component: {fileID: 1771571245}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29330,7 +29437,7 @@ GameObject:
   - component: {fileID: 1772047610}
   m_Layer: 0
   m_Name: LowBuilding (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29463,7 +29570,7 @@ GameObject:
   - component: {fileID: 1781098635}
   m_Layer: 0
   m_Name: Tree_FourLeaves (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29624,7 +29731,7 @@ GameObject:
   - component: {fileID: 1800797265}
   m_Layer: 0
   m_Name: Long_1_Tall (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29759,7 +29866,7 @@ GameObject:
   - component: {fileID: 1804022882}
   m_Layer: 0
   m_Name: Long_2_Tall (25)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29867,7 +29974,7 @@ GameObject:
   - component: {fileID: 1811426981}
   m_Layer: 0
   m_Name: TallGuy_2 (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29973,7 +30080,7 @@ GameObject:
   - component: {fileID: 1818631048}
   m_Layer: 0
   m_Name: Long_1_Tall (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30081,7 +30188,7 @@ GameObject:
   - component: {fileID: 1825280326}
   m_Layer: 0
   m_Name: ThunderSphere (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30187,7 +30294,7 @@ GameObject:
   - component: {fileID: 1826494815}
   m_Layer: 0
   m_Name: Tree_FourLeaves (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30321,7 +30428,7 @@ GameObject:
   - component: {fileID: 1833318288}
   m_Layer: 0
   m_Name: Base (20)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30429,7 +30536,7 @@ GameObject:
   - component: {fileID: 1837215308}
   m_Layer: 0
   m_Name: Base_Tall (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30537,7 +30644,7 @@ GameObject:
   - component: {fileID: 1838363598}
   m_Layer: 0
   m_Name: Base (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30672,7 +30779,7 @@ GameObject:
   - component: {fileID: 1839747600}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30780,7 +30887,7 @@ GameObject:
   - component: {fileID: 1841357890}
   m_Layer: 0
   m_Name: LowBuilding (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30886,7 +30993,7 @@ GameObject:
   - component: {fileID: 1852734186}
   m_Layer: 0
   m_Name: Tree_FourLeaves (25)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31020,7 +31127,7 @@ GameObject:
   - component: {fileID: 1858981068}
   m_Layer: 0
   m_Name: HalfpipeLong (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31126,7 +31233,7 @@ GameObject:
   - component: {fileID: 1861420134}
   m_Layer: 0
   m_Name: Long_2_Tall (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31234,7 +31341,7 @@ GameObject:
   - component: {fileID: 1864084237}
   m_Layer: 0
   m_Name: Long_1_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31342,7 +31449,7 @@ GameObject:
   - component: {fileID: 1870467472}
   m_Layer: 0
   m_Name: Base (35)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31477,7 +31584,7 @@ GameObject:
   - component: {fileID: 1880245999}
   m_Layer: 0
   m_Name: Long_2_Tall (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31585,7 +31692,7 @@ GameObject:
   - component: {fileID: 1881679931}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31693,7 +31800,7 @@ GameObject:
   - component: {fileID: 1891150175}
   m_Layer: 0
   m_Name: Square_Tall (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31828,7 +31935,7 @@ GameObject:
   - component: {fileID: 1893207472}
   m_Layer: 0
   m_Name: Long_2_Tall (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31936,7 +32043,7 @@ GameObject:
   - component: {fileID: 1906747374}
   m_Layer: 0
   m_Name: Tree_FourLeaves (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32043,7 +32150,7 @@ GameObject:
   - component: {fileID: 1907505767}
   m_Layer: 0
   m_Name: TallGuy_2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32149,7 +32256,7 @@ GameObject:
   - component: {fileID: 1907975684}
   m_Layer: 0
   m_Name: Cylinder (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32257,7 +32364,7 @@ GameObject:
   - component: {fileID: 1929167632}
   m_Layer: 0
   m_Name: LowBuildingCurve (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32390,7 +32497,7 @@ GameObject:
   - component: {fileID: 1943294938}
   m_Layer: 0
   m_Name: Tree_FourLeaves (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32497,7 +32604,7 @@ GameObject:
   - component: {fileID: 1952744216}
   m_Layer: 0
   m_Name: Long_2_Tall (24)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32605,7 +32712,7 @@ GameObject:
   - component: {fileID: 1960443916}
   m_Layer: 0
   m_Name: Base_Tall (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32713,7 +32820,7 @@ GameObject:
   - component: {fileID: 1968065964}
   m_Layer: 0
   m_Name: Base_Tall (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32848,7 +32955,7 @@ GameObject:
   - component: {fileID: 1970444910}
   m_Layer: 0
   m_Name: Track
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32954,7 +33061,7 @@ GameObject:
   - component: {fileID: 1976083598}
   m_Layer: 0
   m_Name: Cylinder (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33062,7 +33169,7 @@ GameObject:
   - component: {fileID: 1979078050}
   m_Layer: 0
   m_Name: Square_Tall (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33170,7 +33277,7 @@ GameObject:
   - component: {fileID: 1982324613}
   m_Layer: 0
   m_Name: Tree_FourLeaves (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33277,7 +33384,7 @@ GameObject:
   - component: {fileID: 1983018202}
   m_Layer: 0
   m_Name: Cylinder (27)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33412,7 +33519,7 @@ GameObject:
   - component: {fileID: 1985008149}
   m_Layer: 0
   m_Name: TallGuy_2 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33545,7 +33652,7 @@ GameObject:
   - component: {fileID: 2000124092}
   m_Layer: 0
   m_Name: Base (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33653,7 +33760,7 @@ GameObject:
   - component: {fileID: 2018486191}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33760,7 +33867,7 @@ GameObject:
   - component: {fileID: 2021102353}
   m_Layer: 0
   m_Name: Long_2 (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33868,7 +33975,7 @@ GameObject:
   - component: {fileID: 2021405922}
   m_Layer: 0
   m_Name: TallGuy_2 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33974,7 +34081,7 @@ GameObject:
   - component: {fileID: 2023457035}
   m_Layer: 0
   m_Name: Base (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34082,7 +34189,7 @@ GameObject:
   - component: {fileID: 2032035651}
   m_Layer: 0
   m_Name: Cylinder (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34244,7 +34351,7 @@ GameObject:
   - component: {fileID: 2039359797}
   m_Layer: 0
   m_Name: Tent (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34350,7 +34457,7 @@ GameObject:
   - component: {fileID: 2049164969}
   m_Layer: 0
   m_Name: Cylinder (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34566,7 +34673,7 @@ GameObject:
   - component: {fileID: 2073985903}
   m_Layer: 0
   m_Name: Cylinder (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34674,7 +34781,7 @@ GameObject:
   - component: {fileID: 2077159263}
   m_Layer: 0
   m_Name: Cylinder (31)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34782,7 +34889,7 @@ GameObject:
   - component: {fileID: 2077788819}
   m_Layer: 0
   m_Name: Long_1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34890,7 +34997,7 @@ GameObject:
   - component: {fileID: 2090445297}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34998,7 +35105,7 @@ GameObject:
   - component: {fileID: 2093154373}
   m_Layer: 0
   m_Name: Base_Tall (26)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35106,7 +35213,7 @@ GameObject:
   - component: {fileID: 2107172959}
   m_Layer: 0
   m_Name: Base_Tall (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35272,7 +35379,7 @@ GameObject:
   - component: {fileID: 2110764435}
   m_Layer: 0
   m_Name: Base (22)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35380,7 +35487,7 @@ GameObject:
   - component: {fileID: 2112931620}
   m_Layer: 0
   m_Name: Long_2_Tall (21)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35488,7 +35595,7 @@ GameObject:
   - component: {fileID: 2113003200}
   m_Layer: 0
   m_Name: Tree_FourLeaves (19)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35595,7 +35702,7 @@ GameObject:
   - component: {fileID: 2123889872}
   m_Layer: 0
   m_Name: Base (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35703,7 +35810,7 @@ GameObject:
   - component: {fileID: 2133893496}
   m_Layer: 0
   m_Name: Tent
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35809,7 +35916,7 @@ GameObject:
   - component: {fileID: 2134205049}
   m_Layer: 0
   m_Name: Crater (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35915,7 +36022,7 @@ GameObject:
   - component: {fileID: 2136950561}
   m_Layer: 0
   m_Name: Cylinder (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36179,7 +36286,7 @@ GameObject:
   - component: {fileID: 2144569931}
   m_Layer: 0
   m_Name: Long_2_Tall (18)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36288,7 +36395,7 @@ GameObject:
   - component: {fileID: 2145075754}
   m_Layer: 0
   m_Name: GemBuilding (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36447,7 +36554,7 @@ GameObject:
   - component: {fileID: 2991632183406151888}
   m_Layer: 0
   m_Name: Long_2_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36572,6 +36679,7 @@ Transform:
   - {fileID: 7301060298881667726}
   - {fileID: 1906747373}
   - {fileID: 707810943}
+  - {fileID: 453311087}
   - {fileID: 1255792811}
   - {fileID: 4397654029133651683}
   - {fileID: 6622822679108891636}
@@ -36780,7 +36888,7 @@ GameObject:
   - component: {fileID: 9109443729121477235}
   m_Layer: 0
   m_Name: Volcano
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36857,7 +36965,7 @@ GameObject:
   - component: {fileID: 7756958772529889848}
   m_Layer: 0
   m_Name: Cylinder_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36920,7 +37028,7 @@ GameObject:
   - component: {fileID: 5501867408113705642}
   m_Layer: 0
   m_Name: Track
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36939,7 +37047,7 @@ GameObject:
   - component: {fileID: 6622822679108891637}
   m_Layer: 0
   m_Name: TrueHalfpipe
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37000,7 +37108,7 @@ GameObject:
   - component: {fileID: 8591347840089134627}
   m_Layer: 0
   m_Name: Tree_ThreeLeaves
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37019,7 +37127,7 @@ GameObject:
   - component: {fileID: 7232778425136119096}
   m_Layer: 0
   m_Name: Pyramid
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37038,7 +37146,7 @@ GameObject:
   - component: {fileID: 8835374810897824116}
   m_Layer: 0
   m_Name: CrystalPath
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37080,7 +37188,7 @@ GameObject:
   - component: {fileID: 8765837630355807377}
   m_Layer: 0
   m_Name: LowBuildingCurve
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37200,7 +37308,7 @@ GameObject:
   - component: {fileID: 7067855843664528989}
   m_Layer: 0
   m_Name: Base_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37219,7 +37327,7 @@ GameObject:
   - component: {fileID: 7027811409740619017}
   m_Layer: 0
   m_Name: TallGuy_2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37342,7 +37450,7 @@ GameObject:
   - component: {fileID: 7508024903390476512}
   m_Layer: 0
   m_Name: Square_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37428,7 +37536,7 @@ GameObject:
   - component: {fileID: 7202271456324342118}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37756,7 +37864,7 @@ GameObject:
   - component: {fileID: 6856132772615425157}
   m_Layer: 0
   m_Name: GrindrailGround
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37849,7 +37957,7 @@ GameObject:
   - component: {fileID: 8087987544607639794}
   m_Layer: 0
   m_Name: Long_2.001
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38188,7 +38296,7 @@ GameObject:
   - component: {fileID: 7971178676851948935}
   m_Layer: 0
   m_Name: TransportTube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38207,7 +38315,7 @@ GameObject:
   - component: {fileID: 6813539265759724255}
   m_Layer: 0
   m_Name: Long_1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38226,7 +38334,7 @@ GameObject:
   - component: {fileID: 6364262638288694580}
   m_Layer: 0
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38593,7 +38701,7 @@ GameObject:
   - component: {fileID: 8179700070839294261}
   m_Layer: 0
   m_Name: Long_1_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38869,7 +38977,7 @@ GameObject:
   - component: {fileID: 7212190920384772334}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39146,7 +39254,7 @@ GameObject:
   - component: {fileID: 7232886345074571421}
   m_Layer: 0
   m_Name: TallGuy_1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39217,7 +39325,7 @@ GameObject:
   - component: {fileID: 7384629245185020682}
   m_Layer: 0
   m_Name: Tree_FourLeaves
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39323,7 +39431,7 @@ GameObject:
   - component: {fileID: 7489190910023219063}
   m_Layer: 0
   m_Name: ThunderSphere
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39394,7 +39502,7 @@ GameObject:
   - component: {fileID: 7525906782264923665}
   m_Layer: 0
   m_Name: Long_2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39501,7 +39609,7 @@ GameObject:
   - component: {fileID: 7834257027248341945}
   m_Layer: 0
   m_Name: HalfpipeLong
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39690,7 +39798,7 @@ GameObject:
   - component: {fileID: 8809413894886607553}
   m_Layer: 0
   m_Name: Cylinder_Large
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39746,7 +39854,7 @@ GameObject:
   - component: {fileID: 8165946228720593509}
   m_Layer: 0
   m_Name: Tent
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39840,7 +39948,7 @@ GameObject:
   - component: {fileID: 8390820356640337128}
   m_Layer: 0
   m_Name: Crater
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39919,7 +40027,7 @@ GameObject:
   - component: {fileID: 8612154967007393373}
   m_Layer: 0
   m_Name: GrindrailFloating
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40084,7 +40192,7 @@ GameObject:
   - component: {fileID: 8949452389579995083}
   m_Layer: 0
   m_Name: Cylinder_Large_Tall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40196,7 +40304,7 @@ GameObject:
   - component: {fileID: 9149722575216660392}
   m_Layer: 0
   m_Name: LowBuilding
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
