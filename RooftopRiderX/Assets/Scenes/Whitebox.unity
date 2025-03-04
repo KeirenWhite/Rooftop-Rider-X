@@ -320,6 +320,22 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.009861064
       objectReference: {fileID: 0}
+    - target: {fileID: 5784263024909093227, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Size.z
+      value: 1.025888
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784263024909093227, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Center.x
+      value: 0.000001543225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784263024909093227, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Center.y
+      value: -0.024264941
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784263024909093227, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Center.z
+      value: -0.016234616
+      objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1020.1

@@ -83,59 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1175226655387250599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8349971594009907621}
-  - component: {fileID: 5784263024909093227}
-  m_Layer: 0
-  m_Name: BikeDownPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8349971594009907621
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175226655387250599}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.68, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7832394100825699236}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5784263024909093227
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175226655387250599}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.049527735, z: 0.17157072}
-  m_Center: {x: 0.0000015432935, y: -0.024263952, z: 0.00015638511}
 --- !u!1 &1586977108830987009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1552,6 @@ Transform:
   - {fileID: 2795560351776540963}
   - {fileID: 3973034015399223531}
   - {fileID: 1002015566502546422}
-  - {fileID: 8349971594009907621}
   m_Father: {fileID: 6753616344642384908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &841812855980674189
@@ -1698,12 +1644,14 @@ MonoBehaviour:
     raycast: {fileID: 3857689941614463802}
     maxDistance: 0
     radius: 0
-  bikeDownCol: {fileID: 5784263024909093227}
+  bikeDownCol: {fileID: 7412434982887150772}
+  rb: {fileID: 0}
   boostScript: {fileID: 9169183369952577697}
   leanMode: 1
   bikeVisuals: {fileID: 3267159709697827920}
   visualsTransformTarget: {fileID: 6136018837992285226}
   landTrickAudio: {fileID: 7583663520827551752}
+  framesUntilBikeDown: 30
 --- !u!33 &5127109234020144523
 MeshFilter:
   m_ObjectHideFlags: 0
