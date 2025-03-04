@@ -394,6 +394,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f92e2d57-cf58-4476-854f-de9026af54d1",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "9b4970a0-7435-4404-9667-f3f568f3f283",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -428,7 +439,7 @@
                 {
                     "name": "",
                     "id": "9cf82db5-8a99-4adc-baa1-2ed0f71e7766",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
