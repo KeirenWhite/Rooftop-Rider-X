@@ -408,7 +408,7 @@ public class CarRaycast : MonoBehaviour
         if (input.grounded > 1)
         {
             //jump
-            rb.AddForce(Vector3.up * jumpStrength * input.jump);
+            rb.AddForce(transform.rotation * (Vector3.up * jumpStrength * input.jump));
         }
     }
 

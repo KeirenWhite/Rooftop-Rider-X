@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     public float Movespeed = 2;
     public float reverseSpeedMult = 2;
     public float Lookspeed = 120;
+    [SerializeField] private float airLookSpeed = 240f;
     private float RecallCameraY = 0; //this is so the camera doesn't rollover with the car
 
     [SerializeField] private float offsetAmount = 10f;
@@ -89,7 +90,7 @@ public class CameraController : MonoBehaviour
         if (lookat != null)
         {
             Quaternion rotTarget = Quaternion.LookRotation(lookat.transform.position - this.transform.position);
-            this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotTarget, Lookspeed * Time.deltaTime);
+            this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, rotTarget, (bike.input.grounded == 0 ? airLookSpeed : Lookspeed) * Time.deltaTime);
         }       
 
     }
