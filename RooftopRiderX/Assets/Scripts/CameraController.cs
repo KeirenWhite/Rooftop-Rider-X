@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour
     private float RecallCameraY = 0; //this is so the camera doesn't rollover with the car
 
     [SerializeField] private float offsetAmount = 10f;
+    [SerializeField] private float reachAroundAmount = 0.5f;
 
     public CarRaycast bike = null;
 
@@ -55,12 +56,26 @@ public class CameraController : MonoBehaviour
             Vector3 cameraMovePos;
             if (lookat != null)
             {
-                Vector3 camMoveOffset = new Vector3(0f, steer.y, steer.x);
-                camMoveOffset.x = camMoveOffset.magnitude / 5;
-                camMoveOffset *= offsetAmount;
+                float airReachAroundReduction = bike.input.grounded == 0 ? -1f : 1f;
 
+                Vector3 camMoveOffset = new Vector3(steer.x, steer.y, 0f);
+                camMoveOffset.z = new Vector2(steer.x, steer.y).magnitude * (reachAroundAmount * airReachAroundReduction);
+                camMoveOffset *= offsetAmount;
+                camMoveOffset = Quaternion.AngleAxis(bike.transform.eulerAngles.y, Vector3.up) * camMoveOffset;
+
+                Vector3 pushAwayIfClose = Vector3.zero;
+                if (bike.rb.velocity.magnitude < 10f)
+                {
+                    pushAwayIfClose = Quaternion.AngleAxis(bike.transform.eulerAngles.y, Vector3.up) * (Vector3.back * 3);
+                    if (bike.input.grounded == 0)
+                    {
+                        pushAwayIfClose = Quaternion.AngleAxis(bike.transform.eulerAngles.y, Vector3.up) * (Vector3.back * 10);
+                    }
+                }
                 moveTargetY = lookat.transform.position.y + RecallCameraY;
                 cameraMovePos = new Vector3(moveto.transform.position.x, moveTargetY, moveto.transform.position.z) + camMoveOffset;
+                cameraMovePos += pushAwayIfClose;
+
                 this.transform.position = Vector3.Lerp(this.transform.position, cameraMovePos, Movespeed * Time.deltaTime);
             }
             else

@@ -85,7 +85,7 @@ public class CarRaycast : MonoBehaviour
     public WheelInfo FR = WheelInfo.CreateDefault();
     public WheelInfo BL = WheelInfo.CreateDefault();
     [SerializeField] private Collider bikeDownCol;
-    private Rigidbody rb = null;
+    [HideInInspector] public Rigidbody rb = null;
     private float origDrag;
     private float origAngDrag;
     [HideInInspector] public InputInfo input;
