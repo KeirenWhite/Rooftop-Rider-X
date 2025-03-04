@@ -344,7 +344,7 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
-            rb.drag = 0.12f;
+            rb.drag = 0.22f;
             rb.angularDrag = 3f;
             AirFrameStabilize();
             if (input.roll > 0)

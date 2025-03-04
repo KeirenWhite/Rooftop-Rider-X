@@ -368,6 +368,18 @@ PrefabInstance:
       propertyPath: landTrickAudio
       value: 
       objectReference: {fileID: 645618645}
+    - target: {fileID: 7412434982887150772, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Size.z
+      value: 1.0312755
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412434982887150772, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Center.x
+      value: -4.8322614e-13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412434982887150772, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Center.z
+      value: -0.000035076537
+      objectReference: {fileID: 0}
     - target: {fileID: 7856665823438781419, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_Name
       value: BikePrefab
