@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: airTurnMult
-      value: 0.45
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: landTrickAudio
