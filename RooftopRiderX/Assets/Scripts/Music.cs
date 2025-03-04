@@ -103,7 +103,7 @@ public class Music : MonoBehaviour
             audioSourceLow.volume = 1;
             audioSourceMid.volume = 1;
             audioSourceMidSolo.volume = 0;
-            audioSourceTop.volume = Mathf.Lerp(startTop, 1, currentTime / duration);
+            audioSourceTop.volume = Mathf.Lerp(startTop, 1, currentTime);
             deltaTransition = 3;
         }
 
