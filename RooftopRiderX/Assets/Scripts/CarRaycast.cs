@@ -323,7 +323,8 @@ public class CarRaycast : MonoBehaviour
 
             boostScript.RefillBoost(trickScore[0] + trickScore[1] + trickScore[2]);
             trickTrack = Vector3.zero;
-            landTrickAudio.Play();
+            if (trickScore[0] + trickScore[1] + trickScore[2] > 5)
+                landTrickAudio.Play();
         }
     }
 
