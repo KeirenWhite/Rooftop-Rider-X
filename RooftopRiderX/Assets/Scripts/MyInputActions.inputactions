@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "CamSteer",
+                    "type": "Value",
+                    "id": "4bf42f5c-1227-4777-9b5f-7b82c4d21e16",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -424,6 +433,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Boost",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4711da0a-c7e8-418f-b3ad-2723c755c674",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamSteer",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

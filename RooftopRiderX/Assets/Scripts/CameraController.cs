@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
@@ -11,7 +12,11 @@ public class CameraController : MonoBehaviour
     public float Lookspeed = 120;
     private float RecallCameraY = 0; //this is so the camera doesn't rollover with the car
 
+    [SerializeField] private float offsetAmount = 10f;
+
     public CarRaycast bike = null;
+
+    private Vector2 steer;
 
     private void Start()
     {
@@ -19,6 +24,13 @@ public class CameraController : MonoBehaviour
         if (moveto != null)
             RecallCameraY = Mathf.Abs(moveto.transform.position.y - lookat.transform.position.y);
     }
+
+    private void OnCamSteer(InputValue value)
+    {
+        steer = value.Get<Vector2>();
+        Debug.Log(steer);
+    }
+
     private void LateUpdate()
     {
         //the new position, but keep the camera at original y so it doesn't flip with the car
@@ -28,8 +40,6 @@ public class CameraController : MonoBehaviour
             Vector3 cameraMovePos;
             if (lookat != null)
             {
-                
-
                 moveTargetY = lookat.transform.position.y + RecallCameraY;
                 cameraMovePos = new Vector3(farmoveto.transform.position.x, moveTargetY, farmoveto.transform.position.z);
                 this.transform.position = Vector3.Lerp(this.transform.position, cameraMovePos, (Movespeed * reverseSpeedMult) * Time.deltaTime);
@@ -45,8 +55,12 @@ public class CameraController : MonoBehaviour
             Vector3 cameraMovePos;
             if (lookat != null)
             {
+                Vector3 camMoveOffset = new Vector3(0f, steer.y, steer.x);
+                camMoveOffset.x = camMoveOffset.magnitude / 5;
+                camMoveOffset *= offsetAmount;
+
                 moveTargetY = lookat.transform.position.y + RecallCameraY;
-                cameraMovePos = new Vector3(moveto.transform.position.x, moveTargetY, moveto.transform.position.z);
+                cameraMovePos = new Vector3(moveto.transform.position.x, moveTargetY, moveto.transform.position.z) + camMoveOffset;
                 this.transform.position = Vector3.Lerp(this.transform.position, cameraMovePos, Movespeed * Time.deltaTime);
             }
             else
