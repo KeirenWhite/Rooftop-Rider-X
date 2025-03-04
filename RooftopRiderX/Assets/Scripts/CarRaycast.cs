@@ -71,6 +71,7 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private float stabilizationSensitivity = 60f;
     [SerializeField] private float airStabilizationSensitivityZ = 10f;
     [SerializeField] private float airTurnMult = 0.7f;
+    [SerializeField] private float newDrag = 4f;
     public float airTurnSpeed = 1.5f;
     public float airFlipSpeed = 2f;
     public float wheelieSpeed = 100f;
@@ -328,6 +329,11 @@ public class CarRaycast : MonoBehaviour
     {
 
         Vector2 inputVal = new Vector2(input.steer.x, input.flip.y);
+
+        if (inputVal.magnitude == 0 && input.grounded == 0)
+        {
+            rb.angularVelocity = Vector3.MoveTowards(rb.angularVelocity, Vector3.zero, Time.deltaTime * newDrag);
+        }
 
         if (input.grounded > 1)
         {
