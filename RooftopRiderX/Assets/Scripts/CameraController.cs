@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         //the new position, but keep the camera at original y so it doesn't flip with the car
-        if (farmoveto != null && bike.input.reverse > 0)
+        if (farmoveto != null && bike.input.reverse > 0 && bike.input.grounded > 0)
         {
             float moveTargetY;
             Vector3 cameraMovePos;

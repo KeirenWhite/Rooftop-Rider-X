@@ -131,7 +131,7 @@ public class CarRaycast : MonoBehaviour
         FR.maxDistance = FR.anchor.transform.position.y - FR.raycast.transform.position.y;
         BL.maxDistance = BL.anchor.transform.position.y - BL.raycast.transform.position.y;
 
-        coroutine = WaitForTurn(1);
+        //coroutine = WaitForTurn(1);
     }
     private void FixedUpdate()
     {
@@ -344,22 +344,14 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
-            rb.drag = 0.3f;
-            //rb.angularDrag = 0f;
+            rb.drag = 0.12f;
+            rb.angularDrag = 3f;
             AirFrameStabilize();
             if (input.roll > 0)
             {
 
                 Vector3 torque = new Vector3(inputVal.y, 0, inputVal.x);
-                if (input.steer.x > 0 || input.flip.y > 0 || input.steer.x < 0 || input.flip.y < 0)
-                {
-                    rb.angularDrag = 3f;
-                }
-                else
-                {
-                    StartCoroutine(coroutine);
-                    rb.angularDrag = 0f;
-                }
+               
 
                 rb.angularVelocity += (transform.rotation * torque) * airTurnMult;
 
@@ -371,15 +363,7 @@ public class CarRaycast : MonoBehaviour
                 if (input.downed == false)
                 {
                     Vector3 torque = new Vector3(inputVal.y, inputVal.x, 0);
-                    if(input.steer.x > 0 || input.flip.y > 0 || input.steer.x < 0 || input.flip.y < 0)
-                    {
-                        rb.angularDrag = 3f;
-                    }
-                    else
-                    {
-                        StartCoroutine(coroutine);
-                        rb.angularDrag = 0f;
-                    }
+                 
 
                     rb.angularVelocity += transform.rotation * torque * airTurnMult;
                 }
@@ -548,11 +532,11 @@ public class CarRaycast : MonoBehaviour
        
     }
 
-    private IEnumerator WaitForTurn(float waitTime)
+    /*private IEnumerator WaitForTurn(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         rb.angularDrag = 0f;
-    }
+    }*/
 
    /* private void OnDrawGizmos()
     {
