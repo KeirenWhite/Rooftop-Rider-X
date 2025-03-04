@@ -332,7 +332,7 @@ public class CarRaycast : MonoBehaviour
         if (input.grounded > 1)
         {
             rb.drag = origDrag;
-            //rb.angularDrag = origAngDrag;
+            rb.angularDrag = origAngDrag;
             FrameStabilize();
 
             //turn the car
@@ -342,7 +342,7 @@ public class CarRaycast : MonoBehaviour
         else
         {
             rb.drag = 0.3f;
-            //rb.angularDrag = 1f;
+            rb.angularDrag = 3f;
             AirFrameStabilize();
             if (input.roll > 0)
             {
