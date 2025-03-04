@@ -93,6 +93,8 @@ public class CarRaycast : MonoBehaviour
     private Quaternion initialRotationWheelF;
     private Quaternion initialRotationHB;
     //private float maxRot = 45f;
+    //public ConstantForce constantF;
+    [SerializeField] private float extraGravity = 100f;
 
     private bool wasOnGround = false;
     private Quaternion holdoverRotation;
@@ -334,6 +336,7 @@ public class CarRaycast : MonoBehaviour
 
         if (input.grounded > 1)
         {
+            //constantF.enabled = false;
             rb.drag = origDrag;
             rb.angularDrag = origAngDrag;
             FrameStabilize();
@@ -344,6 +347,7 @@ public class CarRaycast : MonoBehaviour
         }
         else
         {
+            //constantF.enabled = true;
             rb.drag = 0.22f;
             rb.angularDrag = 3f;
             AirFrameStabilize();
@@ -491,7 +495,12 @@ public class CarRaycast : MonoBehaviour
             holdoverRotation = transform.rotation;
         }
         else if (input.grounded == 0)
+        {
             wasInAir = true;
+
+            if (rb.velocity.y < 0 && !input.downed)
+                rb.AddForce(new Vector3(0f, Time.deltaTime * -extraGravity, 0f), ForceMode.Acceleration);
+        }
             
     }
 
