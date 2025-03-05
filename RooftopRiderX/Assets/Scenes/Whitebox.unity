@@ -25109,8 +25109,8 @@ MonoBehaviour:
   farmoveto: {fileID: 941456194}
   Movespeed: 2
   reverseSpeedMult: 2
-  Lookspeed: 120
-  airLookSpeed: 240
+  Lookspeed: 180
+  airLookSpeed: 300
   offsetAmount: 15
   reachAroundAmount: 0.5
   bike: {fileID: 645618647}
