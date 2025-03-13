@@ -52,8 +52,11 @@ public class CarRaycast : MonoBehaviour
         public TrailRenderer tire;
         public TrailRenderer airTire;
         public GameObject raycast;      //how far down to ground to raycast        
+        public GameObject groundRaycast;
         [HideInInspector]
         public float maxDistance;       //calculated in start (anchor - raycastTo position)        
+        [HideInInspector]
+        public float groundedMaxDistance;
         [HideInInspector]
         public float radius;            //calculated in start (mesh bounds)
 
@@ -109,9 +112,6 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private GameObject visualsTransformTarget;
     //SerializeField] private float leanSpeedModifier = 1f;
 
-    [SerializeField] private GameObject frontAnchor;
-    [SerializeField] private GameObject backAnchor;
-
     [Header("Sound Effects")]
     public AudioSource landTrickAudio;
    
@@ -132,13 +132,12 @@ public class CarRaycast : MonoBehaviour
         FR.radius = FR.wheel.GetComponent<Renderer>().bounds.extents.y;
         BL.radius = BL.wheel.GetComponent<Renderer>().bounds.extents.y;
 
-        // set anchors
-        FR.anchor = frontAnchor;
-        BL.anchor = backAnchor;
-
         //distance to raycast to ground
         FR.maxDistance = FR.anchor.transform.position.y - FR.raycast.transform.position.y;
         BL.maxDistance = BL.anchor.transform.position.y - BL.raycast.transform.position.y;
+
+        FR.groundedMaxDistance = FR.anchor.transform.position.y - FR.groundRaycast.transform.position.y;
+        BL.groundedMaxDistance = BL.anchor.transform.position.y - BL.groundRaycast.transform.position.y;
 
         //coroutine = WaitForTurn(1);
     }
@@ -191,6 +190,7 @@ public class CarRaycast : MonoBehaviour
     }
 
     [SerializeField] private float spherecastRadius = 0.25f;
+    [SerializeField] private float suctionPower = 10f;
     private void FrameStabilize()
     {
         RaycastHit backHit;
@@ -199,6 +199,7 @@ public class CarRaycast : MonoBehaviour
         Vector3 groundNormal = Vector3.up;
 
         bool[] frontBackIsHitting = new bool[2];
+
 
         if (Physics.SphereCast(BL.anchor.transform.position, spherecastRadius, -this.transform.up, out backHit, BL.maxDistance))
         {
@@ -222,15 +223,30 @@ public class CarRaycast : MonoBehaviour
 
         if (frontBackIsHitting[0] || frontBackIsHitting[1])
         {
+            AirStabilizeTimer(true);
             transform.rotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
         }
 
+        //Debug.Log(frontBackIsHitting[0] + ", " + frontBackIsHitting[1]);
+
+        if (frontBackIsHitting[0] && frontBackIsHitting[1])
+        {
+            Vector3 averageNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
+
+            //Debug.Log(averageNormal.ToString());
+
+            rb.AddForce(suctionPower * -averageNormal, ForceMode.Force);
+        }
 
         //Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
     }
 
     void AirFrameStabilize()
     {
+        AirStabilizeTimer();
+        if (airStabilizeTimer > 0f)
+            return;
+
         RaycastHit hit;
 
 
@@ -244,6 +260,19 @@ public class CarRaycast : MonoBehaviour
 
 
         //Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
+    }
+
+    private float airStabilizeTimer = 0f;
+    [SerializeField] private float airStabilizeWaitTime = 1f;
+    private void AirStabilizeTimer(bool reset = false, float overrideWaitTime = -1f) // if false, increments timer; if true, resets
+    {
+        if (reset)
+        {
+            airStabilizeTimer = overrideWaitTime == -1f ? airStabilizeWaitTime : overrideWaitTime;
+            return;
+        }
+
+        airStabilizeTimer -= Time.deltaTime;
     }
 
     private void OnGUI()
@@ -261,6 +290,7 @@ public class CarRaycast : MonoBehaviour
     private void OnSteer(InputValue value)
     {
         input.steer = value.Get<Vector2>();
+        AirStabilizeTimer(true, 0.5f);
     }
     private void OnGas(InputValue value)
     {
@@ -289,6 +319,7 @@ public class CarRaycast : MonoBehaviour
     private void OnJump(InputValue value)
     {
         input.jump = value.Get<float>();
+        AirStabilizeTimer(true);
     }
 
     /*private void onWheelie(InputValue value)
@@ -371,6 +402,7 @@ public class CarRaycast : MonoBehaviour
             //constantF.enabled = false;
             rb.drag = origDrag;
             rb.angularDrag = origAngDrag;
+            
             FrameStabilize();
 
             //turn the car
@@ -382,7 +414,10 @@ public class CarRaycast : MonoBehaviour
             //constantF.enabled = true;
             rb.drag = 0.22f;
             rb.angularDrag = 3f;
-            //AirFrameStabilize();
+
+            AirFrameStabilize();
+
+
             if (input.roll > 0)
             {
 
@@ -475,7 +510,7 @@ public class CarRaycast : MonoBehaviour
         input.grounded = 0;
         RaycastHit hit;
 
-        if (Physics.SphereCast(FR.anchor.transform.position, groundedSpherecastRadius, -this.transform.up, out hit, FR.maxDistance) == true)
+        if (Physics.SphereCast(FR.anchor.transform.position, groundedSpherecastRadius, -this.transform.up, out hit, FR.groundedMaxDistance) == true)
         {
             input.grounded++;
             //Debug.Log("groundedFR");
@@ -491,7 +526,7 @@ public class CarRaycast : MonoBehaviour
             FR.airTire.emitting = true;
         }
 
-        if (Physics.SphereCast(BL.anchor.transform.position, groundedSpherecastRadius, -this.transform.up, out hit, BL.maxDistance) == true)
+        if (Physics.SphereCast(BL.anchor.transform.position, groundedSpherecastRadius, -this.transform.up, out hit, BL.groundedMaxDistance) == true)
         {
             input.grounded++;
             //Debug.Log("groundedBL");
@@ -552,7 +587,7 @@ public class CarRaycast : MonoBehaviour
                 {
                     bikeDownFrameCount++;
 
-                    Debug.Log(bikeDownFrameCount);
+                    //Debug.Log(bikeDownFrameCount);
 
                     if (bikeDownFrameCount >= framesUntilBikeDown)
                         input.downed = true;                   
@@ -582,21 +617,17 @@ public class CarRaycast : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        /*
-        Gizmos.color = Color.green;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(FR.anchor.transform.position, groundedSpherecastRadius);
-        Gizmos.DrawWireSphere(FR.raycast.transform.position, groundedSpherecastRadius);
-        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(FR.groundRaycast.transform.position, groundedSpherecastRadius);
         Gizmos.DrawWireSphere(BL.anchor.transform.position, groundedSpherecastRadius);
-        Gizmos.DrawWireSphere(BL.raycast.transform.position, groundedSpherecastRadius);
-        */
+        Gizmos.DrawWireSphere(BL.groundRaycast.transform.position, groundedSpherecastRadius);
+
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(FR.anchor.transform.position, spherecastRadius);
         Gizmos.DrawWireSphere(FR.raycast.transform.position, spherecastRadius);
-        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(BL.anchor.transform.position, spherecastRadius);
         Gizmos.DrawWireSphere(BL.raycast.transform.position, spherecastRadius);
-        
     }
     
 
