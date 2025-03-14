@@ -141,6 +141,11 @@ public class CarRaycast : MonoBehaviour
 
         //coroutine = WaitForTurn(1);
     }
+
+    private void Update()
+    {
+        
+    }
     private void FixedUpdate()
     {
         BikeGrounded();
@@ -197,6 +202,7 @@ public class CarRaycast : MonoBehaviour
         RaycastHit frontHit;
 
         Vector3 groundNormal = Vector3.up;
+
 
         bool[] frontBackIsHitting = new bool[2];
 
@@ -334,6 +340,7 @@ public class CarRaycast : MonoBehaviour
         {
             this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+            input.downed = false;
         }
         //input.reset = value.Get<float>();
     }
