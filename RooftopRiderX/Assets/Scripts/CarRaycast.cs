@@ -494,7 +494,7 @@ public class CarRaycast : MonoBehaviour
     }
     private void BikeMove()
     {
-        if (input.grounded > 0)
+        if (input.grounded > 0 && !input.downed)
         {
             //gas
             rb.AddRelativeForce(Vector3.forward * Movespeed * input.gas * Time.fixedDeltaTime, ForceMode.VelocityChange);
