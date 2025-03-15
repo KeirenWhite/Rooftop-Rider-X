@@ -263,7 +263,7 @@
                 {
                     "name": "",
                     "id": "9b59ac75-127a-4e6e-94d5-1cd764cb08f8",
-                    "path": "<Gamepad>/start",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -274,7 +274,7 @@
                 {
                     "name": "",
                     "id": "af0c3525-3f7a-4926-a1fd-fc350f64bd93",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
