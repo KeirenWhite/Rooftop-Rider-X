@@ -168,6 +168,40 @@ public class CarRaycast : MonoBehaviour
         //Debug.Log("speed: " + rb.velocity.magnitude);
     }
 
+    [SerializeField] private float wallRaycastLength = 6f;
+    [SerializeField] private float slopeIgnore = 0.5f;
+    private void SnapToWall()
+    {
+        //Debug.Log("snap");
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, wallRaycastLength)) // shoot ray right
+        {
+            if (transform.up.y <= slopeIgnore)
+            {
+
+                return;
+            }
+                Debug.Log(transform.up);
+            AirStabilizeTimer(true);
+            transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+            Debug.Log(hit.collider.gameObject.name);
+        }
+        else if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.right), out hit, wallRaycastLength)) // shoot ray left
+        {
+            if (transform.up.y <= slopeIgnore)
+            {
+
+                return;
+            }
+                Debug.Log(transform.up);
+            AirStabilizeTimer(true);
+            transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+            Debug.Log(hit.collider.gameObject.name);
+        }
+    }
+
     //private bool isLeanCoroutineRunning = false;
     //private bool isResetLeanCoroutineRunning = false;
     //private Coroutine currentLeanCoroutine;
@@ -235,6 +269,7 @@ public class CarRaycast : MonoBehaviour
 
         //Debug.Log(frontBackIsHitting[0] + ", " + frontBackIsHitting[1]);
 
+        
         if (frontBackIsHitting[0] && frontBackIsHitting[1])
         {
             Vector3 averageNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
@@ -243,8 +278,7 @@ public class CarRaycast : MonoBehaviour
 
             rb.AddForce(suctionPower * -averageNormal, ForceMode.Force);
         }
-
-        //Debug.DrawRay(transform.position, -this.transform.up, Color.blue);
+        
     }
 
     void AirFrameStabilize()
@@ -256,7 +290,7 @@ public class CarRaycast : MonoBehaviour
         RaycastHit hit;
 
 
-        if (Physics.Raycast(transform.position, -this.transform.up, out hit))
+        if (Physics.Raycast(transform.position, -transform.up, out hit))
         {
             float groundNormal = hit.normal.y;
 
@@ -424,7 +458,6 @@ public class CarRaycast : MonoBehaviour
 
             AirFrameStabilize();
 
-
             if (input.roll > 0)
             {
 
@@ -450,7 +483,10 @@ public class CarRaycast : MonoBehaviour
                 //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
             }
 
+            SnapToWall();
+
         }
+
         //turn the front wheels
         AxelF.transform.localRotation = initialRotationAxel * Quaternion.AngleAxis(45f * input.steer.x, Vector3.forward);
         HandleBar.transform.localRotation = initialRotationHB * Quaternion.AngleAxis(25f * input.steer.x, Vector3.forward);
@@ -590,7 +626,7 @@ public class CarRaycast : MonoBehaviour
             //Debug.Log(contact.thisCollider);
             if(contact.thisCollider == bikeDownCol)
             {
-                if (col.collider.CompareTag("Ground"))
+                if (col.collider.CompareTag("Ground") || col.collider.CompareTag("TrueGround"))
                 {
                     bikeDownFrameCount++;
 
@@ -635,6 +671,9 @@ public class CarRaycast : MonoBehaviour
         Gizmos.DrawWireSphere(FR.raycast.transform.position, spherecastRadius);
         Gizmos.DrawWireSphere(BL.anchor.transform.position, spherecastRadius);
         Gizmos.DrawWireSphere(BL.raycast.transform.position, spherecastRadius);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position + transform.right * wallRaycastLength, transform.position - transform.right * wallRaycastLength);
     }
     
 

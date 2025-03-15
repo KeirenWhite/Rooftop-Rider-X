@@ -575,6 +575,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6968038597379266287, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: BL.anchor
       value: 
@@ -623,6 +627,10 @@ PrefabInstance:
       propertyPath: frontGroundAnchor
       value: 
       objectReference: {fileID: 1235998004}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: wallRaycastLength
+      value: 1.51
+      objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: framesUntilBikeDown
       value: 60
@@ -1292,7 +1300,7 @@ GameObject:
   - component: {fileID: 76159966}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Ground
+  m_TagString: TrueGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8711,7 +8719,7 @@ GameObject:
   - component: {fileID: 452573385}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Ground
+  m_TagString: TrueGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9795,7 +9803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8391222552659086748, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: TrueGround
       objectReference: {fileID: 0}
     - target: {fileID: -8248806849171054368, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
       propertyPath: m_TagString
@@ -13232,7 +13240,7 @@ GameObject:
   - component: {fileID: 690857291}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Ground
+  m_TagString: TrueGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15203,7 +15211,7 @@ GameObject:
   - component: {fileID: 784197997}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Ground
+  m_TagString: TrueGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
