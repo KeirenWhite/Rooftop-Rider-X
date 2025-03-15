@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
 
     private void OnCamSteer(InputValue value)
     {
-        steer = value.Get<Vector2>();
+        steer = -value.Get<Vector2>()/2;
         Debug.Log(steer);
     }
 
