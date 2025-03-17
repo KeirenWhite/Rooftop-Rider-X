@@ -477,11 +477,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1373600130866742062, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.009994581
+      value: -1.38
       objectReference: {fileID: 0}
     - target: {fileID: 2136050309880144472, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: -1.3800012
       objectReference: {fileID: 0}
     - target: {fileID: 2286887752482170199, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_Layer
@@ -592,16 +592,24 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: snapSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: backAnchor
       value: 
       objectReference: {fileID: 356894896}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: bikeHeight
+      value: 1.04
+      objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: frontAnchor
       value: 
       objectReference: {fileID: 1984406458}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: suctionPower
-      value: 250000
+      value: 25000
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: landTrickAudio
@@ -1298,9 +1306,9 @@ GameObject:
   - component: {fileID: 76159968}
   - component: {fileID: 76159967}
   - component: {fileID: 76159966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
-  m_TagString: TrueGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8717,9 +8725,9 @@ GameObject:
   - component: {fileID: 452573387}
   - component: {fileID: 452573386}
   - component: {fileID: 452573385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
-  m_TagString: TrueGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9802,8 +9810,12 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: -8391222552659086748, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
       propertyPath: m_TagString
-      value: TrueGround
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: -8248806849171054368, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
       propertyPath: m_TagString
@@ -13238,9 +13250,9 @@ GameObject:
   - component: {fileID: 690857293}
   - component: {fileID: 690857292}
   - component: {fileID: 690857291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
-  m_TagString: TrueGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14074,14 +14086,12 @@ MonoBehaviour:
 
     LT: Brake/Reverse
 
-    A: Jump
+    A: Jump/Reset
 
     B: Boost
 
     X:
     Roll (air)
-
-    Select/+: Reset
 
     Rightstick: Camera'
   m_isRightToLeft: 0
@@ -15209,9 +15219,9 @@ GameObject:
   - component: {fileID: 784197999}
   - component: {fileID: 784197998}
   - component: {fileID: 784197997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
-  m_TagString: TrueGround
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22044,7 +22054,7 @@ Transform:
   m_GameObject: {fileID: 1235998004}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000083008556, y: -0.2999998, z: -0.000011995009}
+  m_LocalPosition: {x: -0.000083008556, y: -0.5799843, z: -0.000011995009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29906,7 +29916,7 @@ Transform:
   m_GameObject: {fileID: 1700367627}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000083008556, y: -0.3, z: -0.0002141004}
+  m_LocalPosition: {x: -0.000083008556, y: -0.58, z: -0.0002141004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

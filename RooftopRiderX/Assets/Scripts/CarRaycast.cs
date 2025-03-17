@@ -105,8 +105,6 @@ public class CarRaycast : MonoBehaviour
     private Vector3 trickTrack;
     [SerializeField] private Boost boostScript;
 
-    private bool wasInAir = true;
-
     [SerializeField] private bool leanMode = false;
     [SerializeField] private GameObject bikeVisuals;
     [SerializeField] private GameObject visualsTransformTarget;
@@ -165,47 +163,60 @@ public class CarRaycast : MonoBehaviour
 
         SpinWheels();
 
+        if (input.grounded == 2)
+            wasOnGround = true;
+
         //Debug.Log("speed: " + rb.velocity.magnitude);
+        
     }
 
     [SerializeField] private float wallRaycastLength = 6f;
-    [SerializeField] private float slopeIgnore = 0.5f;
+    //[SerializeField] private float slopeIgnore = 0.5f;
+    [SerializeField] private float bikeHeight = 1.05f;
+    private float snapCooldown = 0f;
+    [SerializeField] private float snapCooldownTime = 0.35f;
+    [SerializeField] private float snapSpeed;
     private void SnapToWall()
     {
+        if (snapCooldown > 0f)
+        {
+            snapCooldown -= Time.deltaTime;
+            return;
+        }
         //Debug.Log("snap");
 
         RaycastHit hit;
 
+        bool wallRaycastHit = false;
+
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, wallRaycastLength)) // shoot ray right
         {
-            if (transform.up.y <= slopeIgnore)
+            if (Vector3.Dot(Vector3.up, hit.normal) > 0.9)
             {
-
                 return;
             }
-                Debug.Log(transform.up);
             AirStabilizeTimer(true);
-            transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
-            Debug.Log(hit.collider.gameObject.name);
+            wallRaycastHit = true;
         }
         else if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.right), out hit, wallRaycastLength)) // shoot ray left
         {
-            if (transform.up.y <= slopeIgnore)
+            if (Vector3.Dot(Vector3.up, hit.normal) > 0.9)
             {
-
                 return;
             }
-                Debug.Log(transform.up);
             AirStabilizeTimer(true);
+            wallRaycastHit = true;
+        }
+
+        if (wallRaycastHit)
+        {
+            Vector3 targetPosition = transform.position + hit.normal * ((0.5f * bikeHeight) - hit.distance);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * snapSpeed);
+
             transform.rotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
-            Debug.Log(hit.collider.gameObject.name);
         }
     }
 
-    //private bool isLeanCoroutineRunning = false;
-    //private bool isResetLeanCoroutineRunning = false;
-    //private Coroutine currentLeanCoroutine;
-    //private float leanHoldRotation = 0f;
     private void UpdateBikeVisuals()
     {
         bikeVisuals.transform.position = visualsTransformTarget.transform.position;
@@ -217,19 +228,11 @@ public class CarRaycast : MonoBehaviour
                 visualsTransformTarget.transform.eulerAngles.z + (30 * input.steer.x));
         if (input.roll > 0 || input.downed == true)
             bikeVisuals.transform.rotation = visualsTransformTarget.transform.rotation;
-
-        /*
-        if (!isLeanCoroutineRunning)
-            bikeVisuals.transform.rotation = Quaternion.Euler(
-                visualsTransformTarget.transform.eulerAngles.x, 
-                visualsTransformTarget.transform.eulerAngles.y, 
-                leanHoldRotation
-                );
-        */
     }
 
     [SerializeField] private float spherecastRadius = 0.25f;
     [SerializeField] private float suctionPower = 10f;
+    private Vector3 collisionNormal = Vector3.up;
     private void FrameStabilize()
     {
         RaycastHit backHit;
@@ -270,15 +273,29 @@ public class CarRaycast : MonoBehaviour
         //Debug.Log(frontBackIsHitting[0] + ", " + frontBackIsHitting[1]);
 
         
+        //Debug.Log(frontHit.collider.name + ", " + backHit.collider.name);
+
         if (frontBackIsHitting[0] && frontBackIsHitting[1])
         {
-            Vector3 averageNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
+
+            collisionNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
 
             //Debug.Log(averageNormal.ToString());
 
-            rb.AddForce(suctionPower * -averageNormal, ForceMode.Force);
+            rb.AddForce(suctionPower * -collisionNormal, ForceMode.Force);
+
+            if (!wasOnGround)
+            {
+                //Debug.Log("bounce negation");
+                Vector3 velocityAlongNormal = Vector3.Project(rb.velocity, collisionNormal);
+                rb.velocity = rb.velocity - velocityAlongNormal;
+            }
         }
         
+        /*if (!wasOnGround)
+        {
+            _Debug.Log(frontBackIsHitting[0] + ", " + frontBackIsHitting[1]);
+        }*/
     }
 
     void AirFrameStabilize()
@@ -372,6 +389,7 @@ public class CarRaycast : MonoBehaviour
         //upright car
         if (input.downed)
         {
+            snapCooldown = snapCooldownTime;
             this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
             input.downed = false;
@@ -542,6 +560,8 @@ public class CarRaycast : MonoBehaviour
         WheelB.transform.Rotate(Vector3.forward * direction, ((velocity / BL.radius) * Mathf.Rad2Deg) * Time.fixedDeltaTime);
     }
 
+
+    private bool wasInAirChangedThisFrame = false;
     [SerializeField] private float groundedSpherecastRadius = 0.25f;
     private void BikeGrounded()
     {
@@ -549,7 +569,8 @@ public class CarRaycast : MonoBehaviour
         //Purpose:
         //  check each wheel contact with ground
         //  'tire' trail emitting = wheel contact with ground
-
+        
+        wasInAirChangedThisFrame = false;
         input.grounded = 0;
         RaycastHit hit;
 
@@ -585,31 +606,28 @@ public class CarRaycast : MonoBehaviour
             BL.airTire.emitting = true;
         }
 
+
+
         // testing out resetting angular velocity on landing
         if (input.grounded == 2)
         {
             if (!wasOnGround)
-                FinishTrick();
-            bikeDownFrameCount = 0;
-            input.downed = false;
-            wasOnGround = true;
-            
-            if (wasInAir)
             {
+                FinishTrick();
                 rb.angularVelocity = Vector3.zero;
             }
-            wasInAir = false;
+            bikeDownFrameCount = 0;
+            input.downed = false;
         }
 
         if (input.grounded == 0 && wasOnGround)
         {
+            snapCooldown = snapCooldownTime;
             wasOnGround = false;
             holdoverRotation = transform.rotation;
         }
         else if (input.grounded == 0)
         {
-            wasInAir = true;
-
             if (rb.velocity.y < 0 && !input.downed)
                 rb.AddForce(new Vector3(0f, Time.deltaTime * -extraGravity, 0f), ForceMode.Acceleration);
         }
@@ -626,7 +644,7 @@ public class CarRaycast : MonoBehaviour
             //Debug.Log(contact.thisCollider);
             if(contact.thisCollider == bikeDownCol)
             {
-                if (col.collider.CompareTag("Ground") || col.collider.CompareTag("TrueGround"))
+                if (col.collider.CompareTag("Ground"))
                 {
                     bikeDownFrameCount++;
 
