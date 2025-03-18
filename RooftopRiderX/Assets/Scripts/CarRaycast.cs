@@ -481,7 +481,7 @@ public class CarRaycast : MonoBehaviour
         Vector2 inputVal = new Vector2(input.steer.x, input.flip.y);
         
 
-        if (input.grounded > 1)
+        if (input.grounded >= 1)
         {
             //constantF.enabled = false;
             rb.drag = origDrag;
