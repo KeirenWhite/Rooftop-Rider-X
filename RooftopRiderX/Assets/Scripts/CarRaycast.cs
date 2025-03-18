@@ -306,7 +306,7 @@ public class CarRaycast : MonoBehaviour
             if (input.grounded == 0)
             {
                 collisionNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
-                rb.AddForce(suctionPower * -collisionNormal, ForceMode.Force);
+                //rb.AddForce(suctionPower * -collisionNormal, ForceMode.Force);
             }
 
             if (!wasOnGround && input.grounded == 2)
