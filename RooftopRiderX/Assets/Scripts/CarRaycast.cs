@@ -156,6 +156,8 @@ public class CarRaycast : MonoBehaviour
 
     private float GetGravity()
     {
+        if (input.grounded == 2)
+            return jumpGravity;
         return rb.velocity.y < 0f ? fallGravity : jumpGravity;
     }
 

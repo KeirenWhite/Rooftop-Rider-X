@@ -125,7 +125,7 @@ public class CameraController : MonoBehaviour
             Vector3 direction = (transformWithoutY - centerpointWithoutY).normalized;
             Vector3 targetPosition = centerpointPos + direction * minRadius;
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, pushAwaySpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, pushAwaySpeed * Time.deltaTime);
         }
     }
 
