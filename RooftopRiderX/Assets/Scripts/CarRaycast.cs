@@ -110,6 +110,14 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private GameObject visualsTransformTarget;
     //SerializeField] private float leanSpeedModifier = 1f;
 
+    [Header("Jump Shtuff")]
+    [SerializeField] private float jumpHeight = 10f;
+    [SerializeField] private float jumpTimeToPeak = 10f;
+    [SerializeField] private float jumpTimeToDescent = 10f;
+    private float jumpVelocity;
+    private float jumpGravity;
+    private float fallGravity;
+
     [Header("Sound Effects")]
     public AudioSource landTrickAudio;
    
@@ -138,14 +146,28 @@ public class CarRaycast : MonoBehaviour
         BL.groundedMaxDistance = BL.anchor.transform.position.y - BL.groundRaycast.transform.position.y;
 
         //coroutine = WaitForTurn(1);
+
+        // initialize jump variables
+        jumpVelocity = (2f * jumpHeight) / jumpTimeToPeak;
+        jumpGravity = (-2f * jumpHeight) / (jumpTimeToPeak * jumpTimeToPeak);
+        fallGravity = (-2f * jumpHeight) / (jumpTimeToDescent * jumpTimeToDescent);
+
+    }
+
+    private float GetGravity()
+    {
+        return rb.velocity.y < 0f ? fallGravity : jumpGravity;
     }
 
     private void Update()
     {
         
     }
+
     private void FixedUpdate()
     {
+        rb.velocity += new Vector3(0f, GetGravity() * Time.deltaTime, 0f) ;
+
         BikeGrounded();
         BikeDowned();
         

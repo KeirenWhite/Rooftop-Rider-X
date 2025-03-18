@@ -20,6 +20,15 @@ public class CameraController : MonoBehaviour
 
     private Vector2 steer;
 
+    // buggy rn
+    [Header("Air Restriction Radius")]
+    [SerializeField] private float minRadius = 10f;
+    [SerializeField] private float pushAwaySpeed = 10f;
+    [SerializeField] private float clampHeightMin = -2.5f;
+    [SerializeField] private float clampHeightMax = 2.5f;
+    [SerializeField] private float heightCorrectionSpeed = 1f;
+    private bool inRadius = false;
+
     private void Start()
     {
         //the RecallCameraY is so the camera doesn't flip with the car and go under the ground by accident
@@ -64,7 +73,7 @@ public class CameraController : MonoBehaviour
                 camMoveOffset *= offsetAmount;
                 camMoveOffset = Quaternion.AngleAxis(bike.transform.eulerAngles.y, Vector3.up) * camMoveOffset;
 
-                Vector3 pushAwayIfClose = Vector3.zero;
+                /*Vector3 pushAwayIfClose = Vector3.zero;
                 if (bike.rb.velocity.magnitude < 10f)
                 {
                     pushAwayIfClose = Quaternion.AngleAxis(bike.transform.eulerAngles.y, Vector3.up) * (Vector3.back * 3);
@@ -72,10 +81,16 @@ public class CameraController : MonoBehaviour
                     {
                         pushAwayIfClose = Quaternion.AngleAxis(bike.transform.eulerAngles.y, Vector3.up) * (Vector3.back * 10);
                     }
+                }*/
+
+                if (bike.input.grounded == 0)
+                {
+                    PositionRestrict();
                 }
+
                 moveTargetY = lookat.transform.position.y + RecallCameraY;
                 cameraMovePos = new Vector3(moveto.transform.position.x, moveTargetY, moveto.transform.position.z) + camMoveOffset;
-                cameraMovePos += pushAwayIfClose;
+                //cameraMovePos += pushAwayIfClose;
 
                 this.transform.position = Vector3.Lerp(this.transform.position, cameraMovePos, Movespeed * Time.deltaTime);
             }
@@ -84,7 +99,6 @@ public class CameraController : MonoBehaviour
                 this.transform.position = Vector3.Lerp(this.transform.position, moveto.transform.position, Movespeed * Time.deltaTime);
             }
         }
-        
 
         //rotation
         if (lookat != null)
@@ -94,4 +108,33 @@ public class CameraController : MonoBehaviour
         }       
 
     }
+
+    private void PositionRestrict()
+    {
+        Vector3 centerpointPos = bike.gameObject.transform.position;
+
+        Vector3 transformWithoutY = new Vector3(transform.position.x, 0f, transform.position.z);
+        Vector3 centerpointWithoutY = new Vector3(centerpointPos.x, 0f, centerpointPos.z);
+
+        float distance = Vector3.Distance(transformWithoutY, centerpointWithoutY);
+
+        Debug.Log(distance);
+
+        if (distance < minRadius)
+        {
+            Vector3 direction = (transformWithoutY - centerpointWithoutY).normalized;
+            Vector3 targetPosition = centerpointPos + direction * minRadius;
+
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, pushAwaySpeed * Time.deltaTime);
+        }
+    }
+
+    private void HeightRestrict()
+    {
+        Vector3 centerpointPos = bike.gameObject.transform.position;
+
+        float clampedY = Mathf.Clamp(transform.position.y, clampHeightMin + centerpointPos.y, clampHeightMax + centerpointPos.y);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, clampedY, transform.position.z), heightCorrectionSpeed * Time.deltaTime);
+    }
+
 }

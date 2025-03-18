@@ -472,6 +472,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 841812855980674189, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 841812855980674189, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_AngularDrag
       value: 10
       objectReference: {fileID: 0}
@@ -604,12 +608,20 @@ PrefabInstance:
       value: 1.04
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: jumpHeight
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: frontAnchor
       value: 
       objectReference: {fileID: 1984406458}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: suctionPower
       value: 25000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: jumpTimeToPeak
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: landTrickAudio
@@ -635,6 +647,10 @@ PrefabInstance:
       propertyPath: frontGroundAnchor
       value: 
       objectReference: {fileID: 1235998004}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: jumpTimeToDescent
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: wallRaycastLength
       value: 1.51
@@ -25621,6 +25637,11 @@ MonoBehaviour:
   offsetAmount: 15
   reachAroundAmount: 0.5
   bike: {fileID: 645618647}
+  minRadius: 20
+  pushAwaySpeed: 5
+  clampHeightMin: -5
+  clampHeightMax: 15
+  heightCorrectionSpeed: 50
 --- !u!114 &1452743192
 MonoBehaviour:
   m_ObjectHideFlags: 0
