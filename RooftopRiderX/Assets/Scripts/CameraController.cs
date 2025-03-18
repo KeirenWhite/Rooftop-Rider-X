@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
     private void OnCamSteer(InputValue value)
     {
         steer = -value.Get<Vector2>()/2;
-        Debug.Log(steer);
+        //Debug.Log(steer);
     }
 
     private void LateUpdate()
@@ -118,7 +118,7 @@ public class CameraController : MonoBehaviour
 
         float distance = Vector3.Distance(transformWithoutY, centerpointWithoutY);
 
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if (distance < minRadius)
         {
