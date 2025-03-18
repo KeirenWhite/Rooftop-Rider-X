@@ -157,7 +157,7 @@ public class CarRaycast : MonoBehaviour
     private float GetGravity()
     {
         if (input.grounded == 2)
-            return jumpGravity;
+            return jumpGravity / 2;
         return rb.velocity.y < 0f ? fallGravity : jumpGravity;
     }
 
@@ -173,7 +173,7 @@ public class CarRaycast : MonoBehaviour
         BikeGrounded();
         BikeDowned();
         
-        //FrameStabilize();
+        FrameStabilize();
 
         BikeTurn();
         BikeJump();
@@ -194,6 +194,7 @@ public class CarRaycast : MonoBehaviour
         
     }
 
+    [SerializeField] private GameObject wallRaycastPosition;
     [SerializeField] private float wallRaycastLength = 6f;
     //[SerializeField] private float slopeIgnore = 0.5f;
     [SerializeField] private float bikeHeight = 1.05f;
@@ -213,7 +214,7 @@ public class CarRaycast : MonoBehaviour
 
         bool wallRaycastHit = false;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, wallRaycastLength)) // shoot ray right
+        if (Physics.Raycast(wallRaycastPosition.transform.position, transform.TransformDirection(Vector3.right), out hit, wallRaycastLength)) // shoot ray right
         {
             if (Vector3.Dot(Vector3.up, hit.normal) > 0.9)
             {
@@ -222,7 +223,7 @@ public class CarRaycast : MonoBehaviour
             AirStabilizeTimer(true);
             wallRaycastHit = true;
         }
-        else if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.right), out hit, wallRaycastLength)) // shoot ray left
+        else if (Physics.Raycast(wallRaycastPosition.transform.position, transform.TransformDirection(-Vector3.right), out hit, wallRaycastLength)) // shoot ray left
         {
             if (Vector3.Dot(Vector3.up, hit.normal) > 0.9)
             {
@@ -288,7 +289,7 @@ public class CarRaycast : MonoBehaviour
             frontBackIsHitting[0] = false;
         }
 
-        if (frontBackIsHitting[0] || frontBackIsHitting[1])
+        if ((frontBackIsHitting[0] || frontBackIsHitting[1]) && input.grounded == 2)
         {
             AirStabilizeTimer(true);
             transform.rotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
@@ -302,13 +303,13 @@ public class CarRaycast : MonoBehaviour
         if (frontBackIsHitting[0] && frontBackIsHitting[1])
         {
 
-            collisionNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
+            if (input.grounded == 0)
+            {
+                collisionNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
+                rb.AddForce(suctionPower * -collisionNormal, ForceMode.Force);
+            }
 
-            //Debug.Log(averageNormal.ToString());
-
-            rb.AddForce(suctionPower * -collisionNormal, ForceMode.Force);
-
-            if (!wasOnGround)
+            if (!wasOnGround && input.grounded == 2)
             {
                 //Debug.Log("bounce negation");
                 Vector3 velocityAlongNormal = Vector3.Project(rb.velocity, collisionNormal);
@@ -485,8 +486,6 @@ public class CarRaycast : MonoBehaviour
             //constantF.enabled = false;
             rb.drag = origDrag;
             rb.angularDrag = origAngDrag;
-            
-            FrameStabilize();
 
             //turn the car
             this.transform.Rotate(Vector3.up, turnSpeed * input.steer.x * Time.fixedDeltaTime);
@@ -715,7 +714,7 @@ public class CarRaycast : MonoBehaviour
         Gizmos.DrawWireSphere(BL.raycast.transform.position, spherecastRadius);
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position + transform.right * wallRaycastLength, transform.position - transform.right * wallRaycastLength);
+        Gizmos.DrawLine(wallRaycastPosition.transform.position + transform.right * wallRaycastLength, wallRaycastPosition.transform.position - transform.right * wallRaycastLength);
     }
     
 
