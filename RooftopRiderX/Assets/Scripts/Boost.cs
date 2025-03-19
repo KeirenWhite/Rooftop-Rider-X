@@ -27,7 +27,7 @@ public class Boost : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (input > 0 && boostVal > 0)
+        if (input > 0 && boostVal > 0 && !bikeScript.input.downed)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
             boostVal -= Time.deltaTime * boostUseMult;

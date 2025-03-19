@@ -651,8 +651,8 @@ public class CarRaycast : MonoBehaviour
         }
         else if (input.grounded == 0)
         {
-            if (rb.velocity.y < 0 && !input.downed)
-                rb.AddForce(new Vector3(0f, Time.deltaTime * -extraGravity, 0f), ForceMode.Acceleration);
+            //if (rb.velocity.y < 0 && !input.downed)
+            //    rb.AddForce(new Vector3(0f, Time.deltaTime * -extraGravity, 0f), ForceMode.Acceleration);
         }
             
     }
