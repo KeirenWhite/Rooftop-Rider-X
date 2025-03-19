@@ -522,7 +522,7 @@ public class CarRaycast : MonoBehaviour
                 Vector3 torque = new Vector3(inputVal.y, 0, inputVal.x);
                
 
-                rb.angularVelocity += (transform.rotation * torque) * airTurnMult;
+                rb.angularVelocity += (transform.rotation * torque) * (airTurnMult * Time.deltaTime);
 
                 //this.transform.Rotate(Vector3.forward, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
                 //this.transform.Rotate(Vector3.right, airFlipSpeed * input.flip.y * Time.fixedDeltaTime);
@@ -534,7 +534,7 @@ public class CarRaycast : MonoBehaviour
                     Vector3 torque = new Vector3(inputVal.y, inputVal.x, 0);
                  
 
-                    rb.angularVelocity += transform.rotation * torque * airTurnMult;
+                    rb.angularVelocity += transform.rotation * torque * (airTurnMult * Time.deltaTime);
                 }
                 
                 //this.transform.Rotate(Vector3.up, airTurnSpeed * input.steer.x * Time.fixedDeltaTime);
