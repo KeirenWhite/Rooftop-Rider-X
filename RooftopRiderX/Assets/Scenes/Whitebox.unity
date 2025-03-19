@@ -628,6 +628,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1984406458}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: resetBounce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: suctionPower
       value: 0
       objectReference: {fileID: 0}
@@ -706,6 +710,14 @@ PrefabInstance:
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: forwardForce
       value: 5000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: aerialBoostUseMult
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: groundedBoostUseMult
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

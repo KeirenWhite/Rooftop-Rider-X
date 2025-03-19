@@ -13,7 +13,8 @@ public class Boost : MonoBehaviour
 
     private float boostVal = 100f;
     [SerializeField] private Slider boostSlider;
-    [SerializeField] private float boostUseMult = 10f;
+    [SerializeField] private float groundedBoostUseMult = 10f;
+    [SerializeField] private float aerialBoostUseMult = 10f;
     [SerializeField] private float boostRefillMult = 1f;
     [SerializeField] private float trickMultiplier = 0.25f;
 
@@ -30,7 +31,7 @@ public class Boost : MonoBehaviour
         if (input > 0 && boostVal > 0 && !bikeScript.input.downed)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
-            boostVal -= Time.deltaTime * boostUseMult;
+            boostVal -= Time.deltaTime * (bikeScript.input.grounded == 2 ? groundedBoostUseMult : aerialBoostUseMult);
             boostSlider.value = boostVal;
         }
         else if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)

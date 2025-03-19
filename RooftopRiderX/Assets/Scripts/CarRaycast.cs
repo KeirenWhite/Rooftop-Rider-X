@@ -426,18 +426,39 @@ public class CarRaycast : MonoBehaviour
         input.wheelie = value.Get<Vector2>();
     }*/
 
+    private bool wasJustDowned = false;
+    [SerializeField] private float resetBounce = 1000f;
     private void OnReset(InputValue value)
     {
         //upright car
         if (input.downed)
         {
             snapCooldown = snapCooldownTime;
-            this.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1, this.transform.position.z);
+            transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 2f, this.transform.position.z);
+            rb.velocity += new Vector3(0f, resetBounce, 0f); ;
             input.downed = false;
+            wasJustDowned = true;
         }
         //input.reset = value.Get<float>();
     }
+
+    [SerializeField] private float bikeDownedResetWaitTime = 1f;
+    private float bikeDownedResetTimer = 0f;
+    private void BikeDownedResetTimer(bool reset = false, float overrideWaitTime = -1)
+    {
+        if (reset)
+        {
+            bikeDownedResetTimer = overrideWaitTime == -1 ? bikeDownedResetWaitTime : overrideWaitTime;
+            return;
+        }
+
+        if (bikeDownedResetTimer <= 0f)
+            input.downed = false;
+        else
+            bikeDownedResetTimer -= Time.deltaTime;
+    }
+
 
     private void Trick()
     {
@@ -654,6 +675,7 @@ public class CarRaycast : MonoBehaviour
             if (!wasOnGround)
             {
                 FinishTrick();
+
                 rb.angularVelocity = Vector3.zero;
             }
             bikeDownFrameCount = 0;
@@ -666,10 +688,9 @@ public class CarRaycast : MonoBehaviour
             wasOnGround = false;
             holdoverRotation = transform.rotation;
         }
-        else if (input.grounded == 0)
+        else if (input.grounded == 0 && input.downed)
         {
-            //if (rb.velocity.y < 0 && !input.downed)
-            //    rb.AddForce(new Vector3(0f, Time.deltaTime * -extraGravity, 0f), ForceMode.Acceleration);
+            BikeDownedResetTimer();
         }
             
     }
@@ -691,16 +712,28 @@ public class CarRaycast : MonoBehaviour
                     //Debug.Log(bikeDownFrameCount);
 
                     if (bikeDownFrameCount >= framesUntilBikeDown)
-                        input.downed = true;                   
+                    {
+                        input.downed = true;
+                        trickTrack = Vector3.zero;
+                    }
+              
                 }
-                /*else
-                {
-                    input.downed = false;
-                }*/
             }
-            
         }
+    }
 
+    private void OnCollisionExit(Collision col)
+    {
+        foreach (ContactPoint contact in col.contacts)
+        {
+            if (contact.thisCollider == bikeDownCol)
+            {
+                if (col.collider.CompareTag("Ground"))
+                {
+                    BikeDownedResetTimer(true);
+                }
+            }
+        }
     }
 
     private void BikeDowned() 
