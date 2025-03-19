@@ -258,6 +258,7 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private float spherecastRadius = 0.25f;
     [SerializeField] private float suctionPower = 10f;
     private Vector3 collisionNormal = Vector3.up;
+    private Vector3 deltaNormal = Vector3.up;
     private void FrameStabilize()
     {
         RaycastHit backHit;
@@ -289,10 +290,19 @@ public class CarRaycast : MonoBehaviour
             frontBackIsHitting[0] = false;
         }
 
-        if ((frontBackIsHitting[0] || frontBackIsHitting[1]) && input.grounded == 2)
+        if (input.grounded == 2)
         {
+            groundNormal = ((backHit.normal + frontHit.normal) / 2).normalized;
+
+            Vector3 finalNormal = groundNormal;
+
+            if (deltaNormal != groundNormal && deltaNormal != Vector3.zero)
+            {
+                finalNormal = ((groundNormal + deltaNormal) / 2).normalized;
+            }
+
             AirStabilizeTimer(true);
-            transform.rotation = Quaternion.FromToRotation(transform.up, groundNormal) * transform.rotation;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(transform.up, finalNormal) * transform.rotation, stabilizationSensitivity * Time.deltaTime);
         }
 
         //Debug.Log(frontBackIsHitting[0] + ", " + frontBackIsHitting[1]);
@@ -316,11 +326,18 @@ public class CarRaycast : MonoBehaviour
                 rb.velocity = rb.velocity - velocityAlongNormal;
             }
         }
-        
+
         /*if (!wasOnGround)
         {
             _Debug.Log(frontBackIsHitting[0] + ", " + frontBackIsHitting[1]);
         }*/
+
+        if (!frontBackIsHitting[0] && !frontBackIsHitting[1])
+        {
+            deltaNormal = Vector3.zero;
+        }
+
+        deltaNormal = groundNormal;
     }
 
     void AirFrameStabilize()
