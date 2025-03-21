@@ -20,10 +20,13 @@ public class Boost : MonoBehaviour
 
     [SerializeField] private CarRaycast bikeScript;
 
+    [SerializeField] private ParticleSystem boostTrail;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        boostTrail.Stop();
     }
 
     private void FixedUpdate()
@@ -33,12 +36,23 @@ public class Boost : MonoBehaviour
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
             boostVal -= Time.deltaTime * (bikeScript.input.grounded == 2 ? groundedBoostUseMult : aerialBoostUseMult);
             boostSlider.value = boostVal;
+            if (!boostTrail.isPlaying)
+                boostTrail.Play();
         }
-        else if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)
+        else if (input == 0)
         {
-            boostVal += Time.deltaTime * boostRefillMult;
-            boostSlider.value = boostVal;
+            if (boostTrail.isPlaying)
+                boostTrail.Stop();
+
+            if (boostVal < 100 && bikeScript.input.grounded > 0)
+            {
+                boostVal += Time.deltaTime * boostRefillMult;
+                boostSlider.value = boostVal;
+            }
         }
+
+        if (boostVal <= 0 && boostTrail.isPlaying)
+             boostTrail.Stop();
     }
 
     private void OnBoost(InputValue value)

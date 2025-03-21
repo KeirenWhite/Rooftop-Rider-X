@@ -796,6 +796,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.009861064
       objectReference: {fileID: 0}
+    - target: {fileID: 5250603354172913699, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5784263024909093227, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_Size.z
       value: 1.025888
@@ -976,6 +980,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BikePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: boostTrail
+      value: 
+      objectReference: {fileID: 1072729854}
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: boostSlider
       value: 
@@ -25017,6 +25025,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061851544}
   m_Mesh: {fileID: 6064507249952220307, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
+--- !u!198 &1072729854 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5250603354172913699, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+  m_PrefabInstance: {fileID: 48933758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1085139199
 GameObject:
   m_ObjectHideFlags: 0
