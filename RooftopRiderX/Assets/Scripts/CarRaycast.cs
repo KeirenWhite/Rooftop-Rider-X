@@ -430,7 +430,7 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private float resetBounce = 1000f;
     private void OnReset(InputValue value)
     {
-        //upright car
+        //upright bike
         if (input.downed)
         {
             snapCooldown = snapCooldownTime;

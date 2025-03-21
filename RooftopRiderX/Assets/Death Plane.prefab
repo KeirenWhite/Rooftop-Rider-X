@@ -69,8 +69,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bike: {fileID: 0}
   bikeRb: {fileID: 0}
-  respawnPoint: {fileID: 0}
-  fallSound: {fileID: 0}
+  respawnPoint: {fileID: 1163036937499173339, guid: 69ab21a810d453e49b7ddddf8bfd454e, type: 3}
+  fallSound: {fileID: 4745675984236427343}
 --- !u!82 &4745675984236427343
 AudioSource:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2ca5aa03012af6b46a532ea933692ef9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
