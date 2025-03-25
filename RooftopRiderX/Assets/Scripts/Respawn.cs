@@ -34,7 +34,7 @@ public class Respawn : MonoBehaviour
     {
         bikeRb.velocity = Vector3.zero;
         bike.transform.position = respawnPoint.transform.position;
-        bike.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+        bike.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
         mainCamera.transform.position = respawnPoint.transform.position;
         fallSound.Play();
     }
