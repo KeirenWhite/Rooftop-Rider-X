@@ -8,10 +8,10 @@ public class Boost : MonoBehaviour
 {
     [SerializeField] private float forwardForce = 100f;
     [SerializeField] private Transform forcePos;
-    private float input;
+    public float input;
     private Rigidbody rb;
 
-    private float boostVal = 100f;
+    public float boostVal = 100f;
     [SerializeField] private Slider boostSlider;
     [SerializeField] private float groundedBoostUseMult = 10f;
     [SerializeField] private float aerialBoostUseMult = 10f;
