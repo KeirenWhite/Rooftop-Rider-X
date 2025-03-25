@@ -22,7 +22,7 @@ public class Respawn : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Bike"))
         {
