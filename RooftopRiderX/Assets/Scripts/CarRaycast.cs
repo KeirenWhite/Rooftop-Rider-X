@@ -749,6 +749,11 @@ public class CarRaycast : MonoBehaviour
         rb.angularDrag = 0f;
     }*/
 
+    public Vector3 GetBikeVelocity()
+    {
+        return rb.velocity;
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

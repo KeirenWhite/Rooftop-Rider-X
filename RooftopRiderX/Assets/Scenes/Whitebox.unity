@@ -33481,6 +33481,7 @@ GameObject:
   - component: {fileID: 1452743187}
   - component: {fileID: 1452743190}
   - component: {fileID: 1452743191}
+  - component: {fileID: 1452743193}
   - component: {fileID: 1452743192}
   m_Layer: 0
   m_Name: Main Camera
@@ -33664,6 +33665,21 @@ MonoBehaviour:
   m_DefaultActionMap: Car
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1452743193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452743186}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d402ca9d2d6b945af3e9677a5ca5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1452743188}
+  bike: {fileID: 645618647}
+  camOffset: 10
 --- !u!1 &1453008193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2844486149157665822, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
