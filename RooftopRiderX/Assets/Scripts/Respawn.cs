@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Respawn : MonoBehaviour
 {
@@ -11,15 +12,9 @@ public class Respawn : MonoBehaviour
     public GameObject respawnPoint;
     public AudioSource fallSound;
 
-    void Start()
+    private void OnRespawn(InputValue value)
     {
-        
-    }
-
-    
-    void Update()
-    {
-        
+        RespawnBike();
     }
 
     void OnTriggerEnter(Collider col)
@@ -33,10 +28,12 @@ public class Respawn : MonoBehaviour
     private void RespawnBike()
     {
         bikeRb.velocity = Vector3.zero;
+        bikeRb.angularVelocity = Vector3.zero;
         bike.transform.position = respawnPoint.transform.position;
         bike.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
         mainCamera.transform.position = respawnPoint.transform.position;
         fallSound.Play();
+        bike.GetComponent<Boost>().SetBoostToMax();
     }
     
 }

@@ -85,7 +85,7 @@ public class TrailHandler : MonoBehaviour
         if (!useBoost)
         {
             trail.transform.localPosition = trailPos + new Vector3(Random.Range(-drivePositionVariation, drivePositionVariation), Random.Range(-drivePositionVariation, drivePositionVariation), Random.Range(-drivePositionVariation, drivePositionVariation));
-            trail.transform.localScale = trailScale + new Vector3(Random.Range(-driveScaleVariation, driveScaleVariation), Random.Range(-driveScaleVariation - 0.001f, driveScaleVariation + 0.001f), Random.Range(-driveScaleVariation, driveScaleVariation));
+            trail.transform.localScale = trailScale + new Vector3(Random.Range(-driveScaleVariation, driveScaleVariation), Random.Range(-driveScaleVariation - 0.0015f, driveScaleVariation + 0.0015f), Random.Range(-driveScaleVariation, driveScaleVariation));
         }
         else
         {

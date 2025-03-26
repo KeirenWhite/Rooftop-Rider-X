@@ -57,4 +57,9 @@ public class Boost : MonoBehaviour
         boostSlider.value = boostVal;
     }
 
+    public void SetBoostToMax()
+    {
+        boostVal = 100;
+        boostSlider.value = boostVal;
+    }
 }
