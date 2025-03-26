@@ -16520,6 +16520,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db77b84a80b6d4640a58de6b8b67622a, type: 2}
+    - target: {fileID: -2784407260779933047, guid: aea30d2ac9db7b34b94e22891ea88df5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 270.13376
+      objectReference: {fileID: 0}
+    - target: {fileID: -2784407260779933047, guid: aea30d2ac9db7b34b94e22891ea88df5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2784407260779933047, guid: aea30d2ac9db7b34b94e22891ea88df5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: -2784407260779933047, guid: aea30d2ac9db7b34b94e22891ea88df5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aea30d2ac9db7b34b94e22891ea88df5, type: 3}
       propertyPath: m_Name
       value: simple_flame_parts
@@ -57784,6 +57800,26 @@ PrefabInstance:
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: duration
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: lowToMid
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: midToLow
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: midToTop
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: topToMid
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: zeroToLow
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6707658664708919819, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_audioClip

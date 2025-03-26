@@ -168,6 +168,7 @@ public class CarRaycast : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         rb.velocity += new Vector3(0f, GetGravity() * Time.deltaTime, 0f) ;
 
         BikeGrounded();
@@ -594,9 +595,8 @@ public class CarRaycast : MonoBehaviour
 
     private void BikeJump()
     {
-        if (input.grounded > 1)
+        if (input.grounded > 0)
         {
-            //jump
             rb.AddForce(transform.rotation * (Vector3.up * jumpStrength * input.jump));
         }
     }
