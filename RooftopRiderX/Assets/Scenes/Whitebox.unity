@@ -62527,7 +62527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: lowToMid
-      value: 63
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: midToLow
@@ -62535,7 +62535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: midToTop
-      value: 110
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: topToMid
