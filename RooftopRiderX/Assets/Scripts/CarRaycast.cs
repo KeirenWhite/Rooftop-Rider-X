@@ -30,6 +30,9 @@ using UnityEngine.UIElements;
 public class CarRaycast : MonoBehaviour
 {
     private IEnumerator coroutine;
+
+    [SerializeField] private Material stripeMat;
+
     public struct InputInfo
     {
         public Vector2 steer;
@@ -159,11 +162,6 @@ public class CarRaycast : MonoBehaviour
         if (input.grounded == 2)
             return jumpGravity / 2;
         return rb.velocity.y < 0f ? fallGravity : jumpGravity;
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void FixedUpdate()

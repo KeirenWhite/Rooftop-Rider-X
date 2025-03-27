@@ -934,6 +934,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.009861064
       objectReference: {fileID: 0}
+    - target: {fileID: 5639827645314034600, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3382ed04dd63c3248a79d3ecf587f628, type: 2}
     - target: {fileID: 5784263024909093227, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_Size.z
       value: 1.025888
@@ -1019,6 +1023,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: stripeMat
+      value: 
+      objectReference: {fileID: 2100000, guid: c29dfd2d341024f4d9d0ca3cdd0f95b9, type: 2}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: backAnchor
       value: 
       objectReference: {fileID: 356894896}
@@ -1034,6 +1042,10 @@ PrefabInstance:
       propertyPath: airTurnMult
       value: 33
       objectReference: {fileID: 0}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: bikeVisuals
+      value: 
+      objectReference: {fileID: 899274709}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: frontAnchor
       value: 
@@ -1114,6 +1126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BikePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8108583547629547260, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c29dfd2d341024f4d9d0ca3cdd0f95b9, type: 2}
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: boostSlider
       value: 
@@ -25405,6 +25421,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897470522}
   m_Mesh: {fileID: 8686722994446072557, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
+--- !u!1 &899274709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7925538803898663002, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+  m_PrefabInstance: {fileID: 48933758}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &899601765 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 325538456574240726, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
@@ -62650,6 +62671,10 @@ PrefabInstance:
       propertyPath: topToMid
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: stripeMat
+      value: 
+      objectReference: {fileID: 2100000, guid: c29dfd2d341024f4d9d0ca3cdd0f95b9, type: 2}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: zeroToLow
       value: 15

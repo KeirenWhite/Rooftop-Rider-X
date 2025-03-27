@@ -29,6 +29,8 @@ public class Music : MonoBehaviour
     [SerializeField] private float midToTop = 88f;
     [SerializeField] private float topToMid = 72f;
 
+    [SerializeField] private Material stripeMat;
+
     private int deltaTransition = 0;
 
     private enum MusicState
@@ -216,6 +218,22 @@ public class Music : MonoBehaviour
                 if (currentSpeed >= zeroToLow)
                     state = MusicState.lowSpeed;
 
+                break;
+        }
+    }
+
+    private void ColorChange(int colorState)
+    {
+        switch (colorState)
+        {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+            case 0:
                 break;
         }
     }
