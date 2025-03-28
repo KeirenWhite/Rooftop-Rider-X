@@ -29,7 +29,10 @@ public class Music : MonoBehaviour
     [SerializeField] private float midToTop = 88f;
     [SerializeField] private float topToMid = 72f;
 
-    [SerializeField] private Material stripeMat;
+    [SerializeField] private float colorChangeSpeed = 0.08f;
+
+    private Material stripeMat;
+    [SerializeField] private GameObject stripe;
 
     private int deltaTransition = 0;
 
@@ -55,17 +58,21 @@ public class Music : MonoBehaviour
         audioSourceMid.volume = 0f;
         audioSourceMidSolo.volume = 0f;
         audioSourceTop.volume = 0f;
+
+        stripeMat = stripe.GetComponent<MeshRenderer>().material;
     }
 
     void FixedUpdate()
     {
         //DynamicMusic();
-
         DynamicMusicStateMachine();
+
+        ColorChange();
 
         Debug.Log(currentSpeed);
     }
 
+    /*
     private void DynamicMusic()
     {
         currentSpeed = rb.velocity.magnitude;
@@ -142,6 +149,7 @@ public class Music : MonoBehaviour
         //Debug.Log(currentTime);
 
     }
+    */
 
     private void DynamicMusicStateMachine()
     {
@@ -222,21 +230,49 @@ public class Music : MonoBehaviour
         }
     }
 
-    private void ColorChange(int colorState)
+    [Header(" ----- Speed Colors ----- ")]
+    [Header("Zero Speed")]
+    [SerializeField] private Color zeroSpeedDark = Color.white;
+    [SerializeField] private Color zeroSpeedLight = Color.black;
+    [Header("Low Speed")]
+    [SerializeField] private Color lowSpeedDark = Color.white;
+    [SerializeField] private Color lowSpeedLight = Color.black;
+    [Header("Mid Speed")]
+    [SerializeField] private Color midSpeedDark = Color.white;
+    [SerializeField] private Color midSpeedLight = Color.black;
+    [Header("Top Speed")]
+    [SerializeField] private Color topSpeedDark = Color.white;
+    [SerializeField] private Color topSpeedLight = Color.black;
+
+    private Color darkColor = Color.white;
+    private Color lightColor = Color.white;
+    private void ColorChange()
     {
-        switch (colorState)
+        switch (state)
         {
-            case 1:
+            case MusicState.lowSpeed:
+                darkColor = Vector4.MoveTowards(darkColor, lowSpeedDark, colorChangeSpeed);
+                lightColor = Vector4.MoveTowards(lightColor, lowSpeedLight, colorChangeSpeed);
                 break;
-            case 2:
+            case MusicState.midSpeed:
+                darkColor = Vector4.MoveTowards(darkColor, midSpeedDark, colorChangeSpeed);
+                lightColor = Vector4.MoveTowards(lightColor, midSpeedLight, colorChangeSpeed);
                 break;
-            case 3:
+            case MusicState.topSpeed:
+                darkColor = Vector4.MoveTowards(darkColor, topSpeedDark, colorChangeSpeed);
+                lightColor = Vector4.MoveTowards(lightColor, topSpeedLight, colorChangeSpeed);
                 break;
             default:
-            case 0:
+            case MusicState.zeroSpeed:
+                darkColor = Vector4.MoveTowards(darkColor, zeroSpeedDark, colorChangeSpeed);
+                lightColor = Vector4.MoveTowards(lightColor, zeroSpeedLight, colorChangeSpeed);
                 break;
         }
+
+        stripeMat.SetColor("_DarkColor", darkColor);
+        stripeMat.SetColor("_BrightColor", lightColor);
     }
+
 
     private void InitializeState()
     {
@@ -246,7 +282,7 @@ public class Music : MonoBehaviour
             currentTime = 0f;
             deltaTransition = (int)state;
         }
+        //Debug.Log(state);
 
-        Debug.Log(state);
     }
 }
