@@ -25,10 +25,10 @@ public class ArrowPoint : MonoBehaviour
         }
         arrow.SetActive(true);
 
-        Vector3 bikePos = bike.transform.position;
+        Vector3 bikePos = new Vector3(bike.transform.position.x, bike.transform.position.y + 2, bike.transform.position.z);
         Vector3 pointDir = (target - bikePos).normalized;
 
-        arrow.transform.position = bikePos + (pointDir * 2.75f);
+        arrow.transform.position = bikePos + (pointDir);
         arrow.transform.LookAt(target);
         
     }
