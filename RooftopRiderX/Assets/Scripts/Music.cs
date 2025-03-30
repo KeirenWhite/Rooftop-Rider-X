@@ -29,11 +29,18 @@ public class Music : MonoBehaviour
     [SerializeField] private float midToTop = 88f;
     [SerializeField] private float topToMid = 72f;
 
-    [SerializeField] private float colorChangeSpeed = 0.08f;
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem sonicBoom;
+    [SerializeField] private ParticleSystem speedLines;
+    [SerializeField] private float lineSpeedMid = 20f;
+    [SerializeField] private float lineSpeedTop = 40f;
+    private ParticleSystem.EmissionModule speedlineEmission;
 
+    [Header("Color")]
     private Material stripeMat;
     [SerializeField] private GameObject stripe;
-    [SerializeField] private ParticleSystem sonicBoom;
+    [SerializeField] private float colorChangeSpeed = 0.08f;
+
 
     private int deltaTransition = 0;
 
@@ -61,6 +68,7 @@ public class Music : MonoBehaviour
         audioSourceTop.volume = 0f;
 
         stripeMat = stripe.GetComponent<MeshRenderer>().material;
+        speedlineEmission = speedLines.emission;
     }
 
     void FixedUpdate()
@@ -280,6 +288,27 @@ public class Music : MonoBehaviour
         // reset timer if new state
         if (deltaTransition != (int)state)
         {
+            switch ((int)state)
+            {
+                case 1:
+                    speedLines.Stop();
+                    speedLines.Clear();
+                    break;
+                case 2:
+                    speedlineEmission.rateOverTime = lineSpeedMid;
+                    speedLines.Play();
+                    break;
+                case 3:
+                    speedlineEmission.rateOverTime = lineSpeedTop;
+                    speedLines.Play();
+                    break;
+                default:
+                case 0:
+                    speedLines.Stop();
+                    speedLines.Clear();
+                    break;
+            }
+
             currentTime = 0f;
             deltaTransition = (int)state;
 
