@@ -37,8 +37,8 @@ public class Music : MonoBehaviour
     private ParticleSystem.EmissionModule speedlineEmission;
 
     [Header("Color")]
-    private Material stripeMat;
     [SerializeField] private GameObject stripe;
+    private Material stripeMat;
     [SerializeField] private float colorChangeSpeed = 0.08f;
 
 
@@ -75,6 +75,8 @@ public class Music : MonoBehaviour
     {
         //DynamicMusic();
         DynamicMusicStateMachine();
+
+        AlignSonicBoom();
 
         ColorChange();
 
@@ -159,6 +161,13 @@ public class Music : MonoBehaviour
 
     }
     */
+
+    private void AlignSonicBoom()
+    {
+        if (!sonicBoom.isPlaying) return;
+
+        sonicBoom.gameObject.transform.LookAt(rb.velocity.normalized + sonicBoom.gameObject.transform.position);
+    }
 
     private void DynamicMusicStateMachine()
     {
