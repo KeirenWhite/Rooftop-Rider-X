@@ -69,7 +69,7 @@ public class Music : MonoBehaviour
 
         ColorChange();
 
-        Debug.Log(currentSpeed);
+        //Debug.Log(currentSpeed);
     }
 
     /*

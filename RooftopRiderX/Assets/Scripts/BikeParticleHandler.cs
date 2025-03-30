@@ -17,36 +17,44 @@ public class BikeParticleHandler : MonoBehaviour
         emissionBack = driftDustBack.emission;
     }
 
-    void Update()
+    private void Update()
     {
         if (bike.input.gas > 0 && (bike.input.reverse > 0 || bike.input.brake > 0) && bike.input.grounded > 1)
         {
-            emissionFront.rateOverTime = 10f;
-            emissionFront.rateOverDistance = 1.2f;
-            emissionBack.rateOverTime = 10f;
-            emissionBack.rateOverDistance = 1.2f;
-            if (!driftDustBack.isPlaying)
+            if (!driftDustBack.isEmitting)
             {
-                driftDustBack.Clear();
-                driftDustBack.Emit(1);
+                var emissionBack = driftDustBack.emission;
+                emissionBack.enabled = true;  // Enable instantly
                 driftDustBack.Play();
             }
 
-            if (!driftDustFront.isPlaying)
+            if (!driftDustFront.isEmitting)
             {
-                driftDustFront.Clear();
-                driftDustFront.Emit(1);
+                var emissionFront = driftDustFront.emission;
+                emissionFront.enabled = true;
                 driftDustFront.Play();
             }
         }
         else
         {
-            emissionFront.rateOverTime = 0f;
-            emissionFront.rateOverDistance = 0f;
-            emissionBack.rateOverTime = 0f;
-            emissionBack.rateOverDistance = 0f;
-            driftDustBack.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-            driftDustFront.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            if (driftDustBack.isEmitting)
+            {
+                driftDustBack.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                StartCoroutine(DisableEmissionAfterDelay(driftDustBack, 0.05f));  // Short delay before disabling emission
+            }
+
+            if (driftDustFront.isEmitting)
+            {
+                driftDustFront.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                StartCoroutine(DisableEmissionAfterDelay(driftDustFront, 0.05f));
+            }
         }
+    }
+
+    private IEnumerator DisableEmissionAfterDelay(ParticleSystem ps, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        var emission = ps.emission;
+        emission.enabled = false;
     }
 }
