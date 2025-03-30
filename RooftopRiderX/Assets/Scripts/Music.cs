@@ -33,6 +33,7 @@ public class Music : MonoBehaviour
 
     private Material stripeMat;
     [SerializeField] private GameObject stripe;
+    [SerializeField] private ParticleSystem sonicBoom;
 
     private int deltaTransition = 0;
 
@@ -281,6 +282,9 @@ public class Music : MonoBehaviour
         {
             currentTime = 0f;
             deltaTransition = (int)state;
+
+            if (state == MusicState.topSpeed)
+                sonicBoom.Play();
         }
         //Debug.Log(state);
 
