@@ -9,6 +9,7 @@ TagManager:
   - EndGrind
   - Bike
   - TrueGround
+  - RedBlue
   layers:
   - Default
   - TransparentFX

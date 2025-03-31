@@ -11,6 +11,7 @@ public class Respawn : MonoBehaviour
     public Rigidbody bikeRb;
     public GameObject respawnPoint;
     public AudioSource fallSound;
+    
 
     private void OnRespawn(InputValue value)
     {
@@ -30,7 +31,7 @@ public class Respawn : MonoBehaviour
         bikeRb.velocity = Vector3.zero;
         bikeRb.angularVelocity = Vector3.zero;
         bike.transform.position = respawnPoint.transform.position;
-        bike.transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
+        bike.transform.eulerAngles = respawnPoint.transform.eulerAngles;
         mainCamera.transform.position = respawnPoint.transform.position;
         fallSound.Play();
         bike.GetComponent<Boost>().SetBoostToMax();
