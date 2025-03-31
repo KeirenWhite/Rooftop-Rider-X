@@ -19,7 +19,7 @@ public class GetCheckpoint : MonoBehaviour
 
         SpawnObjective();
     }
-    /*private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bike")
         {
@@ -31,5 +31,6 @@ public class GetCheckpoint : MonoBehaviour
     private void SpawnObjective()
     {
         redBlueCurrentPoint.SetActive(true);
+
     }
 }
