@@ -20,10 +20,14 @@ public class Boost : MonoBehaviour
 
     [SerializeField] private CarRaycast bikeScript;
 
+    [SerializeField] private ParticleSystem stars;
+    private ParticleSystem.EmissionModule starEmission;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        starEmission = stars.emission;
     }
 
     private void FixedUpdate()
@@ -53,6 +57,9 @@ public class Boost : MonoBehaviour
         boostVal += addBoost * trickMultiplier;
         if (boostVal > 100)
             boostVal = 100;
+
+        starEmission.rateOverTime = 5f * addBoost;
+        stars.Play();
 
         boostSlider.value = boostVal;
     }
