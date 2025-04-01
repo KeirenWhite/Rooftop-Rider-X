@@ -888,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 99276544}
     - target: {fileID: 1958565558698476847, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: offset
-      value: 3.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3573573162637646762, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: backPoint
@@ -101068,7 +101068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
@@ -101092,7 +101092,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -128.5
+      value: -129.8
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalPosition.z
