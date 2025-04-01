@@ -66,6 +66,11 @@ public class GetCheckpoint : MonoBehaviour
         SpawnObjective();
     }
 
+    private void ExtraLife()
+    {
+
+    }
+
     private void GameOver()
     {
         if (lifeCounter <= 0)
