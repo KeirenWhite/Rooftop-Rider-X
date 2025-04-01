@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class GetCheckpoint : MonoBehaviour
 {
-    private int score;
+    private int score = 0;
     public GameObject[] redBluePool;
     private int redBlueIndex;
     private GameObject redBlueCurrentPoint;
@@ -17,9 +17,20 @@ public class GetCheckpoint : MonoBehaviour
         redBlueIndex = Random.Range(0, redBluePool.Length);
         redBlueCurrentPoint = redBluePool[redBlueIndex];
 
+        
+
+        foreach (GameObject objective in redBluePool)
+        {
+            Objective objectiveScript = objective.GetComponent<Objective>();
+            if (objectiveScript != null)
+            {
+                objectiveScript.objectiveManager = this;
+            }
+        }
+
         SpawnObjective();
     }
-    private void OnTriggerEnter(Collider col)
+   /* private void OnTriggerEnter(Collider col)
     {
         col = redBlueCurrentPoint.GetComponent<Collider>();
         if (col.CompareTag("Bike"))
@@ -31,11 +42,20 @@ public class GetCheckpoint : MonoBehaviour
             SpawnObjective();
 
         }
-    }
+    }*/
 
     private void SpawnObjective()
     {
+        redBlueIndex = Random.Range(0, redBluePool.Length);
+        redBlueCurrentPoint = redBluePool[redBlueIndex];
         redBlueCurrentPoint.SetActive(true);
 
+    }
+
+    public void GotObjective(Objective objective)
+    {
+        objective.gameObject.SetActive(false);
+        score += 1;
+        SpawnObjective();
     }
 }
