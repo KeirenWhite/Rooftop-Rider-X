@@ -6,11 +6,11 @@ public class ArrowPoint : MonoBehaviour
 {
     [SerializeField] private GameObject arrow;
     [SerializeField] private GameObject bike;
-
     [SerializeField] private bool disableArrow = false;
+    
 
     private Vector3 target = Vector3.one;
-
+        
     void Update()
     {
         Point();

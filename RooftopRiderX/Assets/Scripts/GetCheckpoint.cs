@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;
 
 public class GetCheckpoint : MonoBehaviour
@@ -10,6 +11,7 @@ public class GetCheckpoint : MonoBehaviour
     public GameObject[] redBluePool;
     private int redBlueIndex;
     private GameObject redBlueCurrentPoint;
+    public ArrowPoint target;
 
     private void Start()
     {
@@ -49,6 +51,7 @@ public class GetCheckpoint : MonoBehaviour
         redBlueIndex = Random.Range(0, redBluePool.Length);
         redBlueCurrentPoint = redBluePool[redBlueIndex];
         redBlueCurrentPoint.SetActive(true);
+        target.ChangeTarget(new Vector3(redBlueCurrentPoint.transform.position.x, redBlueCurrentPoint.transform.position.y, redBlueCurrentPoint.transform.position.z));
 
     }
 
