@@ -5,26 +5,26 @@ using UnityEngine;
 public class BikeParticleHandler : MonoBehaviour
 {
     [SerializeField] private CarRaycast bike;
+
     [SerializeField] private ParticleSystem driftDustFront;
     [SerializeField] private ParticleSystem driftDustBack;
-
-    private ParticleSystem.EmissionModule emissionFront;
-    private ParticleSystem.EmissionModule emissionBack;
-
-    private void Start()
-    {
-        emissionFront = driftDustFront.emission;
-        emissionBack = driftDustBack.emission;
-    }
+    [SerializeField] private ParticleSystem trickParticles;
 
     private void Update()
     {
         if (bike.input.gas > 0 && (bike.input.reverse > 0 || bike.input.brake > 0) && bike.input.grounded > 1)
         {
+            if (!trickParticles.isEmitting)
+            {
+                var emissionTrick = trickParticles.emission;
+                emissionTrick.enabled = true;
+                trickParticles.Play();
+            }
+
             if (!driftDustBack.isEmitting)
             {
                 var emissionBack = driftDustBack.emission;
-                emissionBack.enabled = true;  // Enable instantly
+                emissionBack.enabled = true;
                 driftDustBack.Play();
             }
 
@@ -37,10 +37,16 @@ public class BikeParticleHandler : MonoBehaviour
         }
         else
         {
+            if (trickParticles.isEmitting)
+            {
+                trickParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                StartCoroutine(DisableEmissionAfterDelay(trickParticles, 0.05f));
+            }
+
             if (driftDustBack.isEmitting)
             {
                 driftDustBack.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                StartCoroutine(DisableEmissionAfterDelay(driftDustBack, 0.05f));  // Short delay before disabling emission
+                StartCoroutine(DisableEmissionAfterDelay(driftDustBack, 0.05f));
             }
 
             if (driftDustFront.isEmitting)

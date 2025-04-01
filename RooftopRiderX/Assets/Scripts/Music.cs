@@ -32,6 +32,7 @@ public class Music : MonoBehaviour
     [Header("Particles")]
     [SerializeField] private ParticleSystem sonicBoom;
     [SerializeField] private ParticleSystem speedLines;
+    private GameObject speedlineObject;
     [SerializeField] private float lineSpeedMid = 20f;
     [SerializeField] private float lineSpeedTop = 40f;
     private ParticleSystem.EmissionModule speedlineEmission;
@@ -68,13 +69,17 @@ public class Music : MonoBehaviour
         audioSourceTop.volume = 0f;
 
         stripeMat = stripe.GetComponent<MeshRenderer>().material;
+
         speedlineEmission = speedLines.emission;
+        speedlineObject = speedLines.gameObject;
     }
 
     void FixedUpdate()
     {
         //DynamicMusic();
         DynamicMusicStateMachine();
+
+        PositionSpeedLines();
 
         AlignSonicBoom();
 
@@ -300,21 +305,23 @@ public class Music : MonoBehaviour
             switch ((int)state)
             {
                 case 1:
-                    speedLines.Stop();
-                    speedLines.Clear();
+                    speedLines.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                    StartCoroutine(DisableEmissionAfterDelay(speedLines, 0.05f));
                     break;
                 case 2:
                     speedlineEmission.rateOverTime = lineSpeedMid;
+                    speedlineEmission.enabled = true;
                     speedLines.Play();
                     break;
                 case 3:
                     speedlineEmission.rateOverTime = lineSpeedTop;
+                    speedlineEmission.enabled = true;
                     speedLines.Play();
                     break;
                 default:
                 case 0:
-                    speedLines.Stop();
-                    speedLines.Clear();
+                    //speedLines.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                    //StartCoroutine(DisableEmissionAfterDelay(speedLines, 0.05f));
                     break;
             }
 
@@ -325,6 +332,20 @@ public class Music : MonoBehaviour
                 sonicBoom.Play();
         }
         //Debug.Log(state);
+    }
 
+    private void PositionSpeedLines()
+    {
+        if (state == MusicState.lowSpeed || state == MusicState.zeroSpeed) return;
+
+        speedlineObject.transform.localPosition = new Vector3(0f, 0f, Mathf.Clamp(rb.velocity.magnitude, 65f, 130f));
+
+    }
+
+    private IEnumerator DisableEmissionAfterDelay(ParticleSystem ps, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        var emission = ps.emission;
+        emission.enabled = false;
     }
 }

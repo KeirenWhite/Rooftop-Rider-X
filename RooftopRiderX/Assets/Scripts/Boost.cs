@@ -17,11 +17,15 @@ public class Boost : MonoBehaviour
     [SerializeField] private float aerialBoostUseMult = 10f;
     [SerializeField] private float boostRefillMult = 1f;
     [SerializeField] private float trickMultiplier = 0.25f;
+    [SerializeField] private float driftMultSensitivity = 3f;
+    [SerializeField] private float driftMultiplier = 3f;
 
     [SerializeField] private CarRaycast bikeScript;
 
     [SerializeField] private ParticleSystem stars;
     private ParticleSystem.EmissionModule starEmission;
+
+    private float driftTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,8 @@ public class Boost : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float dmult = DriftMultiplier();
+
         if (input > 0 && boostVal > 0 && !bikeScript.input.downed)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
@@ -40,7 +46,7 @@ public class Boost : MonoBehaviour
         }
         else if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)
         {
-            boostVal += Time.deltaTime * boostRefillMult;
+            boostVal += (Time.deltaTime * boostRefillMult) * dmult;
             boostSlider.value = boostVal;
         }
     }
@@ -48,6 +54,26 @@ public class Boost : MonoBehaviour
     private void OnBoost(InputValue value)
     {
         input = value.Get<float>();
+    }
+
+    private float DriftMultiplier()
+    {
+        if (bikeScript.input.gas > 0 && (bikeScript.input.reverse > 0 || bikeScript.input.brake > 0) && bikeScript.input.grounded > 1)
+        {
+            if (input > 0)
+            {
+                driftTimer = 0f;
+            }
+
+            driftTimer += Time.deltaTime;
+            return Mathf.Pow(driftMultSensitivity, driftTimer / driftMultiplier);
+        }
+        else
+        {
+            driftTimer = 0f;
+            return 1f;
+        }
+
     }
 
     public void RefillBoost(float addBoost)

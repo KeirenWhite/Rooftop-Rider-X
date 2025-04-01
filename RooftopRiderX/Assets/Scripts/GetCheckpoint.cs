@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;
+using TMPro;
 
 public class GetCheckpoint : MonoBehaviour
 {
@@ -11,7 +12,9 @@ public class GetCheckpoint : MonoBehaviour
     public GameObject[] redBluePool;
     private int redBlueIndex;
     private GameObject redBlueCurrentPoint;
-    public ArrowPoint target;
+    public ArrowPoint arrowPoint;
+    public TMP_Text scoreText;
+    
 
     private void Start()
     {
@@ -19,7 +22,7 @@ public class GetCheckpoint : MonoBehaviour
         redBlueIndex = Random.Range(0, redBluePool.Length);
         redBlueCurrentPoint = redBluePool[redBlueIndex];
 
-        
+        UpdateCounterDisplay();
 
         foreach (GameObject objective in redBluePool)
         {
@@ -32,33 +35,27 @@ public class GetCheckpoint : MonoBehaviour
 
         SpawnObjective();
     }
-   /* private void OnTriggerEnter(Collider col)
-    {
-        col = redBlueCurrentPoint.GetComponent<Collider>();
-        if (col.CompareTag("Bike"))
-        {
-            redBlueCurrentPoint.SetActive(false);
-            score += 1;
-            redBlueIndex = Random.Range(0, redBluePool.Length);
-            redBlueCurrentPoint = redBluePool[redBlueIndex];
-            SpawnObjective();
 
-        }
-    }*/
+    private void UpdateCounterDisplay()
+    {
+        scoreText.text = string.Format("Score: {0}", score);
+        Debug.Log(score);
+    }
 
     private void SpawnObjective()
     {
         redBlueIndex = Random.Range(0, redBluePool.Length);
         redBlueCurrentPoint = redBluePool[redBlueIndex];
         redBlueCurrentPoint.SetActive(true);
-        target.ChangeTarget(new Vector3(redBlueCurrentPoint.transform.position.x, redBlueCurrentPoint.transform.position.y, redBlueCurrentPoint.transform.position.z));
+        arrowPoint.ChangeTarget(redBlueCurrentPoint.transform.position);
 
     }
 
     public void GotObjective(Objective objective)
     {
         objective.gameObject.SetActive(false);
-        score += 1;
+        score += 100;
+        UpdateCounterDisplay();
         SpawnObjective();
     }
 }
