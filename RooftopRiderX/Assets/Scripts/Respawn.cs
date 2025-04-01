@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Respawn : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Respawn : MonoBehaviour
     public Rigidbody bikeRb;
     public GameObject respawnPoint;
     public AudioSource fallSound;
+    public GetCheckpoint getCheckpoint;
+    //public TMP_Text lives;
     
 
     private void OnRespawn(InputValue value)
@@ -23,6 +26,8 @@ public class Respawn : MonoBehaviour
         if (col.gameObject.CompareTag("Bike"))
         {
             RespawnBike();
+            getCheckpoint.lifeCounter--;
+            getCheckpoint.lives.text = string.Format("Lives: {0}", getCheckpoint.lifeCounter);
         }
     }
     
@@ -36,5 +41,13 @@ public class Respawn : MonoBehaviour
         fallSound.Play();
         bike.GetComponent<Boost>().SetBoostToMax();
     }
+
+    /*private void GameOver()
+    {
+        if (lifeCounter <= 0)
+        {
+            bike.SetActive(false);
+        }
+    }*/
     
 }

@@ -13,7 +13,10 @@ public class GetCheckpoint : MonoBehaviour
     private int redBlueIndex;
     private GameObject redBlueCurrentPoint;
     public ArrowPoint arrowPoint;
+    public int lifeCounter = 3;
     public TMP_Text scoreText;
+    public TMP_Text lives;
+    public GameObject bike;
     
 
     private void Start()
@@ -36,6 +39,10 @@ public class GetCheckpoint : MonoBehaviour
         SpawnObjective();
     }
 
+    private void Update()
+    {
+        GameOver();
+    }
     private void UpdateCounterDisplay()
     {
         scoreText.text = string.Format("Score: {0}", score);
@@ -57,5 +64,13 @@ public class GetCheckpoint : MonoBehaviour
         score += 100;
         UpdateCounterDisplay();
         SpawnObjective();
+    }
+
+    private void GameOver()
+    {
+        if (lifeCounter <= 0)
+        {
+            bike.SetActive(false);
+        }
     }
 }
