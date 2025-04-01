@@ -19,14 +19,19 @@ public class GetCheckpoint : MonoBehaviour
 
         SpawnObjective();
     }
-   /* private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.tag == "Bike")
+        col = redBlueCurrentPoint.GetComponent<Collider>();
+        if (col.CompareTag("Bike"))
         {
-            gameObject.SetActive(false);
-            redBluePool.
+            redBlueCurrentPoint.SetActive(false);
+            score += 1;
+            redBlueIndex = Random.Range(0, redBluePool.Length);
+            redBlueCurrentPoint = redBluePool[redBlueIndex];
+            SpawnObjective();
+
         }
-    }*/
+    }
 
     private void SpawnObjective()
     {
