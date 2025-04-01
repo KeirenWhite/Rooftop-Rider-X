@@ -7,6 +7,7 @@ public class ArrowPoint : MonoBehaviour
     [SerializeField] private GameObject arrow;
     [SerializeField] private GameObject bike;
     [SerializeField] private bool disableArrow = false;
+    [SerializeField] private float offset = 10f;
     
 
     private Vector3 target = Vector3.one;
@@ -25,7 +26,7 @@ public class ArrowPoint : MonoBehaviour
         }
         arrow.SetActive(true);
 
-        Vector3 bikePos = new Vector3(bike.transform.position.x, bike.transform.position.y + 2, bike.transform.position.z);
+        Vector3 bikePos = new Vector3(bike.transform.position.x, bike.transform.position.y + offset, bike.transform.position.z);
         Vector3 pointDir = (target - bikePos).normalized;
 
         arrow.transform.position = bikePos + (pointDir);
