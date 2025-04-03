@@ -6,7 +6,6 @@ using UnityEngine;
 public class SpawnManagerScriptableObject : ScriptableObject
 {
     private ScoreScriptableObject [] scoreArray = new ScoreScriptableObject [10];
-    private bool leaderboardFull = false;
 
     private bool firstUse = false;
 
@@ -17,7 +16,7 @@ public class SpawnManagerScriptableObject : ScriptableObject
 
         for (int i = 0; i < scoreArray.Length - 1; i++)
         {
-            ScoreScriptableObject score = new ScoreScriptableObject();
+            ScoreScriptableObject score = CreateInstance<ScoreScriptableObject>();
             score.SetScore(0);
             score.SetScoreBearer("N/A");
             scoreArray[i] = score;
@@ -28,7 +27,7 @@ public class SpawnManagerScriptableObject : ScriptableObject
     {
         FirstUse();
 
-        ScoreScriptableObject scoreObj = new ScoreScriptableObject();
+        ScoreScriptableObject scoreObj = CreateInstance<ScoreScriptableObject>();
         scoreObj.SetScore(score);
         scoreObj.SetScoreBearer(bearer);
 
