@@ -14,7 +14,7 @@ public class SpawnManagerScriptableObject : ScriptableObject
         if (firstUse) return;
         firstUse = true;
 
-        for (int i = 0; i < scoreArray.Length - 1; i++)
+        for (int i = 0; i < scoreArray.Length; i++)
         {
             ScoreScriptableObject score = CreateInstance<ScoreScriptableObject>();
             score.SetScore(0);
@@ -25,6 +25,8 @@ public class SpawnManagerScriptableObject : ScriptableObject
 
     public void AddNewScore(string bearer, int score)
     {
+        Debug.Log(firstUse);
+
         FirstUse();
 
         ScoreScriptableObject scoreObj = CreateInstance<ScoreScriptableObject>();

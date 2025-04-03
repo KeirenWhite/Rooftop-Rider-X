@@ -19,6 +19,7 @@ public class Boost : MonoBehaviour
     [SerializeField] private float trickMultiplier = 0.25f;
     [SerializeField] private float driftMultSensitivity = 3f;
     [SerializeField] private float driftMultiplier = 3f;
+    [SerializeField] private float baseMultDuringDrift = 2f;
 
     [SerializeField] private CarRaycast bikeScript;
 
@@ -66,7 +67,7 @@ public class Boost : MonoBehaviour
             }
 
             driftTimer += Time.deltaTime;
-            return Mathf.Pow(driftMultSensitivity, driftTimer / driftMultiplier);
+            return baseMultDuringDrift * Mathf.Pow(driftMultSensitivity, driftTimer / driftMultiplier);
         }
         else
         {
@@ -76,11 +77,11 @@ public class Boost : MonoBehaviour
 
     }
 
-    public void RefillBoost(float addBoost)
+    public void RefillBoost(float addBoost, bool overrideMult = false)
     {
         //Debug.Log(addBoost);
 
-        boostVal += addBoost * trickMultiplier;
+        boostVal += addBoost * (overrideMult ? 1f : trickMultiplier);
         if (boostVal > 100)
             boostVal = 100;
 

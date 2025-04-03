@@ -18,8 +18,6 @@ public class GetCheckpoint : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text lives;
     public GameObject bike;
-    
-    [SerializeField] private SpawnManagerScriptableObject spawnManager;
 
     private void Start()
     {
@@ -77,11 +75,7 @@ public class GetCheckpoint : MonoBehaviour
     {
         if (lifeCounter <= 0)
         {
-            spawnManager.AddNewScore("TheGoatSamulock", score);
-
             bike.SetActive(false);
-
-            SceneManager.LoadScene("GameOver");
         }
     }
 }
