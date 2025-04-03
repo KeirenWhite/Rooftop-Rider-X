@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Whitebox.unity
     guid: ee8b9a7bb48c33c43ad6d948c348ff21
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 42801017e2f4db5438572144338c1dbc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: c34f09ce8eccbd2419248aa6c74cfe56, type: 2}

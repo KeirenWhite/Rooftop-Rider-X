@@ -5,6 +5,7 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GetCheckpoint : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GetCheckpoint : MonoBehaviour
     public TMP_Text lives;
     public GameObject bike;
     
+    [SerializeField] private SpawnManagerScriptableObject spawnManager;
 
     private void Start()
     {
@@ -75,7 +77,11 @@ public class GetCheckpoint : MonoBehaviour
     {
         if (lifeCounter <= 0)
         {
+            spawnManager.AddNewScore("TheGoatSamulock", score);
+
             bike.SetActive(false);
+
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
