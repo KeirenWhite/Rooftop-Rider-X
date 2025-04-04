@@ -11758,7 +11758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lives: 10'
+  m_text: 'Lives: 3'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -39436,7 +39436,6 @@ MonoBehaviour:
   scoreText: {fileID: 1639870568}
   lives: {fileID: 387653228}
   bike: {fileID: 333505769}
-  spawnManager: {fileID: 11400000, guid: 37e504f4cd644c64d95a8fce868b2571, type: 2}
 --- !u!4 &995127484
 Transform:
   m_ObjectHideFlags: 0

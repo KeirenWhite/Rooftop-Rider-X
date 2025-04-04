@@ -42,6 +42,12 @@ public class CameraController : MonoBehaviour
         //Debug.Log(steer);
     }
 
+    private void OnCamReset(InputValue value)
+    {
+        transform.position = moveto.transform.position;
+        transform.LookAt(lookat.transform.position);
+    }
+
     private void LateUpdate()
     {
         //the new position, but keep the camera at original y so it doesn't flip with the car
