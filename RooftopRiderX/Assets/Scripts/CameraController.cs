@@ -29,8 +29,20 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float heightCorrectionSpeed = 1f;
     private bool inRadius = false;
 
+    [SerializeField] private int depthNum = 0;
+
+    private void Awake()
+    {
+        Camera cam = GetComponent<Camera>();
+
+        //cam.clearFlags = CameraClearFlags.Depth; 
+
+        cam.depth = depthNum;
+    }
+
     private void Start()
     {
+
         //the RecallCameraY is so the camera doesn't flip with the car and go under the ground by accident
         if (moveto != null)
             RecallCameraY = Mathf.Abs(moveto.transform.position.y - lookat.transform.position.y);
