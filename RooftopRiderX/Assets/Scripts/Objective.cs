@@ -19,6 +19,7 @@ public class Objective : MonoBehaviour
         {
             audioSource.Play();
             objectiveManager.GotObjective(this);
+            col.GetComponent<Boost>().RefillBoost(20f, true);
         }
     }
 }

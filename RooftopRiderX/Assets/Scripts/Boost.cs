@@ -76,11 +76,11 @@ public class Boost : MonoBehaviour
 
     }
 
-    public void RefillBoost(float addBoost)
+    public void RefillBoost(float addBoost, bool overrideTrick = false)
     {
         //Debug.Log(addBoost);
 
-        boostVal += addBoost * trickMultiplier;
+        boostVal += addBoost * (overrideTrick ? 1f : trickMultiplier);
         if (boostVal > 100)
             boostVal = 100;
 
