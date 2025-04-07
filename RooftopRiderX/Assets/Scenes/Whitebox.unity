@@ -1216,7 +1216,8 @@ PrefabInstance:
       propertyPath: driftMultiplier
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1958565558698476847, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5922989600378187691, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
     - {fileID: 4476911953352876270, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
@@ -3105,6 +3106,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20c16a8bec7e02f47a13df8e3b9b0121, type: 3}
   m_PrefabInstance: {fileID: 493330542}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &99276548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99276544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92c41ede2817ad4d904e94f1b1fec81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 99276544}
+  bike: {fileID: 645618636}
+  disableArrow: 0
+  offset: 2.5
 --- !u!1001 &101957512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8799,7 +8816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -11686,7 +11703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -13275,7 +13292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -20728,7 +20745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -21254,10 +21271,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewArrow2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 20c16a8bec7e02f47a13df8e3b9b0121, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 20c16a8bec7e02f47a13df8e3b9b0121, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 99276548}
   m_SourcePrefab: {fileID: 100100000, guid: 20c16a8bec7e02f47a13df8e3b9b0121, type: 3}
 --- !u!1 &498727836
 GameObject:
@@ -28502,7 +28526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -30566,7 +30590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Gray
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -36902,7 +36926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Green
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -37703,7 +37727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -42629,12 +42653,17 @@ MonoBehaviour:
   - {fileID: 2070472580}
   - {fileID: 1846382364}
   - {fileID: 1938055650}
-  arrowPoint: {fileID: 1531521533}
-  lifeCounter: 3
+  arrow: {fileID: 99276544}
+  lifeCounter: 10
   scoreText: {fileID: 1639870568}
   lives: {fileID: 387653228}
   bike: {fileID: 333505769}
   spawnManager: {fileID: 11400000, guid: 37e504f4cd644c64d95a8fce868b2571, type: 2}
+  redMat: {fileID: 2100000, guid: 708ba2aa0e7b6fb4b9738a4bb7a48559, type: 2}
+  blueMat: {fileID: 2100000, guid: dad240051a1faf044a9de4565c02af3d, type: 2}
+  yellowMat: {fileID: 2100000, guid: d18f922d5b72ec24b8aaec58f2d760fa, type: 2}
+  greenMat: {fileID: 2100000, guid: 624fd0d947500994fae8b7ff2ca6678e, type: 2}
+  grayMat: {fileID: 2100000, guid: fec6f7598f7534f4ba7d9b78e25dd356, type: 2}
 --- !u!4 &995127484
 Transform:
   m_ObjectHideFlags: 0
@@ -42828,7 +42857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -54613,7 +54642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Gray
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -55846,7 +55875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Gray
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -57908,7 +57937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Gray
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -66920,7 +66949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Green
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -82376,7 +82405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -82992,17 +83021,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531361252}
   m_Mesh: {fileID: 5331347218532796612, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
---- !u!114 &1531521533 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1958565558698476847, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
-  m_PrefabInstance: {fileID: 48933758}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92c41ede2817ad4d904e94f1b1fec81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1531521534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7610275255122065409, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
@@ -84208,7 +84226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Green
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -84439,7 +84457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -85394,7 +85412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -103263,7 +103281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -104137,7 +104155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -106107,7 +106125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -106925,7 +106943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Green
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -109016,7 +109034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -109326,7 +109344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -110673,7 +110691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Blue
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x
@@ -111869,7 +111887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212553992820453183, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_TagString
-      value: RedBlue
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 8841422539406652805, guid: 903b3a4b24e17eb4282a62327a5603d5, type: 3}
       propertyPath: m_LocalScale.x

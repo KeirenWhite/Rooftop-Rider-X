@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     [SerializeField] private Button mmButton;
-    [SerializeField] private TMP_Text bearerList;
-    [SerializeField] private TMP_Text scoreList;
+    [SerializeField] private TMP_Text score;
 
     [SerializeField] private SpawnManagerScriptableObject leaderboardObject;
 
@@ -22,11 +21,7 @@ public class GameOverManager : MonoBehaviour
 
     private void SetLeaderboard()
     {
-        for (int i = 0; i < 10; i++)
-        {
-            bearerList.text += (i == 0 ? "" : "\n") + leaderboardObject.BearerAtPlacement(i);
-            scoreList.text += (i == 0 ? "" : "\n") + leaderboardObject.ScoreAtPlacement(i);
-        }
+        score.text = leaderboardObject.ScoreAtPlacement(0).ToString();
     }
 
     public void ReturnToMainMenu()

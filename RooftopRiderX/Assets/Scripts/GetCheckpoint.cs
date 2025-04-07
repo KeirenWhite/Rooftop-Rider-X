@@ -13,13 +13,20 @@ public class GetCheckpoint : MonoBehaviour
     public GameObject[] redBluePool;
     private int redBlueIndex;
     private GameObject redBlueCurrentPoint;
-    public ArrowPoint arrowPoint;
+    public GameObject arrow;
+    private GameObject arrowObject;
     public int lifeCounter = 3;
     public TMP_Text scoreText;
     public TMP_Text lives;
     public GameObject bike;
     
     [SerializeField] private SpawnManagerScriptableObject spawnManager;
+
+    [SerializeField] private Material redMat;
+    [SerializeField] private Material blueMat;
+    [SerializeField] private Material yellowMat;
+    [SerializeField] private Material greenMat;
+    [SerializeField] private Material grayMat;
 
     private void Start()
     {
@@ -56,8 +63,30 @@ public class GetCheckpoint : MonoBehaviour
         redBlueIndex = Random.Range(0, redBluePool.Length);
         redBlueCurrentPoint = redBluePool[redBlueIndex];
         redBlueCurrentPoint.SetActive(true);
-        arrowPoint.ChangeTarget(redBlueCurrentPoint.transform.position);
 
+        MeshRenderer arrowMat = arrow.GetComponent<MeshRenderer>();
+
+        switch (redBlueCurrentPoint.tag)
+        {
+            default:
+            case "Red":
+                arrowMat.material = redMat;
+                break;
+            case "Blue":
+                arrowMat.material = blueMat;
+                break;
+            case "Yellow":
+                arrowMat.material = yellowMat;
+                break;
+            case "Green":
+                arrowMat.material = greenMat;
+                break;
+            case "Gray":
+                arrowMat.material = grayMat;
+                break;
+        }
+
+        arrow.GetComponent<ArrowPoint>().ChangeTarget(redBlueCurrentPoint.transform.position);
     }
 
     public void GotObjective(Objective objective)

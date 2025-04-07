@@ -10,6 +10,11 @@ TagManager:
   - Bike
   - TrueGround
   - RedBlue
+  - Red
+  - Blue
+  - Green
+  - Yellow
+  - Gray
   layers:
   - Default
   - TransparentFX
