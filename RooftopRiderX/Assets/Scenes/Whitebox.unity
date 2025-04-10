@@ -75266,7 +75266,7 @@ MonoBehaviour:
   moveto: {fileID: 1623970704}
   lookat: {fileID: 645618636}
   farmoveto: {fileID: 941456194}
-  Movespeed: 2
+  Movespeed: 3
   reverseSpeedMult: 2
   Lookspeed: 180
   airLookSpeed: 300
@@ -117714,6 +117714,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 645618640}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1452743188}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: stripe
       value: 
       objectReference: {fileID: 1051575801}
@@ -117754,12 +117758,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1064609828}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: midSpeedFOV
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: topSpeedFOV
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: lineSpeedMid
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: lineSpeedTop
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: changeFOVSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: lowSpeedDark.b

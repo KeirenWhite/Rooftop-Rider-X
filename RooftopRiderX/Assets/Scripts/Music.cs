@@ -42,6 +42,12 @@ public class Music : MonoBehaviour
     private Material stripeMat;
     [SerializeField] private float colorChangeSpeed = 0.08f;
 
+    [Header("Camera")]
+    [SerializeField] private Camera cam;
+    [SerializeField] private float changeFOVSpeed = 0.2f;
+    [SerializeField] private float defaultFOV = 60f;
+    [SerializeField] private float midSpeedFOV = 75f;
+    [SerializeField] private float topSpeedFOV = 90f;
 
     private int deltaTransition = 0;
 
@@ -84,6 +90,8 @@ public class Music : MonoBehaviour
         AlignSonicBoom();
 
         ColorChange();
+
+        CamFOVChange();
 
         //Debug.Log(currentSpeed);
     }
@@ -294,6 +302,39 @@ public class Music : MonoBehaviour
 
         stripeMat.SetColor("_DarkColor", darkColor);
         stripeMat.SetColor("_BrightColor", lightColor);
+    }
+
+    private void CamFOVChange()
+    {
+        switch (state)
+        {
+            case MusicState.lowSpeed:
+                cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defaultFOV, changeFOVSpeed);
+                break;
+            case MusicState.midSpeed:
+                cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, midSpeedFOV, changeFOVSpeed);
+                break;
+            case MusicState.topSpeed:
+                cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, topSpeedFOV, changeFOVSpeed);
+                break;
+            default:
+            case MusicState.zeroSpeed:
+                cam.fieldOfView = Mathf.MoveTowards(cam.fieldOfView, defaultFOV, changeFOVSpeed);
+                break;
+        }
+
+    }
+
+    private float SmoothMoveTowardsDelta(float current, float target, float maxDelta)
+    {
+        float newMaxDelta = maxDelta;
+
+        if (Mathf.Abs(target) / Mathf.Abs(current) > 0.8f)
+        {
+            newMaxDelta = maxDelta * (5 * (1 - (Mathf.Abs(target) / Mathf.Abs(current))));
+        }
+
+        return Mathf.MoveTowards(current, target, newMaxDelta);
     }
 
 
