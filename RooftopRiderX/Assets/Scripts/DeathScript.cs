@@ -22,7 +22,7 @@ public class DeathScript : MonoBehaviour
 
     void Start()
     {
-        
+        deathCanvas.SetActive(false);
     }
 
     private void OnRespawn(InputValue value)
