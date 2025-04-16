@@ -25,13 +25,13 @@ public class Respawn : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Bike"))
         {
-            RespawnBike();
+            //RespawnBike();
             getCheckpoint.lifeCounter--;
             getCheckpoint.lives.text = string.Format("Lives: {0}", getCheckpoint.lifeCounter);
         }
     }
     
-    private void RespawnBike()
+    public void RespawnBike()
     {
         bikeRb.velocity = Vector3.zero;
         bikeRb.angularVelocity = Vector3.zero;

@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class GetCheckpoint : MonoBehaviour
 {
-    private int score = 0;
+    public int score = 0;
     public GameObject[] redBluePool;
     private int redBlueIndex;
     private GameObject redBlueCurrentPoint;
