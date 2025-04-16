@@ -19,7 +19,7 @@ public class GetCheckpoint : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text lives;
     public GameObject bike;
-    
+    public AudioSource audioSource;
     [SerializeField] private SpawnManagerScriptableObject spawnManager;
 
     [SerializeField] private Material redMat;
@@ -93,6 +93,7 @@ public class GetCheckpoint : MonoBehaviour
     {
         objective.gameObject.SetActive(false);
         score += 100;
+        audioSource.Play();
         UpdateCounterDisplay();
         SpawnObjective();
     }

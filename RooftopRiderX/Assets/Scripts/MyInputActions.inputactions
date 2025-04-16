@@ -498,6 +498,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1643545d-2ca5-435a-b6f4-50292f332260",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f0fe0531-d673-46da-99e3-d16c31ded6a4",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
@@ -627,6 +638,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "Previous",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Continue",
+            "id": "0df3b152-b26e-49e0-a80d-1627136d4aeb",
+            "actions": [
+                {
+                    "name": "Respawn",
+                    "type": "Value",
+                    "id": "7f3937b3-a4d7-43b5-b631-d5b10ab06e46",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cc19b8ab-8e1c-44a9-86db-eec0a77c9dbd",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ce38632-c6ee-45ef-a5fd-9d11df259505",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

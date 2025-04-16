@@ -11,15 +11,15 @@ public class Respawn : MonoBehaviour
     public Camera mainCamera;
     public Rigidbody bikeRb;
     public GameObject respawnPoint;
-    public AudioSource fallSound;
+    /*public AudioSource fallSound;*/
     public GetCheckpoint getCheckpoint;
     //public TMP_Text lives;
     
 
-    private void OnRespawn(InputValue value)
+    /*private void OnRespawn(InputValue value)
     {
         RespawnBike();
-    }
+    }*/
 
     void OnTriggerEnter(Collider col)
     {
@@ -38,7 +38,7 @@ public class Respawn : MonoBehaviour
         bike.transform.position = respawnPoint.transform.position;
         bike.transform.eulerAngles = respawnPoint.transform.eulerAngles;
         mainCamera.transform.position = respawnPoint.transform.position;
-        fallSound.Play();
+        //fallSound.Play();
         bike.GetComponent<Boost>().SetBoostToMax();
     }
 

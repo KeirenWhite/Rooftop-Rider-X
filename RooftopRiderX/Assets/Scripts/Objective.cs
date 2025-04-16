@@ -5,7 +5,7 @@ using UnityEngine;
 public class Objective : MonoBehaviour
 {
     public GetCheckpoint objectiveManager;
-    public AudioSource audioSource;
+    /*public AudioSource audioSource;*/
     //public ArrowPoint target;
 
     private void Start()
@@ -17,7 +17,7 @@ public class Objective : MonoBehaviour
     {
         if (col.CompareTag("Bike"))  
         {
-            audioSource.Play();
+            //audioSource.Play();
             objectiveManager.GotObjective(this);
             col.GetComponent<Boost>().RefillBoost(20f, true);
         }

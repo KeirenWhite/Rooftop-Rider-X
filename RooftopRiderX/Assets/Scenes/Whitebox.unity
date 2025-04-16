@@ -341,6 +341,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8841808}
   m_Mesh: {fileID: 9086201508115507805, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
+--- !u!1 &11136371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1306608368998375669, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+  m_PrefabInstance: {fileID: 7168514551542836721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &11337550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1882530728411375235, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
@@ -3632,6 +3637,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 121687263}
+    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 121687258}
   m_SourcePrefab: {fileID: 100100000, guid: bb93f720517792d488352ffea1d251c0, type: 3}
@@ -3667,9 +3675,46 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Car
+  m_DefaultActionMap: Continue
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!82 &121687259 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4745675984236427343, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+  m_PrefabInstance: {fileID: 121687256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &121687260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+  m_PrefabInstance: {fileID: 121687256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121687257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &121687263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121687257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 121687260}
+  getCheckpoint: {fileID: 995127483}
+  deathCanvas: {fileID: 1104546580}
+  currentScore: {fileID: 644305168}
+  currentLives: {fileID: 514008817}
+  bike: {fileID: 645618636}
+  bikeScript: {fileID: 645618647}
+  fallSound: {fileID: 121687259}
+  musicManager: {fileID: 11136371}
 --- !u!1 &123185635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8905,7 +8950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &290072993
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11888,7 +11932,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &375223416
 GameObject:
   m_ObjectHideFlags: 0
@@ -12623,6 +12666,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1837410563}
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1837410558}
@@ -13381,7 +13427,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &414675504
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20834,7 +20879,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &482679124
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21032,6 +21076,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 484110182}
+    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 484110177}
   m_SourcePrefab: {fileID: 100100000, guid: bb93f720517792d488352ffea1d251c0, type: 3}
@@ -21067,9 +21114,41 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Car
+  m_DefaultActionMap: 0df3b152-b26e-49e0-a80d-1627136d4aeb
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &484110179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+  m_PrefabInstance: {fileID: 484110175}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484110176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &484110182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484110176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 484110179}
+  getCheckpoint: {fileID: 995127483}
+  deathCanvas: {fileID: 1104546580}
+  currentScore: {fileID: 644305168}
+  currentLives: {fileID: 514008817}
+  bike: {fileID: 645618636}
+  bikeScript: {fileID: 645618647}
+  fallSound: {fileID: 121687259}
+  musicManager: {fileID: 11136371}
 --- !u!1 &484894399
 GameObject:
   m_ObjectHideFlags: 0
@@ -29812,7 +29891,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 8556262120643298411, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
   - {fileID: 2086600976039516832, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
-  - {fileID: 2100000, guid: 65ed982d74d9cdd4795b2f2a10b68f7e, type: 2}
+  - {fileID: 2100000, guid: c94553f48862f9a448faeed3e1b49bde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30909,7 +30988,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &630332124
 GameObject:
   m_ObjectHideFlags: 0
@@ -31920,7 +31998,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 8556262120643298411, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
   - {fileID: 2086600976039516832, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
-  - {fileID: 2100000, guid: 65ed982d74d9cdd4795b2f2a10b68f7e, type: 2}
+  - {fileID: 2100000, guid: c94553f48862f9a448faeed3e1b49bde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37379,7 +37457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &820204551
 GameObject:
   m_ObjectHideFlags: 0
@@ -37782,7 +37859,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 8556262120643298411, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
   - {fileID: 2086600976039516832, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
-  - {fileID: 2100000, guid: 65ed982d74d9cdd4795b2f2a10b68f7e, type: 2}
+  - {fileID: 2100000, guid: c94553f48862f9a448faeed3e1b49bde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -38084,7 +38161,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &825943432
 AudioSource:
   m_ObjectHideFlags: 0
@@ -41764,7 +41840,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 8556262120643298411, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
   - {fileID: 2086600976039516832, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
-  - {fileID: 2100000, guid: 65ed982d74d9cdd4795b2f2a10b68f7e, type: 2}
+  - {fileID: 2100000, guid: c94553f48862f9a448faeed3e1b49bde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -42876,6 +42952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995127484}
   - component: {fileID: 995127483}
+  - component: {fileID: 995127485}
   m_Layer: 0
   m_Name: Objective Manager
   m_TagString: Untagged
@@ -42927,6 +43004,7 @@ MonoBehaviour:
   scoreText: {fileID: 1639870568}
   lives: {fileID: 387653228}
   bike: {fileID: 333505769}
+  audioSource: {fileID: 995127485}
   spawnManager: {fileID: 11400000, guid: 37e504f4cd644c64d95a8fce868b2571, type: 2}
   redMat: {fileID: 2100000, guid: 708ba2aa0e7b6fb4b9738a4bb7a48559, type: 2}
   blueMat: {fileID: 2100000, guid: dad240051a1faf044a9de4565c02af3d, type: 2}
@@ -42973,6 +43051,102 @@ Transform:
   - {fileID: 2010803634}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &995127485
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995127482}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: dea4505b3ee193c488d6d91b82e1d46a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &999936428
 GameObject:
   m_ObjectHideFlags: 0
@@ -43215,7 +43389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1011874762
 AudioSource:
   m_ObjectHideFlags: 0
@@ -55096,7 +55269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &1096173405
 GameObject:
   m_ObjectHideFlags: 0
@@ -55487,8 +55659,6 @@ GameObject:
   - component: {fileID: 1104546584}
   - component: {fileID: 1104546583}
   - component: {fileID: 1104546582}
-  - component: {fileID: 1104546585}
-  - component: {fileID: 1104546586}
   m_Layer: 0
   m_Name: DeathScreen
   m_TagString: Untagged
@@ -55508,6 +55678,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2102867300}
   - {fileID: 514008816}
   - {fileID: 644305167}
   m_Father: {fileID: 1452743189}
@@ -55580,55 +55751,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!114 &1104546585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104546580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1753438595}
-  getCheckpoint: {fileID: 995127483}
-  deathCanvas: {fileID: 1104546580}
-  currentScore: {fileID: 644305168}
-  currentLives: {fileID: 514008817}
-  bike: {fileID: 645618636}
-  bikeScript: {fileID: 645618647}
---- !u!114 &1104546586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104546580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 069edd1b29b471747bcb876a1018fc02, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Car
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1111666632
 GameObject:
   m_ObjectHideFlags: 0
@@ -56387,7 +56509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1130433511
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58449,7 +58570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1213584500
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67557,7 +67677,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &1337062305
 GameObject:
   m_ObjectHideFlags: 0
@@ -68662,7 +68781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1376867636
 AudioSource:
   m_ObjectHideFlags: 0
@@ -82918,7 +83036,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1516535391
 AudioSource:
   m_ObjectHideFlags: 0
@@ -84835,7 +84952,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &1552049107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3183157887193673013, guid: 159af5c1a3bf6994393453501c931ca5, type: 3}
@@ -84970,7 +85086,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1553009321
 AudioSource:
   m_ObjectHideFlags: 0
@@ -85925,7 +86040,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &1580695263
 AudioSource:
   m_ObjectHideFlags: 0
@@ -95839,7 +95953,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Car
+  m_DefaultActionMap: 0df3b152-b26e-49e0-a80d-1627136d4aeb
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1753438595 stripped
@@ -95853,6 +95967,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1753438599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753438588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1753438595}
+  getCheckpoint: {fileID: 995127483}
+  deathCanvas: {fileID: 1104546580}
+  currentScore: {fileID: 644305168}
+  currentLives: {fileID: 514008817}
+  bike: {fileID: 645618636}
+  bikeScript: {fileID: 645618647}
+  fallSound: {fileID: 121687259}
+  musicManager: {fileID: 11136371}
 --- !u!1 &1753761865
 GameObject:
   m_ObjectHideFlags: 0
@@ -103346,9 +103481,41 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Car
+  m_DefaultActionMap: 0df3b152-b26e-49e0-a80d-1627136d4aeb
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1837410560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+  m_PrefabInstance: {fileID: 404696643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837410557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1837410563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837410557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1837410560}
+  getCheckpoint: {fileID: 995127483}
+  deathCanvas: {fileID: 1104546580}
+  currentScore: {fileID: 644305168}
+  currentLives: {fileID: 514008817}
+  bike: {fileID: 645618636}
+  bikeScript: {fileID: 645618647}
+  fallSound: {fileID: 121687259}
+  musicManager: {fileID: 11136371}
 --- !u!1 &1838363596
 GameObject:
   m_ObjectHideFlags: 0
@@ -103901,7 +104068,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &1852734184
 GameObject:
   m_ObjectHideFlags: 0
@@ -106745,7 +106911,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &1943294936
 GameObject:
   m_ObjectHideFlags: 0
@@ -107224,7 +107389,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 8556262120643298411, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
   - {fileID: 2086600976039516832, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
-  - {fileID: 2100000, guid: 65ed982d74d9cdd4795b2f2a10b68f7e, type: 2}
+  - {fileID: 2100000, guid: c94553f48862f9a448faeed3e1b49bde, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107563,7 +107728,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &1960443914
 GameObject:
   m_ObjectHideFlags: 0
@@ -108257,6 +108421,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1974403563}
+    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1974403558}
   m_SourcePrefab: {fileID: 100100000, guid: bb93f720517792d488352ffea1d251c0, type: 3}
@@ -108292,9 +108459,41 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Car
+  m_DefaultActionMap: 0df3b152-b26e-49e0-a80d-1627136d4aeb
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1974403560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+  m_PrefabInstance: {fileID: 1974403556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974403557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1974403563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974403557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1974403560}
+  getCheckpoint: {fileID: 995127483}
+  deathCanvas: {fileID: 1104546580}
+  currentScore: {fileID: 644305168}
+  currentLives: {fileID: 514008817}
+  bike: {fileID: 645618636}
+  bikeScript: {fileID: 645618647}
+  fallSound: {fileID: 121687259}
+  musicManager: {fileID: 11136371}
 --- !u!1 &1976083596
 GameObject:
   m_ObjectHideFlags: 0
@@ -109558,7 +109757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &2008731878
 AudioSource:
   m_ObjectHideFlags: 0
@@ -109868,7 +110066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &2010803639
 AudioSource:
   m_ObjectHideFlags: 0
@@ -110305,7 +110502,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &2014742056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -111215,7 +111411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!82 &2036431118
 AudioSource:
   m_ObjectHideFlags: 0
@@ -112507,7 +112702,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveManager: {fileID: 995127483}
-  audioSource: {fileID: 290072993}
 --- !u!1 &2073985901
 GameObject:
   m_ObjectHideFlags: 0
@@ -113684,6 +113878,81 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -613200878065603006, guid: d4ef1b139a4158f49aedea9368fcb113, type: 3}
+--- !u!1 &2102867299
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102867300}
+  - component: {fileID: 2102867302}
+  - component: {fileID: 2102867301}
+  m_Layer: 0
+  m_Name: blackScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2102867300
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102867299}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 23.164, y: 8.5644, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1104546581}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -11}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2102867301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102867299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2102867302
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102867299}
+  m_CullTransparentMesh: 1
 --- !u!1 &2107172957
 GameObject:
   m_ObjectHideFlags: 0
@@ -116074,6 +116343,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 1753438599}
+    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1753438593}
   m_SourcePrefab: {fileID: 100100000, guid: bb93f720517792d488352ffea1d251c0, type: 3}
@@ -118092,6 +118364,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 03df12dae8493bb4d80259bf8356a412, type: 3}
+    - target: {fileID: 479915124364905445, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1306608368998375669, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_Name
       value: MusicManager
@@ -118100,6 +118376,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: abe2e42339f3f3d408acaf80b9afa771, type: 3}
+    - target: {fileID: 2324966154308052463, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3460695824465935632, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_LocalPosition.x
       value: -536.9112
@@ -118144,6 +118424,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 92782a2fea1d2b74ca6537142bafc101, type: 3}
+    - target: {fileID: 3664603419639613049, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: rb
       value: 
@@ -118280,10 +118564,18 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c9fd22240f3365648aa4ea293e52550f, type: 3}
+    - target: {fileID: 6707658664708919819, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6968145590658349102, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 1d248184574a04a4da3f0610ee68460a, type: 3}
+    - target: {fileID: 6968145590658349102, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -119170,7 +119462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7117903305466053180, guid: 69ab21a810d453e49b7ddddf8bfd454e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 124.84
+      value: 121.41
       objectReference: {fileID: 0}
     - target: {fileID: 7117903305466053180, guid: 69ab21a810d453e49b7ddddf8bfd454e, type: 3}
       propertyPath: m_LocalPosition.z

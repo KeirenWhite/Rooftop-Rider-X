@@ -17,22 +17,32 @@ public class DeathScript : MonoBehaviour
     public GameObject bike;
     public CarRaycast bikeScript;
     private float input;
+    public AudioSource fallSound;
+    public GameObject musicManager;
 
     void Start()
     {
         
     }
 
+    private void OnRespawn(InputValue value)
+    {
+        input = value.Get<float>();
+    }
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Bike"))
         {
-            deathCanvas.SetActive(true);
             dead = true;
+            deathCanvas.SetActive(true);
+            fallSound.Play();
             currentLives.text = string.Format("Lives Remaining: {0}", getCheckpoint.lifeCounter);
             currentScore.text = string.Format("Current Score: {0}", getCheckpoint.score);
             bike.SetActive(false);
-            if (dead)
+            musicManager.SetActive(false);
+          
+            /*if (dead)
             {
                 if(input > 0)
                 {
@@ -41,19 +51,35 @@ public class DeathScript : MonoBehaviour
                     dead = false;
                     deathCanvas.SetActive(false);
                 }
-            }
+            }*/
             //RespawnBike();
         }
     }
 
-    private void OnContinue(InputValue value)
+    private void Continue()
     {
-        input = value.Get<float>();
+        if (dead)
+        {
+            if (input > 0 && dead == true)
+            {
+                musicManager.SetActive(true);
+                bike.SetActive(true);            
+                respawn.RespawnBike();
+                dead = false;
+                deathCanvas.SetActive(false);
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
     }
+   
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        Continue();
     }
 }
