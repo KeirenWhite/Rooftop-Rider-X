@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6789006647349000173}
+  - component: {fileID: 8038496928018533314}
   m_Layer: 0
   m_Name: Barricade
   m_TagString: Untagged
@@ -32,6 +33,27 @@ Transform:
   - {fileID: 7339589240412412050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8038496928018533314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8741465594092518328}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.1467447, y: 3.5120058, z: 4.9153214}
+  m_Center: {x: 0, y: -1.118393, z: -0.037353516}
 --- !u!1001 &7084669065070051193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80,6 +102,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ba7ddc9f53c60ec449dff25d6e29f100, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f6e940824e0717f449a0b2c45d4c8387, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ba7ddc9f53c60ec449dff25d6e29f100, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 53c1e669f515dc74eb21137595a28a18, type: 2}
+    - target: {fileID: -7511558181221131132, guid: ba7ddc9f53c60ec449dff25d6e29f100, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa1e7005c2d279f4892d26876845d252, type: 2}
     - target: {fileID: 919132149155446097, guid: ba7ddc9f53c60ec449dff25d6e29f100, type: 3}
       propertyPath: m_Name
       value: Barricade_arrowleft
