@@ -20,6 +20,7 @@ public class GetCheckpoint : MonoBehaviour
     public TMP_Text lives;
     public GameObject bike;
     public AudioSource audioSource;
+    public Timer time;
     [SerializeField] private SpawnManagerScriptableObject spawnManager;
 
     [SerializeField] private Material redMat;
@@ -87,6 +88,7 @@ public class GetCheckpoint : MonoBehaviour
         }
 
         arrow.GetComponent<ArrowPoint>().ChangeTarget(redBlueCurrentPoint.transform.position);
+        
     }
 
     public void GotObjective(Objective objective)
@@ -96,6 +98,7 @@ public class GetCheckpoint : MonoBehaviour
         audioSource.Play();
         UpdateCounterDisplay();
         SpawnObjective();
+        time.time += time.addTime;
     }
 
     private void ExtraLife()

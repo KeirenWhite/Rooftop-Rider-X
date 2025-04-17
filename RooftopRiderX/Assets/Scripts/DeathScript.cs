@@ -13,7 +13,7 @@ public class DeathScript : MonoBehaviour
     public GameObject deathCanvas;
     public TMP_Text currentScore;
     public TMP_Text currentLives;
-    private bool dead = false;
+    [HideInInspector] public bool dead = false;
     public GameObject bike;
     public CarRaycast bikeScript;
     private float input;
