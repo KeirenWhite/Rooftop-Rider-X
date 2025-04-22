@@ -56,7 +56,7 @@ public class GetCheckpoint : MonoBehaviour
     public void UpdateCounterDisplay()
     {
         scoreText.text = string.Format("Score: {0}", score);
-        Debug.Log(score);
+        //Debug.Log(score);
     }
 
     private void SpawnObjective()
@@ -94,11 +94,18 @@ public class GetCheckpoint : MonoBehaviour
     public void GotObjective(Objective objective)
     {
         objective.gameObject.SetActive(false);
-        score += 1000;
+        AddScore(1000);
         audioSource.Play();
         UpdateCounterDisplay();
         SpawnObjective();
         time.time += time.addTime;
+    }
+
+    public void AddScore(int newScore)
+    {
+        score += newScore;
+        Debug.Log(newScore);
+        UpdateCounterDisplay();
     }
 
     private void ExtraLife()

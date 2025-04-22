@@ -14,6 +14,7 @@ public class Music : MonoBehaviour
     public AudioSource audioSourceMid;
     public AudioSource audioSourceMidSolo;
     public AudioSource audioSourceTop;
+    public GetCheckpoint getCheckpoint;
     private float currentSpeed;
     private float currentTime = 0;
     public float duration = 2f;
@@ -178,7 +179,6 @@ public class Music : MonoBehaviour
     private void AlignSonicBoom()
     {
         if (!sonicBoom.isPlaying) return;
-
         sonicBoom.gameObject.transform.LookAt(rb.velocity.normalized + sonicBoom.gameObject.transform.position);
     }
 
@@ -370,7 +370,12 @@ public class Music : MonoBehaviour
             deltaTransition = (int)state;
 
             if (state == MusicState.topSpeed)
+            {
+                getCheckpoint.AddScore(200);
                 sonicBoom.Play();
+            }
+                
+                
         }
         //Debug.Log(state);
     }

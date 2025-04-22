@@ -1217,6 +1217,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 736284923}
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: getCheckpoint
+      value: 
+      objectReference: {fileID: 995127483}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: driftMultiplier
       value: 0.5
       objectReference: {fileID: 0}
@@ -118526,7 +118530,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 03df12dae8493bb4d80259bf8356a412, type: 3}
     - target: {fileID: 479915124364905445, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1306608368998375669, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_Name
@@ -118538,7 +118542,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: abe2e42339f3f3d408acaf80b9afa771, type: 3}
     - target: {fileID: 2324966154308052463, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3460695824465935632, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -118586,7 +118590,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 92782a2fea1d2b74ca6537142bafc101, type: 3}
     - target: {fileID: 3664603419639613049, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: rb
@@ -118652,6 +118656,10 @@ PrefabInstance:
       propertyPath: lineSpeedTop
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
+      propertyPath: getCheckpoint
+      value: 
+      objectReference: {fileID: 995127483}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: changeFOVSpeed
       value: 0.2
@@ -118726,7 +118734,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: c9fd22240f3365648aa4ea293e52550f, type: 3}
     - target: {fileID: 6707658664708919819, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6968145590658349102, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_audioClip
@@ -118734,7 +118742,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 1d248184574a04a4da3f0610ee68460a, type: 3}
     - target: {fileID: 6968145590658349102, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

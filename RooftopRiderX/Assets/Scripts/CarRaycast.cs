@@ -84,6 +84,7 @@ public class CarRaycast : MonoBehaviour
     public float turnSpeed = 90;
     public float brakeStrength = 5;
     public float jumpStrength = 5;
+    public float currentSpeed;
     public GameObject WheelF;
     public GameObject WheelB;
     public GameObject AxelF;
@@ -133,6 +134,7 @@ public class CarRaycast : MonoBehaviour
         //bikeBody = GetComponent<BoxCollider>();
         origDrag = rb.drag;
         origAngDrag = rb.angularDrag;
+        currentSpeed = rb.velocity.magnitude;
 
         initialRotationAxel = AxelF.transform.localRotation;
         initialRotationWheelF = WheelF.transform.localRotation;
@@ -486,6 +488,8 @@ public class CarRaycast : MonoBehaviour
             float[] trickScore = new float[3];
             float trickPoints = (trickTrack.x + trickTrack.y + trickTrack.z);
             int intTrickPoints = Mathf.CeilToInt(trickPoints);
+            currentSpeed = rb.velocity.magnitude;
+            int intCurrentSpeed = Mathf.CeilToInt(currentSpeed);
 
             trickScore[0] = trickTrack.x;
             trickScore[1] = trickTrack.y;
@@ -508,8 +512,7 @@ public class CarRaycast : MonoBehaviour
             //Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2] + "\n");
 
             boostScript.RefillBoost(trickScore[0] + trickScore[1] + trickScore[2]);
-            getCheckpoint.score += intTrickPoints * 10;
-            getCheckpoint.UpdateCounterDisplay();
+            getCheckpoint.AddScore(intTrickPoints * (intCurrentSpeed/10));
             trickTrack = Vector3.zero;
             if (trickScore[0] + trickScore[1] + trickScore[2] > 5)
                 landTrickAudio.Play();
