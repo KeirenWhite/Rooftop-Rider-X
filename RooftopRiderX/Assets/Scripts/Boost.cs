@@ -19,6 +19,7 @@ public class Boost : MonoBehaviour
     [SerializeField] private float trickMultiplier = 0.25f;
     [SerializeField] private float driftMultSensitivity = 3f;
     [SerializeField] private float driftMultiplier = 3f;
+    public GetCheckpoint getCheckpoint;
 
     [SerializeField] private CarRaycast bikeScript;
 
@@ -37,6 +38,7 @@ public class Boost : MonoBehaviour
     private void FixedUpdate()
     {
         float dmult = DriftMultiplier();
+        
 
         if (input > 0 && boostVal > 0 && !bikeScript.input.downed)
         {
@@ -75,6 +77,8 @@ public class Boost : MonoBehaviour
         }
 
     }
+
+   
 
     public void RefillBoost(float addBoost, bool overrideTrick = false)
     {

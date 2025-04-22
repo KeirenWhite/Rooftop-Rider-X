@@ -13,6 +13,7 @@ public class Respawn : MonoBehaviour
     public GameObject respawnPoint;
     /*public AudioSource fallSound;*/
     public GetCheckpoint getCheckpoint;
+    public CarRaycast bikeScript;
     //public TMP_Text lives;
     
 
@@ -25,7 +26,7 @@ public class Respawn : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Bike"))
         {
-            //RespawnBike();
+            RespawnBike();
             getCheckpoint.lifeCounter--;
             getCheckpoint.lives.text = string.Format("Lives: {0}", getCheckpoint.lifeCounter);
         }
@@ -35,6 +36,7 @@ public class Respawn : MonoBehaviour
     {
         bikeRb.velocity = Vector3.zero;
         bikeRb.angularVelocity = Vector3.zero;
+        bikeScript.trickTrack = Vector3.zero;
         bike.transform.position = respawnPoint.transform.position;
         bike.transform.eulerAngles = respawnPoint.transform.eulerAngles;
         mainCamera.transform.position = respawnPoint.transform.position;

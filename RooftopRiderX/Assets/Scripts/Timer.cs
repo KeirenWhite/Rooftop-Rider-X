@@ -37,10 +37,11 @@ public class Timer : MonoBehaviour
 
     private IEnumerator CountdownTimer()
     {
-        while (time > 0 /*&& !deathCanvas.isActiveAndEnabled*/)
+        while (time > 0)
         {
             yield return waitSeconds;
-            time--;
+
+            time--;        
 
             UpdateTimerDisplay();
         }
@@ -54,7 +55,6 @@ public class Timer : MonoBehaviour
 
     private void UpdateTimerDisplay()
     {
-        // Format the timer text to show MM:SS
         timerText.text = string.Format("{0}", time);
     }
 }

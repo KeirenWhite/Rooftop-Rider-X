@@ -341,11 +341,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8841808}
   m_Mesh: {fileID: 9086201508115507805, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
---- !u!1 &11136371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1306608368998375669, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
-  m_PrefabInstance: {fileID: 7168514551542836721}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &11337550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1882530728411375235, guid: 566e202b4ea8d3d4abbb718070b989ae, type: 3}
@@ -1047,7 +1042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9863242
+      value: 0.9999992
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1055,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.16481659
+      value: 0.0012600883
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1067,12 +1062,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -18.973
+      value: 0.144
       objectReference: {fileID: 0}
     - target: {fileID: 6753616344642384908, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: getCheckpoint
+      value: 
+      objectReference: {fileID: 995127483}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: stabilizationSensitivity
       value: 42
@@ -3617,6 +3616,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 645618640}
     - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      propertyPath: bikeScript
+      value: 
+      objectReference: {fileID: 645618647}
+    - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1452743188}
@@ -3636,9 +3639,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 121687263}
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 121687258}
@@ -3678,44 +3678,6 @@ MonoBehaviour:
   m_DefaultActionMap: Continue
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!82 &121687259 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4745675984236427343, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-  m_PrefabInstance: {fileID: 121687256}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &121687260 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-  m_PrefabInstance: {fileID: 121687256}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121687257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &121687263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 121687257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 121687260}
-  getCheckpoint: {fileID: 995127483}
-  deathCanvas: {fileID: 1104546580}
-  currentScore: {fileID: 644305168}
-  currentLives: {fileID: 514008817}
-  dead: 0
-  bike: {fileID: 645618636}
-  bikeScript: {fileID: 645618647}
-  fallSound: {fileID: 121687259}
-  musicManager: {fileID: 11136371}
 --- !u!1 &123185635
 GameObject:
   m_ObjectHideFlags: 0
@@ -12648,6 +12610,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 645618640}
     - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      propertyPath: bikeScript
+      value: 
+      objectReference: {fileID: 645618647}
+    - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1452743188}
@@ -12667,9 +12633,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1837410563}
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1837410558}
@@ -21057,6 +21020,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 645618640}
     - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      propertyPath: bikeScript
+      value: 
+      objectReference: {fileID: 645618647}
+    - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1452743188}
@@ -21076,9 +21043,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 484110182}
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 484110177}
@@ -21115,42 +21079,9 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 0df3b152-b26e-49e0-a80d-1627136d4aeb
+  m_DefaultActionMap: Continue
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &484110179 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-  m_PrefabInstance: {fileID: 484110175}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484110176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &484110182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484110176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 484110179}
-  getCheckpoint: {fileID: 995127483}
-  deathCanvas: {fileID: 1104546580}
-  currentScore: {fileID: 644305168}
-  currentLives: {fileID: 514008817}
-  dead: 0
-  bike: {fileID: 645618636}
-  bikeScript: {fileID: 645618647}
-  fallSound: {fileID: 121687259}
-  musicManager: {fileID: 11136371}
 --- !u!1 &484894399
 GameObject:
   m_ObjectHideFlags: 0
@@ -57532,7 +57463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 74, y: 238}
+  m_AnchoredPosition: {x: 74, y: 199.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176941711
@@ -96278,39 +96209,6 @@ MonoBehaviour:
   m_DefaultActionMap: Continue
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1753438595 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-  m_PrefabInstance: {fileID: 2067648321365457989}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753438588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1753438599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753438588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1753438595}
-  getCheckpoint: {fileID: 995127483}
-  deathCanvas: {fileID: 1104546580}
-  currentScore: {fileID: 644305168}
-  currentLives: {fileID: 514008817}
-  dead: 0
-  bike: {fileID: 645618636}
-  bikeScript: {fileID: 645618647}
-  fallSound: {fileID: 121687259}
-  musicManager: {fileID: 11136371}
 --- !u!1 &1753761865
 GameObject:
   m_ObjectHideFlags: 0
@@ -103807,39 +103705,6 @@ MonoBehaviour:
   m_DefaultActionMap: Continue
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1837410560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-  m_PrefabInstance: {fileID: 404696643}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837410557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1837410563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837410557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1837410560}
-  getCheckpoint: {fileID: 995127483}
-  deathCanvas: {fileID: 1104546580}
-  currentScore: {fileID: 644305168}
-  currentLives: {fileID: 514008817}
-  dead: 0
-  bike: {fileID: 645618636}
-  bikeScript: {fileID: 645618647}
-  fallSound: {fileID: 121687259}
-  musicManager: {fileID: 11136371}
 --- !u!1 &1838363596
 GameObject:
   m_ObjectHideFlags: 0
@@ -108725,6 +108590,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 645618640}
     - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      propertyPath: bikeScript
+      value: 
+      objectReference: {fileID: 645618647}
+    - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1452743188}
@@ -108744,9 +108613,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1974403563}
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1974403558}
@@ -108786,39 +108652,6 @@ MonoBehaviour:
   m_DefaultActionMap: Continue
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1974403560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-  m_PrefabInstance: {fileID: 1974403556}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974403557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1660e4a4d5e4c594390e7d15318a42d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1974403563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1974403557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d827d48e159ff4f8862206080bf0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1974403560}
-  getCheckpoint: {fileID: 995127483}
-  deathCanvas: {fileID: 1104546580}
-  currentScore: {fileID: 644305168}
-  currentLives: {fileID: 514008817}
-  dead: 0
-  bike: {fileID: 645618636}
-  bikeScript: {fileID: 645618647}
-  fallSound: {fileID: 121687259}
-  musicManager: {fileID: 11136371}
 --- !u!1 &1976083596
 GameObject:
   m_ObjectHideFlags: 0
@@ -116649,6 +116482,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 645618640}
     - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
+      propertyPath: bikeScript
+      value: 
+      objectReference: {fileID: 645618647}
+    - target: {fileID: 6835858508486052087, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1452743188}
@@ -116668,9 +116505,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1753438599}
     - targetCorrespondingSourceObject: {fileID: 6848442794470179920, guid: bb93f720517792d488352ffea1d251c0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1753438593}

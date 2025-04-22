@@ -53,7 +53,7 @@ public class GetCheckpoint : MonoBehaviour
     {
         GameOver();
     }
-    private void UpdateCounterDisplay()
+    public void UpdateCounterDisplay()
     {
         scoreText.text = string.Format("Score: {0}", score);
         Debug.Log(score);
@@ -94,7 +94,7 @@ public class GetCheckpoint : MonoBehaviour
     public void GotObjective(Objective objective)
     {
         objective.gameObject.SetActive(false);
-        score += 100;
+        score += 1000;
         audioSource.Play();
         UpdateCounterDisplay();
         SpawnObjective();

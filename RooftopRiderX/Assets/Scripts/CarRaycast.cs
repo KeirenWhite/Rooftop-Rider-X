@@ -105,7 +105,7 @@ public class CarRaycast : MonoBehaviour
     private bool wasOnGround = false;
     private Quaternion holdoverRotation;
     private Quaternion deltaRotation;
-    private Vector3 trickTrack;
+    public Vector3 trickTrack;
     [SerializeField] private Boost boostScript;
 
     [SerializeField] private bool leanMode = false;
@@ -123,6 +123,7 @@ public class CarRaycast : MonoBehaviour
 
     [Header("Sound Effects")]
     public AudioSource landTrickAudio;
+    public GetCheckpoint getCheckpoint;
    
 
     private void Start()
@@ -170,7 +171,7 @@ public class CarRaycast : MonoBehaviour
         rb.velocity += new Vector3(0f, GetGravity() * Time.deltaTime, 0f) ;
 
         BikeGrounded();
-        BikeDowned();
+        //BikeDowned();
         
         FrameStabilize();
 
@@ -434,7 +435,7 @@ public class CarRaycast : MonoBehaviour
         {
             snapCooldown = snapCooldownTime;
             transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, 0);
-            transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 2f, this.transform.position.z);
+            transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1f, this.transform.position.z);
             rb.velocity += new Vector3(0f, resetBounce, 0f); ;
             input.downed = false;
             wasJustDowned = true;
@@ -483,6 +484,8 @@ public class CarRaycast : MonoBehaviour
         else
         {
             float[] trickScore = new float[3];
+            float trickPoints = (trickTrack.x + trickTrack.y + trickTrack.z);
+            int intTrickPoints = Mathf.CeilToInt(trickPoints);
 
             trickScore[0] = trickTrack.x;
             trickScore[1] = trickTrack.y;
@@ -505,9 +508,12 @@ public class CarRaycast : MonoBehaviour
             //Debug.Log(trickScore[0] + ", " + trickScore[1] + ", " + trickScore[2] + "\n");
 
             boostScript.RefillBoost(trickScore[0] + trickScore[1] + trickScore[2]);
+            getCheckpoint.score += intTrickPoints * 10;
+            getCheckpoint.UpdateCounterDisplay();
             trickTrack = Vector3.zero;
             if (trickScore[0] + trickScore[1] + trickScore[2] > 5)
                 landTrickAudio.Play();
+                
         }
     }
 
@@ -518,7 +524,7 @@ public class CarRaycast : MonoBehaviour
         Vector2 inputVal = new Vector2(input.steer.x, input.flip.y);
         
 
-        if (input.grounded >= 1)
+        if (input.grounded >= 1 && !input.downed)
         {
             //constantF.enabled = false;
             rb.drag = origDrag;
@@ -536,7 +542,7 @@ public class CarRaycast : MonoBehaviour
 
             AirFrameStabilize();
 
-            if (input.roll > 0)
+            if (input.roll > 0 && !input.downed)
             {
 
                 Vector3 torque = new Vector3(inputVal.y, 0, inputVal.x);
