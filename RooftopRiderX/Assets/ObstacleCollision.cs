@@ -34,7 +34,7 @@ public class ObstacleCollision : MonoBehaviour
             col.isTrigger = false;
             rb.useGravity = true;
 
-            gameObject.layer = 7;
+            //gameObject.layer = 7;
 
             StartCoroutine(ResetAfterHit());
 
