@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sign
+  m_Name: Reflective
   m_Shader: {fileID: 4800000, guid: a2882fcb0c3527b47a2015203e3f08d7, type: 3}
   m_Parent: {fileID: 2100000, guid: 5c79ce3902727174e9cc878a4d31c08c, type: 2}
   m_ModifiedSerializedProperties: 0
@@ -31,6 +31,7 @@ Material:
     - _DitherRange1: 0.64
     - _DitherRange2: 0.65
     - _LayersAmount: 2
+    - _TextureBrightness: 2
     m_Colors:
     - _BrightColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
