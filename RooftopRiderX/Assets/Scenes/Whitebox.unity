@@ -32324,7 +32324,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.78297424, b: 0.4339623, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -32368,7 +32368,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 6570
+  m_ColorTemperature: 6779
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -33940,6 +33940,8 @@ GameObject:
   m_Component:
   - component: {fileID: 726754841}
   - component: {fileID: 726754840}
+  - component: {fileID: 726754843}
+  - component: {fileID: 726754842}
   m_Layer: 0
   m_Name: TimeManager
   m_TagString: Untagged
@@ -33981,6 +33983,120 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726754842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726754839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e5a9a69f81eb648bd819e377f09e5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &726754843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726754839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 069edd1b29b471747bcb876a1018fc02, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 008e98be-45b2-44a7-bd23-6fda5a671d6b
+    m_ActionName: Car/Steer[/XInputControllerWindows/leftStick,/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d598f423-a27a-4906-bdd2-a26440c6cc09
+    m_ActionName: Car/Gas[/XInputControllerWindows/rightTrigger,/Keyboard/upArrow,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 093e145a-f87e-4af7-b294-20c38c12dc77
+    m_ActionName: Car/Brake[/XInputControllerWindows/leftShoulder,/Keyboard/b,/Keyboard/downArrow,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2259d2a0-ede3-466e-9a07-5a51343a6b35
+    m_ActionName: Car/Reset[/XInputControllerWindows/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da1f07ee-96d5-4aad-a4e4-3e2086699380
+    m_ActionName: Car/Menu[/XInputControllerWindows/select,/Keyboard/backspace,/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d292b4a0-8ef6-4bf8-a693-d9fc26e9d785
+    m_ActionName: Car/Roll[/Keyboard/shift,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e9ae07f9-614e-4788-8b3d-b550b1178392
+    m_ActionName: Car/Flip[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 59683614-06a7-48d8-93f8-1b756d422dd1
+    m_ActionName: Car/Reverse[/Keyboard/s,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 60757437-a6b5-4a9e-b3cc-ce2621d37b67
+    m_ActionName: Car/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 327da5ee-bbbe-4de2-85c1-f3df82480a2c
+    m_ActionName: Car/Boost[/Mouse/rightButton,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4bf42f5c-1227-4777-9b5f-7b82c4d21e16
+    m_ActionName: Car/CamSteer[/XInputControllerWindows/rightStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3818f81a-b797-445f-8b82-22c6f97555c6
+    m_ActionName: Car/Respawn[/XInputControllerWindows/start,/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 112fcfbe-9043-4b23-91d9-279b4d9988e9
+    m_ActionName: Car/ResetCam[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 98052018-5751-4fda-a9b3-f89d92318407
+    m_ActionName: Car/Continue[/Keyboard/anyKey,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 75f1724b-d730-497f-9c57-18a4bd469bfb
+    m_ActionName: Menu/Next[/XInputControllerWindows/rightShoulder,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 55d8ee78-c492-4264-b0d6-ae5edeb3c218
+    m_ActionName: Menu/Previous[/XInputControllerWindows/leftShoulder,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 598f531d-db91-41bf-82c5-43d23980cf6a
+    m_ActionName: Menu/Play[/XInputControllerWindows/buttonSouth,/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f3937b3-a4d7-43b5-b631-d5b10ab06e46
+    m_ActionName: Continue/Respawn[/XInputControllerWindows/start,/Keyboard/anyKey]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Car
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &728399687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1781815952780526437, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
