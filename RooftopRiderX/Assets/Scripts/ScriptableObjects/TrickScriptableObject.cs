@@ -6,9 +6,9 @@ using UnityEngine;
 public class TrickScriptableObject : ScriptableObject
 {
     /*** Object Variables ***/
-    /* 
-    * bool inAir;
-    * 
+    bool inAir;
+    bool holdOK;
+
     /*** Tracked Variables ***/
     /* 
     * Core variables:
@@ -41,10 +41,7 @@ public class TrickScriptableObject : ScriptableObject
     * - Accelerate/Reverse
     * - Grounded wheels
     * 
-    * 
-    /*** VariableSpecifics ***/
-
-    bool trackVariable;
+    */
 
     //Note: Hangtime points are applied on bike landing
 
