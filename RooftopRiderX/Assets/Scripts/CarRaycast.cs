@@ -118,6 +118,8 @@ public class CarRaycast : MonoBehaviour
     [SerializeField] private float jumpHeight = 10f;
     [SerializeField] private float jumpTimeToPeak = 10f;
     [SerializeField] private float jumpTimeToDescent = 10f;
+    [SerializeField] private Transform jumpParticleSpawn;
+    [SerializeField] private GameObject jumpParticles;
     private float jumpVelocity;
     private float jumpGravity;
     private float fallGravity;
@@ -605,6 +607,13 @@ public class CarRaycast : MonoBehaviour
         if (input.grounded > 0)
         {
             rb.AddForce(transform.rotation * (Vector3.up * jumpStrength * input.jump));
+
+            if (input.jump > 0)
+            {
+                GameObject jumpParticlesInstance = Instantiate(jumpParticles);
+                jumpParticlesInstance.transform.position = jumpParticleSpawn.position;
+                jumpParticlesInstance.transform.rotation = transform.rotation;
+            }
         }
     }
 

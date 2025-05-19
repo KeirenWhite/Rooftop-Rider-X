@@ -34,8 +34,6 @@ public class Music : MonoBehaviour
     [SerializeField] private ParticleSystem sonicBoom;
     [SerializeField] private ParticleSystem speedLines;
     private GameObject speedlineObject;
-    [SerializeField] private float lineSpeedMid = 20f;
-    [SerializeField] private float lineSpeedTop = 40f;
     private ParticleSystem.EmissionModule speedlineEmission;
 
     [Header("Color")]
@@ -350,12 +348,10 @@ public class Music : MonoBehaviour
                     StartCoroutine(DisableEmissionAfterDelay(speedLines, 0.05f));
                     break;
                 case 2:
-                    speedlineEmission.rateOverTime = lineSpeedMid;
                     speedlineEmission.enabled = true;
                     speedLines.Play();
                     break;
                 case 3:
-                    speedlineEmission.rateOverTime = lineSpeedTop;
                     speedlineEmission.enabled = true;
                     speedLines.Play();
                     break;

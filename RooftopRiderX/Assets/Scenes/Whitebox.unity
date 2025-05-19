@@ -1094,6 +1094,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 995127483}
     - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: jumpParticles
+      value: 
+      objectReference: {fileID: 727153944039597606, guid: ca9798f3db128ba4eab72e6c9d3175d9, type: 3}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: jumpParticleSpawn
+      value: 
+      objectReference: {fileID: 824453467}
+    - target: {fileID: 7329796980517859866, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: stabilizationSensitivity
       value: 42
       objectReference: {fileID: 0}
@@ -1238,6 +1246,18 @@ PrefabInstance:
       value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: fill
+      value: 
+      objectReference: {fileID: 643951623}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: fill1
+      value: 
+      objectReference: {fileID: 643951623}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: fill2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: stars
       value: 
       objectReference: {fileID: 513954410}
@@ -1246,12 +1266,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 736284923}
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: boostSlider1
+      value: 
+      objectReference: {fileID: 736284923}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: boostSlider2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: getCheckpoint
       value: 
       objectReference: {fileID: 995127483}
     - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
       propertyPath: driftMultiplier
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169183369952577697, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
+      propertyPath: boostShakeAmount
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1958565558698476847, guid: a21aefd5bb13d724ba1a2ff2348518ac, type: 3}
@@ -34324,10 +34356,10 @@ RectTransform:
   - {fileID: 643951623}
   m_Father: {fileID: 2143268630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 86, y: 18}
-  m_SizeDelta: {x: 148.7632, y: 16.960602}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: 400, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736284923
 MonoBehaviour:
@@ -37188,6 +37220,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823780768}
   m_Mesh: {fileID: -513969142069352844, guid: e5e77e8232e778049a9eb480211e8bc2, type: 3}
+--- !u!1 &824453466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 824453467}
+  m_Layer: 0
+  m_Name: JumpParticleSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &824453467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824453466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.0539, z: -0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2033603933}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824546543
 GameObject:
   m_ObjectHideFlags: 0
@@ -45273,15 +45336,15 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
-    angle: 25
+    type: 4
+    angle: 20
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
-    radiusThickness: 1
+    radiusThickness: 0
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 66.77, y: 30, z: 11}
+    m_Scale: {x: 10, y: 10, z: 10}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -45348,7 +45411,7 @@ ParticleSystem:
     m_SpriteRenderer: {fileID: 0}
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
-    alignToDirection: 0
+    alignToDirection: 1
     m_Texture: {fileID: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
@@ -45479,7 +45542,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 8
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -45532,7 +45595,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.02
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -49374,7 +49437,7 @@ Transform:
   m_GameObject: {fileID: 1064609827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 65}
+  m_LocalPosition: {x: 0, y: 0, z: 55.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50471,7 +50534,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -110405,6 +110468,7 @@ Transform:
   - {fileID: 464241265}
   - {fileID: 1251651809}
   - {fileID: 1459272877}
+  - {fileID: 824453467}
   m_Father: {fileID: 1287373753}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2034697026
@@ -124069,11 +124133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: lineSpeedMid
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: lineSpeedTop
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5643860212028956930, guid: 99d22a903f086df44b7fea3aeb384d66, type: 3}
       propertyPath: getCheckpoint

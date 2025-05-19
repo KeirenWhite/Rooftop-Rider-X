@@ -10,9 +10,11 @@ public class Boost : MonoBehaviour
     [SerializeField] private Transform forcePos;
     public float input;
     private Rigidbody rb;
-
     public float boostVal = 100f;
     [SerializeField] private Slider boostSlider;
+    [SerializeField] private RectTransform fill;
+    [SerializeField] private float boostShakeAmount = 4f;
+    private Vector3 fillStartPos;
     [SerializeField] private float groundedBoostUseMult = 10f;
     [SerializeField] private float aerialBoostUseMult = 10f;
     [SerializeField] private float boostRefillMult = 1f;
@@ -31,26 +33,39 @@ public class Boost : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fillStartPos = fill.transform.position;
+
         rb = gameObject.GetComponent<Rigidbody>();
         starEmission = stars.emission;
     }
 
     private void FixedUpdate()
     {
-        float dmult = DriftMultiplier();
-        
-
         if (input > 0 && boostVal > 0 && !bikeScript.input.downed)
         {
             rb.AddForceAtPosition((transform.forward * forwardForce), forcePos.position, ForceMode.Force);
             boostVal -= Time.deltaTime * (bikeScript.input.grounded == 2 ? groundedBoostUseMult : aerialBoostUseMult);
             boostSlider.value = boostVal;
+
+            BoostShake();
         }
-        else if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)
+        else
         {
-            boostVal += (Time.deltaTime * boostRefillMult) * dmult;
+            fill.transform.position = fillStartPos;
+        }
+        
+        if (input == 0 && boostVal < 100 && bikeScript.input.grounded > 0)
+        {
+            boostVal += (Time.deltaTime * boostRefillMult) * DriftMultiplier();
             boostSlider.value = boostVal;
         }
+    }
+
+    private void BoostShake()
+    {
+        Vector3 shake = new Vector3(Random.Range(-boostShakeAmount, boostShakeAmount), Random.Range(-boostShakeAmount, boostShakeAmount), 0);
+
+        fill.position = fillStartPos + shake;
     }
 
     private void OnBoost(InputValue value)
@@ -68,7 +83,7 @@ public class Boost : MonoBehaviour
             }
 
             driftTimer += Time.deltaTime;
-            return Mathf.Pow(driftMultSensitivity, driftTimer / driftMultiplier);
+            return  2 + Mathf.Pow(driftMultSensitivity, driftTimer / driftMultiplier);
         }
         else
         {
